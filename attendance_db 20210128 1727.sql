@@ -1,0 +1,3522 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.50
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema attendance_db
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ attendance_db;
+USE attendance_db;
+
+--
+-- Table structure for table `attendance_db`.`tbl_admin`
+--
+
+DROP TABLE IF EXISTS `tbl_admin`;
+CREATE TABLE `tbl_admin` (
+  `s_id` int(10) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`s_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance_db`.`tbl_admin`
+--
+
+/*!40000 ALTER TABLE `tbl_admin` DISABLE KEYS */;
+INSERT INTO `tbl_admin` (`s_id`,`user_name`,`password`) VALUES 
+ (1,'admin','admin@');
+/*!40000 ALTER TABLE `tbl_admin` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `attendance_db`.`tbl_attendance`
+--
+
+DROP TABLE IF EXISTS `tbl_attendance`;
+CREATE TABLE `tbl_attendance` (
+  `slno` int(100) NOT NULL,
+  `operator_id` varchar(100) NOT NULL,
+  `updatecorrection` int(100) NOT NULL,
+  `enrollment` int(100) NOT NULL,
+  `original_enrollment` int(100) NOT NULL,
+  `csv_upco` int(100) NOT NULL,
+  `csv_newen` int(100) NOT NULL,
+  `en_diff` int(100) NOT NULL,
+  `dept` text,
+  `state` varchar(100) DEFAULT NULL,
+  `district` varchar(100) DEFAULT NULL,
+  `pec_location` varchar(100) DEFAULT NULL,
+  `stid_db` varchar(50) DEFAULT NULL,
+  `stid_csv` varchar(50) DEFAULT NULL,
+  `created_DTTM` date NOT NULL,
+  `remarks` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance_db`.`tbl_attendance`
+--
+
+/*!40000 ALTER TABLE `tbl_attendance` DISABLE KEYS */;
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'HOJBHN_458816',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','health issue'),
+ (2,'NTPL_KTR_NS475630',13,14,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (3,'HOJBHN_085175',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (4,'NTPL_KTR_NS487920',17,5,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (5,'NTPL_PRN_NS039715',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Nagar Nigam Purnia'),
+ (6,'NTPL_KTR_NS117717',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (7,'NTPL_KTR_NS497595',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (8,'NTPL_KTR_NS198961',5,6,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (9,'HOJBHN_315991',3,67,70,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (10,'NTPL_KTR_NS172084',8,0,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (11,'NTPL_KTR_SS333814',11,5,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','KURSELA BLOCK'),
+ (12,'DCHOJAI484469',0,22,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','IRIS PROBLEM'),
+ (13,'NTPL_KTR_NS315748',19,7,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (14,'NTPL_KTR_NS123742',31,1,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (15,'DCHOJAI479733',0,53,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (16,'NTPL_KTR_NS337763',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (17,'NTPL_KTR_NS127780',24,11,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (18,'NTPL_KTR_SS350687',32,16,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','azamnagar block'),
+ (19,'DCHOJAI505300',0,8,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (20,'HOJBHN_479040',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Electricity problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (21,'NTPL_KTR_NS277790',17,3,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (22,'NTPL_KTR_NS215219',31,11,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Report'),
+ (23,'HOJBHN_304674',1,49,55,0,0,-5,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (24,'NTPL_KTR_SS313806',34,10,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (25,'NTPL_KTR_SS275200',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (26,'NTPL_KTR_NS111423',20,2,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (27,'DCHOJAI370355',0,79,79,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (28,'NTPL_KTR_SS327846',22,3,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','katihar block'),
+ (29,'HOJBHN_386189',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (30,'ntpl_sup_ss347725',35,21,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','no');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (31,'HOJBHN_096795',2,25,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','My Health Condition Very Weak .Doctor Suggest To tack Rest.....'),
+ (32,'HOJBHN_096779',1,55,51,0,0,5,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (33,'NTPL_ARR_NS232683',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','MD MERAZ ALAM DRCC ARARIA'),
+ (34,'NTPL_SHS_NS468786',40,1,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (35,'DCHOJAI479734',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (36,'DCHOJAI502179',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','NO RESIDENT'),
+ (37,'HOJBHN_472588',0,15,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Printer Problem'),
+ (38,'HOJBHN_097390',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (39,'NTPL_KTR_SS304362',23,3,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (40,'NTPL_KTR_NS256442',26,4,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','KORAH BLOCK'),
+ (41,'NTPL_KTR_NS476576',24,2,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02',''),
+ (42,'NTPL_KTR_NS099158',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','MANSAHI BLOCK'),
+ (43,'HOJBHN_472585',0,32,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Due To G.P Office Gram Shava Meeting'),
+ (44,'HOJBHN_449248',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','PRINTER PROBLEM'),
+ (45,'HOJBHN_311088',2,39,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','Electricity Problems'),
+ (46,'HOJBHN_474429',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','ELECTRICITY PROBLEM'),
+ (47,'hojbhn_367109',0,13,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-02','poor power suply'),
+ (48,'ntpl_prn_ns262442',4,13,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','KHUSHNOOR ALAM');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (49,'NTPL_SHS_NS468786',18,8,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Good'),
+ (50,'NTPL_ARR_SS348193',28,4,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (51,'NTPL_SUP_NS168001',16,5,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','NO MARK'),
+ (52,'NTPL_PRN_NS025588',2,2,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Rupaspur khagha Mirganj\r\nRam Kumar'),
+ (53,'NTPL_KTR_NS074368',19,1,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (54,'NTPL_PRN_NS039715',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Nagar Nigam Purnia'),
+ (55,'NTPL_PRN_NS049795',21,5,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','k nagar block neeraj kumar'),
+ (56,'HOJBHN_466674',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electric Problem'),
+ (57,'NTPL_KTR_NS323419',18,1,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (58,'hojbhn_480401',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','center shifting and electricity problem'),
+ (59,'NTPL_PRN_NS241411',22,1,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','ZILA PARISHAD PURNIA'),
+ (60,'NTPL_KTR_SS333814',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','kursela block'),
+ (61,'ntpl_arr_ns198852',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','eod'),
+ (62,'NTPL_PRN_NS164671',20,2,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','if any'),
+ (63,'NTPL_KTR_NS475630',13,8,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','03112020'),
+ (64,'NTPL_ARR_NS241359',16,0,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (65,'ntpl_mdp_ns246809',25,22,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','no'),
+ (66,'NTPL_KTR_SS304362',32,6,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (67,'NTPL_KTR_NS497595',8,2,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (68,'HOJBHN_164964',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (69,'ntpl_ktr_ns256442',14,1,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','KORHA BLOCK'),
+ (70,'HOJBHN_401045',1,22,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','no electricity 4 hrs'),
+ (71,'NTPL_SUP_NS041497',20,9,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (72,'NTPL_KTR_SS275200',33,2,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (73,'NTPL_MDP_NS481229',20,15,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (74,'HOJBHN_311088',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity Problems'),
+ (75,'NTPL_KTR_NS120921',16,2,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (76,'NTPL_KTR_NS034042',23,4,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','SAMUDAYIK BHAWAN KANTIYA');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (77,'NTPL_ARR_NS464500',20,3,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','KURSAKANTA ,BLOCK'),
+ (78,'NTPL_ARR_NS414653',9,13,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','BY SAMSAD'),
+ (79,'NTPL_ARR_NS448108',16,9,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','MOHAMMAD TAUFIQUE ALAM JOKIHAT block'),
+ (80,'ntpl_sup_ss347725',28,20,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','no'),
+ (81,'HOJBHN_458845',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (82,'NTPL_KTR_NS487920',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (83,'NTPL_SUP_NS469771',14,5,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (84,'DCHOJAI077387',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (85,'HOJBHN_365379',2,41,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (86,'NTPL_ARR_NS326985',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','FORBESGANJ BLOCK FORBESGANJ VIRENDRA KUMAR MAHTO');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (87,'NTPL_KTR_SS350687',39,25,64,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Azamnagar Block'),
+ (88,'NTPL_KTR_NS238656',17,5,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Panchayat Bhawan Abadpur'),
+ (89,'ntpl_sup_ns188114',34,4,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','csv'),
+ (90,'NTPL_KTR_NS127780',17,2,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (91,'NTPL_KTR_NS277790',12,2,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (92,'ntpl_sup_ns194876',6,2,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (93,'NTPL_KTR_SS313806',26,7,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (94,'NTPL_KTR_SS327846',32,17,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (95,'NTPL_KTR_NS123742',32,3,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (96,'NTPL_SUP_NS230340',12,11,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (97,'NTPL_KTR_NS499505',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','NAGAR NIGAM KATIHAR'),
+ (98,'hojbhn_457110',0,13,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricty Problem'),
+ (99,'NTPL_KTR_NS111423',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (100,'NTPL_KTR_NS476576',35,8,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (101,'NTPL_SUP_NS295998',22,14,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (102,'hojbhn_367109',1,46,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','none'),
+ (103,'NTPL_KTR_NS337763',8,0,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (104,'HOJBHN_315991',4,59,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (105,'NTPL_KTR_NS099158',9,16,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','MANSAHI BLOCK'),
+ (106,'DCHOJAI130625',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (107,'NTPL_KTR_NS198961',5,4,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (108,'DCHOJAI365375',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (109,'DCHOJAI096205',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Device Problem'),
+ (110,'NTPL_KTR_NS315748',31,13,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (111,'HOJBHN_085175',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (112,'HOJBHN_386189',1,52,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (113,'NTPL_KTR_NS311046',17,11,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (114,'NTPL_ARR_Ns232683',12,1,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','MD MERAZ ALAM DRCC ARARIA'),
+ (115,'HOJBHN_474429',0,21,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','electricity problem and maximum are below 10 years'),
+ (116,'DCHOJAI479733',1,52,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (117,'HOJBHN_225543',8,50,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (118,'NTPL_SUP_NS239156',34,10,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (119,'NTPL_KTR_NS215219',29,10,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (120,'HOJBHN_097390',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (121,'DCHOJAI385374',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','ELECTRICITY PROBLEMS'),
+ (122,'HOJBHN_355537',1,56,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (123,'HOJBHN_464443',3,42,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','electrycity problem'),
+ (124,'HOJBHN_458816',0,63,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','REMARKS'),
+ (125,'HOJBHN_304674',5,45,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (126,'DCHOJAI370355',0,71,71,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (127,'NTPL_SHS_SS355043',16,3,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (128,'NTPL_SHS_NS043445',32,10,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Block Hq Patarghat'),
+ (129,'DCHOJAI484469',0,46,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','HEALTH ISSSUE'),
+ (130,'DCHOJ_216025',4,68,72,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','UPDATE 4 FOR MY MISTAKE'),
+ (131,'DCHOJAI502179',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','no resident'),
+ (132,'NTPL_SHS_NS331132',13,6,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Ok'),
+ (133,'HOJBHN_096779',0,52,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (134,'DCHOJAI080225',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','ELECITY PROBLEM & VERIFIYER ABSENT'),
+ (135,'DCHOJAI162681',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (136,'HOJBHN_472588',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity Problem'),
+ (137,'NTPL_KTR_NS170425',12,9,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (138,'HOJBHN_472585',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (139,'NTPL_SHS_NS350850',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','sonbarsa block hedqater'),
+ (140,'NTPL_SHS_SS211062',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (141,'HOJBHN_479040',0,64,64,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (142,'DCHOJAI510814',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity problem'),
+ (143,'DCHOJAI467259',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','ELECTRICITY PROBLEM'),
+ (144,'DCHOJAI338953',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity problem'),
+ (145,'DCHOJAI510852',0,62,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Printer problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (146,'DCHOJAI505300',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (147,'HOJBHN_363269',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electycity Problem'),
+ (148,'NTPL_PRN_NS328854',16,17,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (149,'HOJBHN_450638',4,59,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (150,'HOJBHN_449248',0,43,42,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (151,'HOJBHN_457380',0,79,79,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (152,'HOJBHN_448024',0,30,28,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','ELECTRICITY PROBLEM'),
+ (153,'HOJBHN_450287',1,57,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03',''),
+ (154,'HOJBHN_452720',1,29,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','Electricity Problem'),
+ (155,'NTPL_KSG_NS298576',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-03','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'NTPL_KTR_NS074368',15,5,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (2,'NTPL_KTR_NS323419',14,8,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (3,'NTPL_SHS_NS025682',8,7,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (4,'ntpl_ksg_ns477554',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','SHAHBAZ ALAM'),
+ (5,'NTPL_PRN_NS344882',13,1,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Hii'),
+ (6,'NTPL_KSG_NS174799',7,8,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','BLOCK HQ KISHANGANJ'),
+ (7,'NTPL_KSG_NS159716',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','eod report'),
+ (8,'ntpl_prn_ns230675',14,4,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Block office jalalgarh'),
+ (9,'ntpl_prn_ns262442',16,4,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','KHUSHNOOR ALAM DHAMDAHA BLOCK'),
+ (10,'NTPL_BGS_NS093183',12,4,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Mukesh kumar\r\nstation id - 05068\r\nuser id - NTPL_BGS_NS093183');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (11,'NTPL_MDP_NS468510',10,5,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (12,'NTPL_MDP_NS039294',14,0,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (13,'hojbhn_480401',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','No More Residents'),
+ (14,'NTPL_KTR_NS478796',18,1,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (15,'ntpl_prn_ns437007',12,5,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','good'),
+ (16,'ntpl_mdp_ns419115',18,8,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (17,'ntpl_bgs_ns145100',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ok'),
+ (18,'NTPL_PRN_NS025588',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Rupaspur khagha Mirganj\r\nRam Kumar'),
+ (19,'NTPL_NDP_NS479028',18,17,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (20,'NTPL_SHS_NS331132',5,22,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ok');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (21,'ntpl_bgs_ns041397',4,2,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','samsa panchayat bhwan'),
+ (22,'hojbhn_367109',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','poor power supply'),
+ (23,'NTPL_MDP_NS481229',14,6,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (24,'ntpl_prn_ns445189',14,3,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (25,'NTPL_ARR_NS414653',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','By Md Shamsad Alam'),
+ (26,'ntpl_prn_ns476875',0,14,15,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (27,'NTPL_KHG_NS475503',57,0,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','mamta kumari  khg'),
+ (28,'NTPL_ARR_NS038856',14,3,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Murli Manohar DM Office Araria'),
+ (29,'NTPL_KIS_NS161360',16,1,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (30,'NTPL_SHS_NS350850',15,0,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','SONBARSA BLOCK HED QUATER'),
+ (31,'NTPL_ARR_NS202070',11,9,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','drda ofice araria'),
+ (32,'NTPL_bgs_ns322323',13,5,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (33,'ntpl_sup_ss347725',29,8,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','no'),
+ (34,'NTPL_PRN_NS164671',22,0,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','RINKESH KUMAR'),
+ (35,'NTPL_SUP_NS168001',21,4,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (36,'ntpl_arr_ns464500',14,5,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','KURSAKANTA,BLOCK'),
+ (37,'NTPL_MDP_NS481024',25,0,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (38,'NTPL_SHS_NS043445',29,15,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Block Hq Patarghat');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (39,'NTPL_PRN_NS241411',20,10,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ZILA PARISHAD PURNIA'),
+ (40,'NTPL_SHS_NS478945',15,3,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (41,'NTPL_PRN_NS039715',11,5,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Nagar Nigam Purnia'),
+ (42,'NTPL_SHS_SS355043',29,3,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (43,'NTPL_ARR_NS448108',13,2,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','MOHAMMAD TAUFIQUE ALAM JOKIHAT BLOCK '),
+ (44,'NTPL_BGS_NS368607',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (45,'NTPL_SHS_SS304059',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (46,'ntpl_prn_ns135936',19,7,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (47,'NTPL_BGS_SS276541',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (48,'NTPL_ARR_NS241359',7,10,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Mohammad Aziz Husain Palasi'),
+ (49,'NTPL_BGS_NS099629',35,4,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','04 11 2020'),
+ (50,'NTPL_PRN_NS200070',20,2,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Md Sohrab Alam Bhawanipur  Block'),
+ (51,'ntpl_khg_ns116606',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Navrang Raj'),
+ (52,'NTPL_KTR_NS487920',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (53,'ntpl_arr_ns149474',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','XXXXXXXXXX'),
+ (54,'NTPL_ARR_NS326985',12,5,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','FORBESGANJ BLOCK FORBESGANJ VIRENDRA KUMAR MAHTO CSV REPORT'),
+ (55,'NTPL_ARR_SS353395',15,2,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (56,'ntpl_khg_ns477023',18,7,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','gaurav kumar patwa');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (57,'DCHOJAI365375',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (58,'NTPL_KTR_NS120921',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (59,'ntpl_khg_ss317195',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (60,'HOJBHN_315991',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (61,'ntpl_prn_ns068438',18,10,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (62,'NTPL_ARR_NS127438',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (63,'ntpl_bgs_ns397959',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (64,'NTPL_SHS_NS087097',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (65,'NTPL_ARR_NS287481',0,1,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','NAGAR PRISHAD ARARIA'),
+ (66,'NTPL_KSG_NS058705',16,11,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','report');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (67,'NTPL_KTR_NS123742',30,1,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (68,'ntpl_ktr_ns256442',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','KORHA BLOCK '),
+ (69,'DCHOJAI467259',0,21,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEM'),
+ (70,'ntpl_sup_ns188114',20,4,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','cvs'),
+ (71,'NTPL_SHS_NS431400',43,9,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (72,'NTPL_SUP_NS041497',15,11,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (73,'NTPL_KTR_SS275200',12,13,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (74,'NTPL_SUP_NS469771',11,4,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (75,'NTPL_KTR_NS475630',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','04112020'),
+ (76,'NTPL_BGS_NS093227',6,2,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Amardeep kumar\r\nStation id- 05086\r\nUser id- NTPL_BGS_NS093227\r\nMalipur Panchayat');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (77,'NTPL_KSG_NS475633',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','KARAN KUMAR SHARMA'),
+ (78,'NTPL_PRN_NS049795',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','k nagar bkock neeraj kumar'),
+ (79,'ntpl_sup_ns194876',20,3,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (80,'ntpl_ktr_ns499505',26,13,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','nagar nigam katihar'),
+ (81,'Ntpl_bgs_ss345166',7,4,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (82,'NTPL_KTR_NS034042',20,4,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','SAMUDAYIK BHAWAN KANTIYA'),
+ (83,'hojbhn_457110',0,23,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Electricty Problem'),
+ (84,'NTPL_KTR_SS350687',29,22,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','AZAMNAGAR BLOCK'),
+ (85,'NTPL_BGS_NS257608',17,6,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (86,'NTPL_KTR_SS313806',14,10,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (87,'NTPL_ARR_NS399303',19,2,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','NAGARPALIKA JOGBANI GYANESHWAR KUMAR SAH'),
+ (88,'NTPL_KTR_NS198961',7,1,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (89,'NTPL_BGS_NS098452',17,8,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','manjhaul anumandal'),
+ (90,'NTPL_KTR_NS097743',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (91,'NTPL_KTR_NS127780',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (92,'HOJBHN_355537',2,22,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','DUE TO VACINATION IN PHC SUB CENTER'),
+ (93,'HOJBHN_452720',1,32,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (94,'NTPL_KSG_NS108883',14,7,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (95,'NTPL_bgs_ns476444',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (96,'NTPL_KTR_SS304362',2,2,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (97,'DCHOJAI502179',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Laptop Problem'),
+ (98,'NTPL_KTR_NS170425',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (99,'NTPL_KTR_NS238656',17,9,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ABADPUR PANCHYAT BHAWAN'),
+ (100,'DCHOJAI479733',0,59,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (101,'ntpl_bgs_ns143929',27,17,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','New - 17\r\nDemographic - 18\r\nBiometric - 1\r\nMendatory Biometric - 7'),
+ (102,'NTPL_KTR_NS476576',20,5,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (103,'HOJBHN_085175',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (104,'HOJBHN_386189',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (105,'DCHOJAI096205',0,41,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','N/A'),
+ (106,'NTPL_MDP_NS479098',20,7,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (107,'NTPL_BGS_NS092087',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (108,'HOJBHN_458845',0,52,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (109,'ntpl_ksg_ns235268',26,2,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (110,'NTPL_KSG_NS225323',24,22,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Report'),
+ (111,'NTPL_KTR_NS111423',8,2,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (112,'NTPL_KTR_NS497595',14,30,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (113,'NTPL_MDP_NS151129',6,6,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (114,'NTPL_KTR_NS215219',23,15,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (115,'HOJBHN_365379',2,42,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (116,'NTPL_PRN_NS328854',10,19,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (117,'NTPL_KSG_NS192083',40,15,49,0,0,6,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','repot'),
+ (118,'NTPL_PRN_NS295784',20,16,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (119,'NTPL_SUP_NS230340',14,32,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (120,'NTPL_KSG_NS238304',0,3,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (121,'DCHOJAI484469',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Iris problem'),
+ (122,'DCHOJAI459124',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEMS'),
+ (123,'NTPL_KTR_SS327846',12,2,16,0,0,-2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (124,'NTPL_KTR_NS277790',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (125,'NTPL_PRN_NS194124',14,3,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (126,'HOJBHN_304674',1,47,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (127,'ntpl_prn_ns188004',13,1,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (128,'NTPL_KTR_NS315748',23,4,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (129,'DCHOJ_216025',0,62,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','no resident '),
+ (130,'NTPL_SHS_SS211062',12,1,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (131,'DCHOJAI385374',0,38,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEMS'),
+ (132,'HOJBHN_225543',10,50,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (133,'HOJBHN_464443',1,43,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (134,'HOJBHN_479040',0,64,65,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (135,'HOJBHN_363269',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Camera & Printer Problem'),
+ (136,'HOJBHN_458569',4,39,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','residend are mainor so finger late And no power backup'),
+ (137,'NTPL_SHS_NS468786',11,2,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Goods'),
+ (138,'NTPL_KTR_NS099158',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','MANSAHI BLOCK'),
+ (139,'HOJBHN_096779',3,37,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Electricty Problem'),
+ (140,'ntpl_bgs_ns368470',11,4,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (141,'NTPL_SUP_NS239156',55,30,85,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (142,'HOJBHN_411160',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Electricity Problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (143,'HOJBHN_097390',1,63,64,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (144,'HOJBHN_472588',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (145,'HOJBHN_472585',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (146,'HOJBHN_474429',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEM AND MAXIMUM ARE BELOW 10 YEARS'),
+ (147,'NTPL_KTR_NS337763',17,19,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (148,'ntpl_sup_ns198023',6,10,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (149,'DCHOJAI441006',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (150,'DCHOJAI479734',1,80,81,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (151,'HOJBHN_452498',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','electricity problam'),
+ (152,'NTPL_SUP_NS295998',27,36,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (153,'DCHOJAI370355',0,84,84,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (154,'HOJBHN_458816',0,70,70,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','TARGET FILLUP'),
+ (155,'HOJBHN_401045',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','station id 80037'),
+ (156,'HOJBHN_457380',0,68,68,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (157,'DCHOJAI515788',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (158,'NTPL_SUP_NS207917',23,6,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (159,'DCHOJAI479490',0,45,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (160,'HOJBHN_450287',1,49,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (161,'DCHOJAI162681',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','electricity problem'),
+ (162,'DCHOJAI510852',1,47,47,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEM');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (163,'HOJBHN_450638',3,41,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (164,'HOJBHN_448024',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (165,'DCHOJAI505300',2,53,53,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (166,'NTPL_KTR_SS333814',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','kursela block'),
+ (167,'NTPL_ARR_NS232683',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Md Meraj Alam Drcc Araria'),
+ (168,'DCHOJAI510814',1,43,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','ELECTRICITY PROBLEM'),
+ (169,'DCHOJAI338953',0,38,35,0,0,3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04',''),
+ (170,'HOJBHN_096795',1,38,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','Health Problem'),
+ (171,'NTPL_BGS_NS126104',25,7,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','suraj'),
+ (172,'DCHOJAI078652',1,61,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-04','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'NTPL_KSG_NS298576',9,3,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (2,'ntpl_ksg_ns477554',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SHAHBAZ ALAM '),
+ (3,'ntpl_arr_ns149474',2,5,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','xxx'),
+ (4,'NTPL_PRN_NS344882',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','hii'),
+ (5,'NTPL_MDP_NS151129',6,2,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','roshan kumar'),
+ (6,'ntpl_bgs_ns477396',2,19,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (7,'NTPL_SUP_NS067752',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (8,'ntpl_bgs_ns083450',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SHAMHO AKAHA KURHA BLOCK'),
+ (9,'NTPL_KSG_NS174799',12,12,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','BLOCK HQ KISHANGNAJ'),
+ (10,'NTPL_MDP_NS039294',7,1,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','05-11-2020');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (11,'ntpl_prn_ns230675',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Block office jalalgarh'),
+ (12,'NTPL_PRN_NS049795',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','k nagar block neeraj kumar'),
+ (13,'NTPL_KTR_Ns323419',19,4,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (14,'ntpl_ktr_ns499505',17,8,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','NAGAR NIGAM KATIHAR'),
+ (15,'NTPL_KTR_NS074368',16,3,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Panchyat Belon'),
+ (16,'NTPL_PRN_NS241162',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SUMAN KUMAR DHAMDAHA ANUMANDAL '),
+ (17,'NTPL_SHS_NS355301',2,3,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (18,'NTPL_MDP_NS481024',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (19,'NTPL_KSG_NS159716',8,4,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','eod report');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (20,'ntpl_prn_ns410302',1,5,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (21,'ntpl_prn_ns068438',20,5,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','govt hospital gulabbagh purnia'),
+ (22,'ntpl_khg_ss317195',19,2,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Date-05/11/2020'),
+ (23,'NTPL_PRN_NS194124',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (24,'NTPL_KIS_NS161360',7,5,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (25,'NTPL_MDP_NS468510',8,3,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (26,'NTPL_SHS_SS355043',21,1,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (27,'NTPL_PRN_NS164671',13,3,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Rinkesh kumar'),
+ (28,'NTPL_KSG_NS108883',10,3,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (29,'NTPL_KHG_SS346186',19,7,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (30,'ntpl_mdp_ns419115',8,13,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (31,'NTPL_PRN_NS025588',1,1,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Rupaspur khagha Mirganj\r\nRam Kumar'),
+ (32,'ntpl_prn_ns445189',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (33,'ntpl_arr_ns198852',12,3,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','eod report madhav kumar'),
+ (34,'NTPL_SHS_NS331132',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ok'),
+ (35,'NTPL_SHS_NS431400',23,2,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (36,'ntpl_bgs_ns226571',3,9,15,0,0,-3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (37,'NTPL_MDP_NS067993',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','GOOD'),
+ (38,'NTPL_KSG_NS058705',26,6,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','report'),
+ (39,'HOJBHN_466674',1,53,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (40,'NTPL_ARR_SS331740',17,6,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (41,'NTPL_ARR_NS399303',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','nagar panchayat jogbani gyaneshwar kumar sah'),
+ (42,'NTPL_MDP_NS202241',6,2,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ranveer kumar sdo office madhepura'),
+ (43,'NTPL_KSG_NS475633',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (44,'NTPL_MDP_NS479098',7,1,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (45,'NTPL_SHS_NS025682',1,1,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (46,'NTPL_KHG_NS329479',4,10,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','uday kumar'),
+ (47,'hojbhn_480401',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','No More Resident And Electricity Problem'),
+ (48,'NTPL_SUP_NS168001',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (49,'ntpl_khg_ns475825',21,9,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','good'),
+ (50,'ntpl_mdp_ns246809',9,15,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','NO'),
+ (51,'NTPL_SHS_NS087097',29,12,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (52,'HOJBHN_225543',0,15,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Printer problem'),
+ (53,'NTPL_SHS_NS350850',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SONBARSA BLOCK HEDQUATER'),
+ (54,'ntpl_arr_ns464500',6,7,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','KURSAKANTA,BLOC'),
+ (55,'NTPL_ARR_SS353395',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (56,'NTPL_SHS_NS468786',15,4,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Good'),
+ (57,'ntpl_prn_ns135936',13,9,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (58,'NTPL_PRN_NS200070',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Md Sohrab Alam Bhawanipur Block');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (59,'NTPL_MDP_NS161561',5,5,2,0,0,8,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (60,'NTPL_SHS_SS211062',1,6,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (61,'NTPL_PRN_NS241411',18,4,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','zila parishad purnia'),
+ (62,'HOJBHN_315991',3,49,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (63,'NTPL_SUP_NS041497',13,5,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (64,'NTPL_ARR_NS326985',10,3,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','forbesganj block forbesganj,virendra kumar mahto'),
+ (65,'ntpl_bgs_ns041397',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','samsa panchayat bhawan'),
+ (66,'HOJBHN_365379',1,28,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (67,'NTPL_KTR_NS034042',15,11,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SAMUDAYIK BHAWAN KANTIYA');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (68,'NTPL_KTR_NS123742',17,1,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (69,'NTPL_bgs_ns322323',9,27,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (70,'NTPL_ARR_NS202070',3,6,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','brhmanand jha drda araria'),
+ (71,'ntpl_bgs_ns145100',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ok'),
+ (72,'NTPL_MDP_NS481229',10,7,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (73,'NTPL_KTR_SS313806',16,7,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (74,'hojbhn_457110',0,15,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Electricty Problem'),
+ (75,'NTPL_ARR_NS287481',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','NAGAR PRISHAD ARARIA'),
+ (76,'ntpl_prn_ns188004',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (77,'ntpl_prn_ns476875',8,0,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (78,'NTPL_SUP_NS469771',16,5,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (79,'NTPL_SHS_NS043445',13,6,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Block Hq Patarghat'),
+ (80,'NTPL_KHG_NS475503',99,0,99,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','mamta kumari'),
+ (81,'NTPL_SHS_SS304059',8,0,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (82,'NTPL_BGS_SS276541',23,11,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','CHERIA BARIYARPUR BLOCK'),
+ (83,'ntpl_sup_ns188114',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (84,'NTPL_KTR_SS333814',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','KURSELA BLOCK'),
+ (85,'NTPL_BGS_NS126104',26,6,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','suraj'),
+ (86,'ntpl_sup_ns194876',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (87,'NTPL_SUP_NS207917',15,4,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (88,'NTPL_KTR_NS311046',19,12,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (89,'NTPL_BGS_NS090621',8,5,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Niraj kumar'),
+ (90,'ntpl_sup_ss347725',36,6,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','NO'),
+ (91,'NTPL_ARR_NS414653',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Md Shamsad Alam'),
+ (92,'NTPL_ARR_NS232683',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','MD MERAZ ALAM ARARIA DRCC'),
+ (93,'NTPL_ARR_NS241359',17,4,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Mohammad Aziz Husain Palasi'),
+ (94,'NTPL_BGS_NS092087',14,2,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (95,'hojbhn_367109',1,38,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Poor Power Suppply'),
+ (96,'NTPL_KTR_NS475630',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','05112020');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (97,'NTPL_KSG_NS225323',27,16,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Hi sir'),
+ (98,'NTPL_KTR_NS238656',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','PANCHAYAT BHAWAN ABADPUR'),
+ (99,'NTPL_BGS_NS160315',34,7,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (100,'Ntpl_bgs_ss345166',13,6,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Birpur Panchayat Bhavan'),
+ (101,'HOJBHN_311088',1,29,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Poor Electricity '),
+ (102,'NTPL_PRN_NS295784',16,6,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (103,'NTPL_BGS_NS442922',16,1,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (104,'ntpl_khg_ns116606',26,9,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (105,'NTPL_BGS_NS098452',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','MANJHAUL ANUMANDAL');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (106,'NTPL_ARR_NS038856',12,11,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Murli Manohar DM Office Araria'),
+ (107,'NTPL_ARR_NS127438',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (108,'DCHOJAI096205',1,42,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','N/A'),
+ (109,'NTPL_KTR_SS350687',17,12,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','AZAMNAGAR BLOCK'),
+ (110,'ntpl_khg_ns407698',19,3,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','SUJIT KUMAR'),
+ (111,'NTPL_BGS_NS093227',17,10,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Amardeep kumar  Malipur panchyat'),
+ (112,'NTPL_KTR_NS476576',10,4,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (113,'NTPL_KHG_NS182311',13,3,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','OK'),
+ (114,'NTPL_BGS_NS368607',16,6,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (115,'NTPL_KTR_NS497595',1,3,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (116,'NTPL_NDP_NS479028',25,15,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (117,'NTPL_bgs_ns476444',20,6,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (118,'ntpl_khg_ns290832',15,5,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','prashant kumar '),
+ (119,'NTPL_KTR_NS097743',8,8,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (120,'ntpl_bgs_ns397959',8,13,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (121,'NTPL_KTR_NS198961',9,8,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (122,'NTPL_KTR_NS127780',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (123,'NTPL_BGS_NS257608',38,6,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (124,'NTPL_BGS_NS099629',32,18,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','shashikant kumar');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (125,'NTPL_SUP_NS295998',26,7,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (126,'NTPL_KSG_NS235268',28,15,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (127,'HOJBHN_085175',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (128,'NTPL_KSG_NS238304',2,3,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (129,'HOJBHN_458845',0,53,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (130,'DCHOJAI077387',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (131,'NTPL_KTR_SS327846',22,4,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','katihar block'),
+ (132,'DCHOJAI502179',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','No Resident'),
+ (133,'NTPL_KSG_NS192083',20,9,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','hi'),
+ (134,'HOJBHN_164964',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (135,'NTPL_ARR_NS398088',12,9,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','LALEET KUMAR  ARARIA Block'),
+ (136,'ntpl_bgs_ns143929',39,12,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','New - 12\r\nDemographic - 29\r\nBiometric - 2\r\nMendatory Biometric - 8'),
+ (137,'NTPL_KTR_SS304362',5,7,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (138,'NTPL_KTR_NS315748',1,3,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (139,'NTPL_KTR_NS099158',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','MANSAHI BLOCK'),
+ (140,'NTPL_KTR_NS277790',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (141,'DCHOJAI479733',1,57,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (142,'ntpl_bgs_ns368470',16,25,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (143,'NTPL_ARR_NS448108',11,4,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','MOHAMMAD TAUFIQUE ALAM JOKIHAT BLOCK');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (144,'NTPL_KTR_NS337763',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (145,'DCHOJAI480447',0,7,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','1st day.\r\nCamera & Finger Problems'),
+ (146,'NTPL_SUP_NS230340',19,14,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (147,'HOJBHN_401045',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (148,'HOJBHN_304674',1,39,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Centre close at 4 PM due to operator health issue'),
+ (149,'HOJBHN_458816',0,55,55,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','.....'),
+ (150,'NTPL_KTR_NS215219',12,1,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (151,'DCHOJAI479734',0,67,67,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (152,'NTPL_KTR_NS487920',9,4,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (153,'HOJBHN_386189',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTRICITY PROBLEM '),
+ (154,'HOJBHN_464443',0,43,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (155,'NTPL_SUP_NS239156',44,29,73,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (156,'HOJBHN_472585',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Electricity Problem'),
+ (157,'DCHOJAI385374',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTRICITY PROBLEMS'),
+ (158,'NTPL_KTR_NS111423',11,1,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (159,'ntpl_sup_ns198023',12,7,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (160,'NTPL_KTR_SS275200',2,6,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (161,'HOJBHN_458569',0,39,35,0,0,4,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','electicity problems'),
+ (162,'NTPL_PRN_NS039715',8,2,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Nagar Nigam Purnia');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (163,'HOJBHN_363269',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Electrycity Problem'),
+ (164,'HOJBHN_479040',1,68,69,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (165,'ntpl_ktr_ns256442',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','KORHA BLOCK'),
+ (166,'HOJBHN_452720',1,50,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (167,'DCHOJAI162681',0,39,41,0,0,-2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (168,'DCHOJAI096870',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','1st day work testing - Date 05-11-2020'),
+ (169,'HOJBHN_097390',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (170,'NTPL_KTR_NS170425',9,3,5,0,0,7,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (171,'HOJBHN_450287',1,52,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (172,'HOJBHN_383821',1,59,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Electricity problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (173,'NTPL_KTR_NS117717',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (174,'HOJBHN_411160',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Printer Problem,Electrcity problem'),
+ (175,'HOJBHN_096779',2,39,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (176,'DCHOJ_216025',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (177,'DCHOJAI078652',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (178,'DCHOJAI370355',0,84,84,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (179,'DCHOJAI385412',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','RESIDENT ABSENT'),
+ (180,'HOJBHN_450638',36,36,38,0,0,34,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (181,'NTPL_KTR_NS478796',24,24,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (182,'DCHOJAI515788',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (183,'DCHOJAI510814',2,40,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (184,'DCHOJAI459124',1,47,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTICITY PROBLAM'),
+ (185,'DCHOJAI505300',2,34,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (186,'HOJBHN_452498',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTRICITY PROBLAM'),
+ (187,'DCHOJAI467259',0,43,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTRICITY PROBLEM'),
+ (188,'HOJBHN_450339',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','ELECTRICITY PROBLEM'),
+ (189,'DCHOJAI487385',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','iris problem'),
+ (190,'HOJBHN_448024',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (191,'DCHOJAI479490',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','electricity problem'),
+ (192,'HOJBHN_457380',1,67,68,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (193,'HOJBHN_096795',1,47,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','Some Time Power Cute....'),
+ (194,'DCHOJAI510852',0,65,65,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05','HELATH PROBLEM'),
+ (195,'DCHOJAI338953',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-05',''),
+ (1,'NTPL_KSG_NS174799',8,2,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','BLOCK HQ KISHANGANJ'),
+ (2,'NTPL_KSG_NS192083',4,3,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','REPOT'),
+ (3,'NTPL_MDP_NS202241',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ranveer kumar sdo office madhepura'),
+ (4,'NTPL_KSG_NS159716',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','eod report'),
+ (5,'NTPL_ARR_NS448108',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','MOHAMMAD TAUFIQUE ALAM JOKIHAT BLOCK'),
+ (6,'NTPL_KSG_NS475633',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','karan kumar sharma ');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (7,'NTPL_MDP_NS067993',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','GOOD'),
+ (8,'ntpl_sup_ss347725',3,8,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','no'),
+ (9,'ntpl_prn_ns445189',8,2,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (10,'ntpl_prn_ns230675',3,2,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Block office jalalgarh'),
+ (11,'NTPL_KTR_NS074368',6,4,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (12,'NTPL_MDP_NS039294',5,3,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','06-11-2020'),
+ (13,'ntpl_bgs_ns083450',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','SHAMHO AKAHA KURHA BLOCK'),
+ (14,'ntpl_prn_ns068438',10,11,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','govt hospital gulabbagh purnia'),
+ (15,'NTPL_KTR_NS323419',12,1,12,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (16,'NTPL_KTR_SS350687',8,6,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','AZAMNAGAR BLOCK'),
+ (17,'NTPL_MDP_NS161561',10,1,10,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (18,'ntpl_ktr_ns499505',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','NAGAR NIGAM KATIHAR'),
+ (19,'NTPL_SHS_NS331132',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Ok'),
+ (20,'ntpl_khg_ns475825',17,3,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','chandani kumari'),
+ (21,'ntpl_mdp_ns246809',2,7,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','no'),
+ (22,'ntpl_mdp_ns419115',7,5,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (23,'NTPL_MDP_NS481024',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','06-11-2020'),
+ (24,'ntpl_khg_ss317195',1,13,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (25,'HOJBHN_311088',1,34,34,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricity Problems');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (26,'NTPL_SUP_NS207917',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (27,'NTPL_MDP_NS151129',5,6,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','roshan kumar'),
+ (28,'NTPL_ARR_SS348193',10,3,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (29,'ntpl_bgs_ns477396',24,15,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','chhaurahi block'),
+ (30,'ntpl_bgs_ns226571',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (31,'NTPL_ARR_NS399303',3,2,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','nagar panchayat jogbani Gyaneshwar kumar sah'),
+ (32,'NTPL_ARR_SS353395',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (33,'NTPL_KTR_SS333814',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','kursela block'),
+ (34,'NTPL_KSG_NS108883',18,3,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (35,'NTPL_KTR_NS311046',3,4,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (36,'NTPL_KHG_NS329479',4,2,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','uday kumar'),
+ (37,'NTPL_SHS_SS355043',22,8,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (38,'NTPL_BGS_SS276541',13,14,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','cheria bariyarpur block'),
+ (39,'NTPL_SHS_NS478945',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (40,'NTPL_BGS_NS090621',1,1,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Niraj kumar'),
+ (41,'ntpl_khg_ns407698',18,4,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','SUJIT KUMAR'),
+ (42,'NTPL_KSG_NS298576',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (43,'NTPL_ARR_NS464500',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','kursakanta,block'),
+ (44,'NTPL_SHS_NS431400',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (45,'NTPL_KTR_NS123742',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (46,'NTPL_KHG_NS182311',18,6,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','17024'),
+ (47,'ntpl_khg_ns290832',17,7,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','prashant kumar'),
+ (48,'NTPL_BGS_NS126104',22,7,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','suraj'),
+ (49,'ntpl_khg_ns116606',16,0,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (50,'NTPL_KSG_NS225323',27,5,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','report'),
+ (51,'NTPL_KIS_NS161360',0,2,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (52,'NTPL_PRN_NS025588',0,1,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','rupaspur khagha mirganj\r\nram kumar'),
+ (53,'hojbhn_457110',0,14,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricty Problem'),
+ (54,'NTPL_BGS_NS098452',21,6,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','manjhaul anumandal');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (55,'NTPL_KTR_NS034042',22,2,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','SAMUDAYIK  BHAWAN KANTIYA'),
+ (56,'NTPL_KTR_NS097743',20,21,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (57,'ntpl_sup_ns188114',4,3,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','cvs'),
+ (58,'NTPL_BGS_NS442922',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (59,'NTPL_ARR_NS241359',7,3,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Mohammad Aziz Husain Palasi'),
+ (60,'HOJBHN_365379',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (61,'HOJBHN_164964',0,49,47,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (62,'NTPL_PRN_NS344882',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','anil kumar'),
+ (63,'ntpl_arr_ns149474',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','xxxx'),
+ (64,'ntpl_khg_ns477023',12,14,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Gaurav Kumar Patwa');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (65,'NTPL_KTR_NS487920',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (66,'NTPL_bgs_ns322323',28,5,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Shamim Barauni Block'),
+ (67,'NTPL_SHS_NS468786',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (68,'NTPL_BGS_NS099629',42,6,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','shashikant kumar'),
+ (69,'ntpl_bgs_ns041397',2,2,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','samsa panchayat bhawan.csv'),
+ (70,'NTPL_SUP_NS168001',10,6,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (71,'NTPL_KTR_NS475630',9,4,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (72,'NTPL_PRN_NS194124',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (73,'ntpl_prn_ns262442',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Khushnoor alam '),
+ (74,'NTPL_MDP_NS481229',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (75,'Ntpl_bgs_ss345166',10,4,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Birpur Panchayat Bhavan'),
+ (76,'NTPL_KSG_NS238304',8,8,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (77,'NTPL_KTR_NS127780',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (78,'NTPL_KTR_SS313806',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (79,'hojbhn_480401',0,21,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Poor Power Suppl'),
+ (80,'NTPL_SUP_NS239156',37,18,55,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (81,'NTPL_KSG_NS235268',22,8,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (82,'NTPL_BGS_NS160315',27,6,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (83,'ntpl_prn_ns437007',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (84,'ntpl_bgs_ns397959',14,4,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (85,'ntpl_prn_ns188004',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (86,'NTPL_PRN_NS241162',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','SUMAN KUMAR DHAMDAHA ANUMANDAL'),
+ (87,'NTPL_KHG_SS346186',23,16,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (88,'NTPL_SUP_NS041497',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (89,'NTPL_KTR_NS238656',11,8,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','PANCHAYAT BHAWAN ABADPUR'),
+ (90,'ntpl_sup_ns194876',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (91,'HOJBHN_452498',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','electricity problam'),
+ (92,'ntpl_prn_ns410302',1,2,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (93,'NTPL_BGS_NS093227',15,2,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Amardeep kumar malipur'),
+ (94,'NTPL_ARR_NS414653',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Md Shamsad Alam');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (95,'NTPL_BGS_NS257608',26,3,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (96,'NTPL_BGS_NS368607',21,2,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (97,'ntpl_bgs_ns143929',40,1,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','New - 1\r\nDemographic - 27\r\nBiometric - 3\r\nMandatory Biometric - 10'),
+ (98,'HOJBHN_466674',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (99,'DCHOJAI365375',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (100,'DCHOJAI385412',0,66,66,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (101,'NTPL_SUP_NS477709',10,10,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','06/11/2020 report arjun shah'),
+ (102,'ntpl_bgs_ns368470',16,20,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (103,'DCHOJAI479734',0,69,69,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (104,'HOJBHN_458845',2,53,55,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (105,'NTPL_SUP_NS469771',13,11,25,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (106,'NTPL_KTR_NS497595',0,5,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (107,'NTPL_KTR_NS476576',12,3,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (108,'NTPL_SHS_NS043445',6,6,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Block Hq Patarghta'),
+ (109,'NTPL_KTR_SS304362',13,2,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (110,'NTPL_SUP_NS230340',37,21,59,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (111,'NTPL_bgs_ns476444',12,4,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (112,'NTPL_KTR_NS111423',1,2,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (113,'NTPL_SHS_NS025682',6,28,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (114,'NTPL_KTR_NS215219',22,8,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (115,'HOJBHN_096779',1,24,26,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Many time Electricity Problem '),
+ (116,'NTPL_KTR_NS315748',3,6,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (117,'NTPL_KTR_NS337763',14,5,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (118,'ntpl_bgs_ns145100',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ok'),
+ (119,'NTPL_PRN_NS241411',9,2,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','zila parishad 27015'),
+ (120,'HOJBHN_304674',1,44,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricity problem'),
+ (121,'HOJBHN_085175',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (122,'NTPL_BGS_NS092087',32,8,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (123,'NTPL_KTR_NS277790',3,2,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (124,'DCHOJAI506739',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ele problem '),
+ (125,'NTPL_SUP_NS067752',3,22,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (126,'NTPL_SUP_NS295998',14,5,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (127,'NTPL_BGS_NS093183',2,7,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Mukesh kumar\r\nStation id- 05068\r\nNagar Panchayat Bakhri'),
+ (128,'DCHOJAI469979',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (129,'NTPL_ARR_NS127438',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (130,'NTPL_ARR_NS287481',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','NAGAR PRISHAD ARARIA'),
+ (131,'HOJBHN_474429',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','HEALTH ISSUE'),
+ (132,'HOJBHN_315991',0,55,55,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (133,'DCHOJAI096870',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','TODAY REPORT'),
+ (134,'hojbhn_367109',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','No More Residents '),
+ (135,'HOJBHN_097390',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (136,'HOJBHN_464443',2,47,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (137,'HOJBHN_458569',1,46,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','elacticity problems'),
+ (138,'ntpl_sup_ns198023',14,10,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (139,'DCHOJAI479733',1,62,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (140,'DCHOJAI459124',1,51,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ELECITY PROBLEM'),
+ (141,'HOJBHN_386189',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (142,'DCHOJ_216025',1,56,56,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (143,'HOJBHN_479040',0,53,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (144,'NTPL_ARR_NS202070',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','drda araria brhmanand jha'),
+ (145,'HOJBHN_450287',1,44,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (146,'HOJBHN_450638',2,34,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (147,'HOJBHN_355537',4,23,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','electricity problem'),
+ (148,'DCHOJAI162681',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (149,'ntpl_ktr_ns256442',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','KORHA BLOCK'),
+ (150,'HOJBHN_452720',1,60,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (151,'DCHOJAI484469',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Properly Not Working Web Camera'),
+ (152,'DCHOJAI096205',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','N/A');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (153,'HOJBHN_457380',0,75,75,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (154,'HOJBHN_383821',0,55,55,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricty Problem'),
+ (155,'DCHOJAI441006',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (156,'DCHOJAI515788',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','DEVICE PROBLEM'),
+ (157,'NTPL_SHS_NS350850',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Sonbarsa Block Hedquater'),
+ (158,'HOJBHN_449248',1,11,11,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Late Start ,Due To Laptop Charger Problem  '),
+ (159,'HOJBHN_448024',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ELECTEICITY PROBLEM'),
+ (160,'DCHOJAI502179',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (161,'NTPL_KTR_NS478796',34,25,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (162,'DCHOJAI510814',1,26,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Machine problem'),
+ (163,'DCHOJAI487385',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','laptop hanging problem'),
+ (164,'DCHOJAI479490',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (165,'HOJBHN_401045',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','ELECCTRICITY  PROBLEM'),
+ (166,'DCHOJAI525285',0,21,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricity Problem'),
+ (167,'HOJBHN_411160',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricity problem'),
+ (168,'HOJBHN_225543',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (169,'NTPL_SHS_NS087097',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (170,'DCHOJAI467259',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','printer problem and poor power supply');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (171,'HOJBHN_363269',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (172,'DCHOJAI389141',0,52,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (173,'DCHOJAI164995',0,16,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (174,'HOJBHN_096795',2,44,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Power Cute Some Time'),
+ (175,'DCHOJAI078652',0,53,54,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (176,'DCHOJAI077387',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (177,'DCHOJAI462048',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','Electricity Problem'),
+ (178,'DCHOJAI510852',0,46,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06','HEALTH PROBLEM'),
+ (179,'DCHOJAI505300',0,38,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-06',''),
+ (1,'HOJBHN_311088',2,20,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','My Uncale accident sport death');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (2,'DCHOJAI365375',0,13,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (3,'ntpl_bgs_ns083450',8,6,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','SHAMHO AKAHA KURHA BLOCK'),
+ (4,'ntpl_khg_ss317195',0,7,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (5,'ntpl_khg_ns475825',16,5,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','chandani kumari'),
+ (6,'NTPL_KHG_SS346186',2,3,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Chautham Block Ka Bijalee And Janetar Kharab Hone Ke Karan Kam Enrollment Hua Sir'),
+ (7,'hojbhn_480401',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Residents Are Absent '),
+ (8,'NTPL_KHG_NS475503',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','mamta kumari khg 17001'),
+ (9,'ntpl_bgs_ns041397',7,10,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','samsa panchayat bhawan'),
+ (10,'ntpl_khg_ns290832',8,6,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','prashant kumar');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (11,'NTPL_BGS_NS093227',10,5,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Amardeep kumar malipur'),
+ (12,'NTPL_KHG_NS329479',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','uday kumar'),
+ (13,'NTPL_BGS_NS090621',8,4,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Niraj kumar'),
+ (14,'NTPL_KHG_NS182311',23,6,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','17024'),
+ (15,'ntpl_khg_ns477023',12,6,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Gaurav Kumar Parwa'),
+ (16,'ntpl_khg_ns116606',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (17,'ntpl_khg_ns407698',8,3,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','SUJIT KUMAR'),
+ (18,'HOJBHN_365379',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (19,'ntpl_bgs_ns397959',27,0,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (20,'hojbhn_457110',0,14,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Resident Absent'),
+ (21,'NTPL_BGS_SS276541',21,6,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','cheria bariyarpur block'),
+ (22,'HOJBHN_466674',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (23,'NTPL_bgs_ns322323',36,4,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Shamim Barauni Block'),
+ (24,'NTPL_BGS_NS442922',21,1,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (25,'hojbhn_367109',1,34,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Poor Power Supply'),
+ (26,'NTPL_BGS_NS368607',13,2,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (27,'HOJBHN_464443',4,38,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','My Helth problem '),
+ (28,'NTPL_BGS_NS092087',11,8,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (29,'NTPL_BGS_NS098452',20,5,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','manjhaul anumandal'),
+ (30,'NTPL_BGS_NS126104',31,2,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','suraj'),
+ (31,'ntpl_bgs_ns477396',9,8,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','chhaurahi block'),
+ (32,'HOJBHN_386189',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','NO ELECTRICITY FROM LONG TIME '),
+ (33,'HOJBHN_085175',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (34,'HOJBHN_315991',1,45,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (35,'ntpl_bgs_ns368470',12,11,22,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (36,'NTPL_BGS_NS257608',32,6,39,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (37,'Ntpl_bgs_ss345166',10,4,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Birpur Panchayat Bhavan'),
+ (38,'ntpl_bgs_ns143929',25,2,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','New - 2\r\nDemographic - 17\r\nBiometric - 1\r\nMandatory Biometric - 7');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (39,'NTPL_SUP_NS295998',8,6,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (40,'NTPL_bgs_ns476444',20,7,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (41,'NTPL_BGS_NS160315',30,6,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (42,'HOJBHN_383821',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (43,'HOJBHN_096779',3,38,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ELECTRICITY PROBLEM '),
+ (44,'HOJBHN_304674',1,50,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (45,'NTPL_SUP_NS230340',30,17,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (46,'ntpl_sup_ns188114',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','csv'),
+ (47,'HOJBHN_450287',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Electricity Problem'),
+ (48,'DCHOJAI077387',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (49,'HOJBHN_458845',1,44,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (50,'HOJBHN_355537',2,35,38,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (51,'HOJBHN_472585',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (52,'DCHOJAI484469',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Iris Problem'),
+ (53,'DCHOJAI479733',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (54,'DCHOJAI096205',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','N/A'),
+ (55,'NTPL_SUP_NS239156',46,20,68,0,0,-2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (56,'NTPL_BGS_NS093183',10,2,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Mukesh kumar\r\nStation id- 05068\r\nNagar Panchayat Bakhri'),
+ (57,'DCHOJAI479734',1,59,66,0,0,-6,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (58,'DCHOJAI469979',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Lack of electricity');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (59,'HOJBHN_458816',1,52,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','HEALTH PROBLEM'),
+ (60,'HOJBHN_097390',0,61,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (61,'DCHOJAI370355',0,77,77,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (62,'DCHOJAI385374',0,41,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ELECTRICITY PROBLEMS & NO RESIDENT'),
+ (63,'ntpl_sup_ns198023',14,13,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (64,'DCHOJAI506978',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (65,'HOJBHN_450638',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (66,'HOJBHN_164964',0,38,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (67,'HOJBHN_452720',0,57,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (68,'HOJBHN_411160',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Resident are absent');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (69,'DCHOJAI096870',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','07-11-2020 REPORT'),
+ (70,'HOJBHN_458569',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','electicity problems'),
+ (71,'DCHOJ_216025',0,61,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (72,'HOJBHN_225543',0,52,52,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (73,'DCHOJAI110583',2,49,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','.....'),
+ (74,'HOJBHN_472588',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','No Electricity Up to 2 PM '),
+ (75,'DCHOJAI385412',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (76,'DCHOJAI162681',1,44,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (77,'HOJBHN_450339',0,18,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','PRINTER PROBLEM'),
+ (78,'DCHOJAI510852',2,47,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','HEALTH PROBLEM');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (79,'DCHOJAI441006',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ELETRICITY PROBLEM'),
+ (80,'DCHOJAI506739',0,41,45,0,0,-4,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ok'),
+ (81,'DCHOJAI467259',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','electricity problem'),
+ (82,'DCHOJAI459124',2,55,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ELECTRICITY PROBLAM'),
+ (83,'DCHOJAI502179',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Electricity Problem, Laptop Problem '),
+ (84,'DCHOJAI480447',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Electricity & Printer Problems.\r\nBorhawar GP Office\r\nStation ID-70022'),
+ (85,'ntpl_bgs_ns145100',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ok'),
+ (86,'DCHOJAI515788',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (87,'DCHOJAI338953',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (88,'DCHOJAI487385',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','laptop hanging problem'),
+ (89,'Dchojai526563',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (90,'HOJBHN_457380',0,75,75,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (91,'DCHOJAI479490',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','electricity problem'),
+ (92,'HOJBHN_474429',0,46,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','ELECTRICITY PROBLEM'),
+ (93,'DCHOJAI510814',1,41,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','NETWORK PROBLEM'),
+ (94,'DCHOJAI531312',1,36,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','electricity problem'),
+ (95,'DCHOJAI106234',1,60,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','This update is my previous mistaken '),
+ (96,'HOJBHN_391018',0,63,63,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (97,'HOJBHN_448024',0,22,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','Late start due to health issue'),
+ (98,'DCHOJAI478735',0,18,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','IRIS PROBLAM,ELECTRIC PROBLAM'),
+ (99,'HOJBHN_449248',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (100,'DCHOJAI389141',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (101,'HOJBHN_452498',0,45,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','vdm problem'),
+ (102,'DCHOJAI525285',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','electricity problem'),
+ (103,'HOJBHN_096795',3,47,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07',''),
+ (104,'DCHOJAI071611',0,16,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','LAPTOP CONFIQUARATION PROBLEMS AND NO ELECTRICITY'),
+ (105,'DCHOJAI505300',4,63,67,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-07','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'HOJBHN_085175',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (2,'HOJBHN_311088',0,7,5,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Family Issue'),
+ (3,'DCHOJAI441006',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELETRICITY PROBLEM'),
+ (4,'DCHOJAI527874',1,32,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (5,'DCHOJAI506739',0,46,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ele problem '),
+ (6,'HOJBHN_411160',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Poor electricity '),
+ (7,'HOJBHN_304674',1,33,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Resident absent (Sunday)'),
+ (8,'DCHOJAI479733',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (9,'HOJBHN_474429',0,18,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELECTRICITY PROBLEM'),
+ (10,'DCHOJAI498948',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','No More Residents');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (11,'HOJBHN_452733',1,52,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (12,'HOJBHN_457380',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (13,'HOJBHN_383821',1,44,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','No Resident'),
+ (14,'DCHOJAI370355',0,68,68,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (15,'HOJBHN_386189',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELECTRICITY PROBLEM'),
+ (16,'DCHOJAI479734',1,59,59,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (17,'DCHOJAI106234',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (18,'HOJBHN_458569',1,48,47,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (19,'HOJBHN_458816',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','NO MORE RESIDENT'),
+ (20,'HOJBHN_472588',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Electricity Problem ');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (21,'HOJBHN_355537',3,54,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (22,'DCHOJAI505300',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (23,'DCHOJAI531312',0,12,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','IRIS PROBLEM'),
+ (24,'HOJBHN_096779',5,59,64,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (25,'DCHOJAI510814',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELECTRICITY PROBLEM'),
+ (26,'DCHOJAI487385',0,18,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','New center joining '),
+ (27,'HOJBHN_097390',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (28,'DCHOJAI162681',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (29,'DCHOJAI096870',0,68,68,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','08/11/2020 REPORT'),
+ (30,'HOJBHN_479040',0,71,71,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (31,'HOJBHN_472585',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (32,'DCHOJAI469979',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','electricity problem and room shifting problem'),
+ (33,'DCHOJAI459124',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELECTICITY PROBLAM'),
+ (34,'DCHOJAI130625',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Eletricity problem'),
+ (35,'HOJBHN_448024',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','ELECTRICITY PROBLEM'),
+ (36,'HOJBHN_391018',1,56,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (37,'DCHOJAI506978',0,71,71,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (38,'DCHOJAI389141',0,45,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (39,'HOJBHN_450638',2,29,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','electricity problem'),
+ (40,'DCHOJAI385374',0,54,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','NO ELECTRICITY');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (41,'HOJBHN_452498',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','electricity problems'),
+ (42,'DCHOJAI479490',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (43,'DCHOJAI408781',0,11,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','NO ELECTRICITY'),
+ (44,'DCHOJAI502179',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','No Electricity'),
+ (45,'HOJBHN_450287',1,55,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (46,'HOJBHN_449248',0,41,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (47,'HOJBHN_363269',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (48,'DCHOJAI480447',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','Printer problems'),
+ (49,'HOJBHN_096795',2,25,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','NO ELECTRICITY FROM MORNING TO 4:40 PM .SO TODAY WORKING OVER TIME 8 PM'),
+ (50,'DCHOJAI478735',0,19,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (51,'DCHOJAI338953',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','electricity problem'),
+ (52,'DCHOJAI510852',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','HEALTH PROBLEM'),
+ (53,'DCHOJAI080225',0,47,46,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (54,'DCHOJAI365375',0,18,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (55,'DCHOJAI071611',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','LAPTOP PROBLEM'),
+ (56,'Dchojai526563',0,41,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08',''),
+ (57,'DCHOJAI462048',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-08','PRINTER PROBLEM'),
+ (1,'HOJBHN_096779',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Absent / On leave'),
+ (2,'ntpl_bgs_ns368470',19,5,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (3,'NTPL_KSG_NS475633',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','karan kumar sharma');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (4,'NTPL_PRN_NS344882',18,1,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','HG'),
+ (5,'Ntpl_ksg_ns477554',6,3,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','SHAHBAZ ALAM'),
+ (6,'ntpl_prn_ns230675',9,4,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Block office jalalgarh'),
+ (7,'NTPL_PRN_NS025588',12,1,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','rupaspur khagha mirganj\r\nram kumar'),
+ (8,'ntpl_khg_ns475825',15,8,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','chandani kumari'),
+ (9,'ntpl_bgs_ns041397',8,1,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','samsa panchayat bhawan '),
+ (10,'NTPL_KHG_NS475503',26,1,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','mamta kumari 17001'),
+ (11,'ntpl_khg_ss317195',15,7,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (12,'NTPL_MDP_NS039294',17,2,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (13,'NTPL_MDP_NS468510',19,2,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (14,'NTPL_KTR_NS323419',25,3,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (15,'NTPL_KHG_SS346186',3,6,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (16,'NTPL_KTR_NS074368',28,3,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (17,'hojbhn_457110',0,15,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Resident Absent'),
+ (18,'NTPL_SHS_NS043445',14,2,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Block Hq Patarghat'),
+ (19,'ntpl_bgs_ns477396',39,12,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','chhaurahi block'),
+ (20,'NTPL_SHS_NS025682',8,10,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (21,'NTPL_MDP_NS151129',7,4,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','roshan kumar'),
+ (22,'ntpl_prn_ns445189',20,3,24,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (23,'NTPL_SHS_NS331132',24,7,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','ok'),
+ (24,'ntpl_prn_ns437007',12,2,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (25,'ntpl_prn_ns188004',12,6,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (26,'NTPL_ARR_NS287481',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','NAGAR PRISHAD ARARIA '),
+ (27,'NTPL_PRN_NS194124',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (28,'ntpl_arr_ns464500',12,3,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','KURSAKANTA,BLOCK'),
+ (29,'NTPL_ARR_NS448108',20,6,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','MOHAMMAD TAUFIQUE ALAM JOKIHAT BLOCK'),
+ (30,'NTPL_PRN_NS200070',13,1,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Md Sohrab Alam Bhawanipur Block'),
+ (31,'NTPL_BGS_NS099629',33,10,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','shaahikant kumar');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (32,'NTPL_PRN_NS049795',19,2,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','k nagar blocl neeraj kumar'),
+ (33,'NTPL_ARR_SS331740',29,1,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (34,'NTPL_ARR_NS149474',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','xxxxxxxxxxx'),
+ (35,'NTPL_SHS_NS355301',3,3,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (36,'NTPL_ARR_NS399303',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Gyaneshwar kumar sah nagar panchayat jogbani'),
+ (37,'ntpl_prn_ns476875',12,4,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (38,'ntpl_arr_ns198852',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Electricity problem'),
+ (39,'NTPL_SHS_SS355043',17,4,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (40,'NTPL_ARR_SS348193',20,1,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (41,'NTPL_SHS_NS350850',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Sonbarsa Block Hedquater'),
+ (42,'NTPL_PRN_NS241162',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','suman kumar dhamdaha anumandal '),
+ (43,'NTPL_BGS_NS093183',2,6,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (44,'Ntpl_shs_ss304059',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (45,'NTPL_PRN_NS164671',22,0,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','RINKESH KUMAR'),
+ (46,'NTPL_PRN_NS295784',14,0,16,0,0,-2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (47,'NTPL_BGS_NS442922',21,1,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (48,'NTPL_PRN_NS241411',21,2,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','zila parishad purnia'),
+ (49,'NTPL_MDP_NS481024',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','09-11-2020');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (50,'ntpl_prn_ns410302',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (51,'ntpl_prn_ns135936',15,0,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (52,'ntpl_khg_ns290832',17,3,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','prashant kumar'),
+ (53,'NTPL_ARR_NS232683',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','MD MERAZ ALAM ARARIA DRCC'),
+ (54,'ntpl_khg_ns116606',25,1,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (55,'NTPL_MDP_NS479098',7,5,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (56,'DCHOJAI498948',1,34,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','No More Residents.....'),
+ (57,'ntpl_ktr_ns499505',31,11,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','NAGAR NIGAM KATIHAR'),
+ (58,'NTPL_KTR_NS172084',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Pranpur Block ');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (59,'NTPL_ARR_SS353395',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','NA'),
+ (60,'ntpl_khg_ns477023',13,15,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (61,'NTPL_bgs_ns322323',36,15,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (62,'HOJBHN_085175',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (63,'ntpl_bgs_ns368607',19,6,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (64,'NTPL_KTR_SS350687',21,11,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','AZAMNAGAR BLOCK'),
+ (65,'NTPL_SHS_NS478945',16,9,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (66,'NTPL_KHG_NS182311',18,4,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','RAMESHWAR KUMAR'),
+ (67,'NTPL_SUP_NS041497',4,3,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (68,'NTPL_ARR_NS414653',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','EOD report of today by Md shamsad Alam');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (69,'NTPL_KSG_NS225323',22,7,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','report'),
+ (70,'ntpl_prn_ns262442',9,0,10,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (71,'HOJBHN_304674',1,37,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Resident Absent'),
+ (72,'NTPL_KTR_NS120921',9,0,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (73,'NTPL_KTR_NS123742',37,0,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (74,'NTPL_KHG_NS407698',22,4,28,0,0,-2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','sujit kumar'),
+ (75,'NTPL_MDP_NS481229',14,5,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (76,'NTPL_SUP_NS067752',4,11,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (77,'ntpl_mdp_ns246809',7,1,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','NO'),
+ (78,'NTPL_SUP_NS207917',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (79,'NTPL_SHS_NS431400',44,2,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (80,'NTPL_ARR_NS038856',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Murli Manohar DM Office Araria'),
+ (81,'HOJBHN_315991',1,58,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (82,'NTPL_KHG_NS329479',14,3,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','UDAY KUMAR'),
+ (83,'ntpl_ksg_ns235268',18,7,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (84,'NTPL_BGS_NS098452',23,10,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','manjhaul anumandal'),
+ (85,'NTPL_KTR_SS333814',13,2,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','kursela block'),
+ (86,'NTPL_KTR_SS313806',32,13,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (87,'NTPL_KTR_NS198961',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Other'),
+ (88,'NTPL_BGS_SS276541',38,8,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','cheria bariyarpur');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (89,'ntpl_bgs_ns226571',12,7,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (90,'HOJBHN_466674',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (91,'NTPL_ARR_NS241359',5,4,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Mohammad Aziz Husain Palasi'),
+ (92,'NTPL_SHS_SS319100',16,9,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (93,'NTPL_KTR_NS487920',22,9,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (94,'DCHOJAI096205',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','N/A'),
+ (95,'NTPL_KTR_NS034042',22,6,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','SAMUDAYIK BHAWAN KANTIYA'),
+ (96,'ntpl_bgs_ns397959',15,9,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (97,'hojbhn_480401',0,43,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (98,'Ntpl_bgs_ss345166',24,10,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Birpur Panchayat Bhavan');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (99,'NTPL_BGS_NS257608',35,11,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (100,'NTPL_BGS_NS092087',16,2,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (101,'NTPL_BGS_NS160315',28,5,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (102,'ntpl_sup_ss347725',25,6,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','no'),
+ (103,'NTPL_SHS_SS211062',11,1,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (104,'NTPL_KTR_NS315748',7,3,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (105,'NTPL_KTR_NS097743',16,1,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (106,'NTPL_KTR_NS497595',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (107,'NTPL_BGS_NS093227',34,5,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (108,'NTPL_KTR_NS127780',6,2,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (109,'ntpl_bgs_ns145100',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','ok'),
+ (110,'NTPL_KTR_NS277790',13,2,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (111,'NTPL_SUP_NS469771',16,8,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (112,'NTPL_KSG_NS238304',12,2,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (113,'DCHOJAI506739',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','poor power supply '),
+ (114,'HOJBHN_472588',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Absent / On leave'),
+ (115,'ntpl_Sup_ns188114',44,3,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','csv'),
+ (116,'NTPL_KSG_NS272769',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','ID Inactive'),
+ (117,'ntpl_bgs_ns143929',37,5,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','New - 5\r\nDemographic - 28\r\nBiometric - 1\r\nMandatory Biometric - 8'),
+ (118,'ntpl_sup_ns198023',13,38,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (119,'DCHOJAI385374',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Device problem'),
+ (120,'NTPL_SUP_NS230340',17,14,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (121,'hojbhn_367109',2,42,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (122,'HOJBHN_225543',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (123,'NTPL_bgs_ns476444',14,3,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (124,'NTPL_BGS_NS126104',21,10,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','suraj'),
+ (125,'NTPL_PRN_NS328854',9,3,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (126,'DCHOJAI365375',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (127,'NTPL_KTR_NS476576',29,4,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (128,'NTPL_KTR_SS304362',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (129,'DCHOJAI479734',0,57,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (130,'NTPL_BGS_NS083450 ',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Other'),
+ (131,'NTPL_KTR_NS111423',7,3,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (132,'DCHOJAI106234',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (133,'NTPL_PRN_NS039715',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Nagar Nigam Purnia'),
+ (134,'NTPL_KTR_SS327846',4,2,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (135,'NTPL_SUP_NS239156',19,10,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (136,'ntpl_sup_ns194876',12,3,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (137,'DCHOJAI370355',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (138,'NTPL_KTR_SS275200',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Manihari sdo office');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (139,'DCHOJAI130625',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Eletricity problem'),
+ (140,'HOJBHN_464443',2,49,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (141,'HOJBHN_450287',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Other'),
+ (142,'DCHOJAI487385',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','NO more residents.....'),
+ (143,'NTPL_SHS_NS087097',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (144,'NTPL_MDP_NS202241',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','ranveer kumar sdo office madepura'),
+ (145,'HOJBHN_355537',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Device problem'),
+ (146,'HOJBHN_458845',3,59,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (147,'HOJBHN_458569',0,50,50,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (148,'DCHOJAI080225',0,31,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','cemara & biomatic');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (149,'DCHOJAI502179',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','no resident'),
+ (150,'DCHOJAI441006',0,32,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','electricity problem'),
+ (151,'HOJBHN_311088',1,18,18,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Due to Momthly VDP Meeting & Work start at 2:20pm'),
+ (152,'DCHOJAI525285',0,21,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Electricity Problem'),
+ (153,'NTPL_KTR_NS337763',22,3,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (154,'NTPL_KSG_NS159716',2,2,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (155,'NTPL_KSG_NS298576',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (156,'NTPL_KTR_NS099158',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','MANSAHI BLOCK'),
+ (157,'HOJBHN_450339',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Public issue / over crowd');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (158,'NTPL_MDP_NS161561',4,2,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (159,'HOJBHN_458816',0,66,66,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','TARGET FILLUP'),
+ (160,'NTPL_BGS_NS090621',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Other'),
+ (161,'DCHOJAI096870',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (162,'NTPL_SHS_NS468786',13,0,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Good'),
+ (163,'DCHOJAI484469',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (164,'HOJBHN_383821',1,49,49,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (165,'HOJBHN_472585',0,13,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','There was a meeting in the Gram Panchayat office.'),
+ (166,'HOJBHN_386189',1,50,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (167,'NTPL_KSG_NS108883',14,8,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (168,'DCHOJAI162681',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (169,'NTPL_KTR_NS215219',2,29,34,0,0,-3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (170,'DCHOJAI515788',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (171,'HOJBHN_479040',1,66,67,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (172,'DCHOJAI469979',0,19,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','electricity cut from 4 pm'),
+ (173,'NTPL_KSG_NS174799',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','BLOCK HQ KISHANGANJ'),
+ (174,'HOJBHN_097390',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (175,'HOJBHN_391018',0,59,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (176,'DCHOJAI506978',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (177,'ntpl_ktr_ns256442',17,4,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (178,'HOJBHN_365379',0,32,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Electricity Problem'),
+ (179,'DCHOJAI478735',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','electric problam'),
+ (180,'NTPL_ARR_NS202070',6,18,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','drda office araria brhmanand jha'),
+ (181,'HOJBHN_452733',2,59,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (182,'DCHOJAI478006',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (183,'DCHOJAI479733',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (184,'HOJBHN_457380',0,66,66,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (185,'HOJBHN_411160',0,36,36,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Electricity Problem'),
+ (186,'NTPL_KTR_NS478796',36,26,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (187,'DCHOJAI110583',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (188,'HOJBHN_474429',0,64,46,0,0,18,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','HEALTH ISSUE'),
+ (189,'NTPL_SUP_NS295998',47,22,69,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (190,'HOJBHN_164964',0,41,41,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (191,'DCHOJAI459124',2,52,54,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','electricity problems'),
+ (192,'DCHOJAI479490',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (193,'DCHOJAI531312',1,27,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','LEPTOP PROBLEM'),
+ (194,'HOJBHN_448024',0,39,39,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (195,'DCHOJAI385412',0,57,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (196,'HOJBHN_452498',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','vdm problem'),
+ (197,'HOJBHN_096795',1,34,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','ELECTRICITY PROBLEM.MORE TIME POWER CUTE.....');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (198,'HOJBHN_450638',6,70,76,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (199,'HOJBHN_363269',0,43,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (200,'DCHOJAI480447',0,62,62,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','Electricity Problems'),
+ (201,'Dchojai526563',0,9,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','laptop problem'),
+ (202,'DCHOJAI510852',2,57,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','TOO MUCH ELECTRICITY PROBLEM'),
+ (203,'DCHOJAI338953',0,38,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (204,'DCHOJAI071611',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','laptop problems'),
+ (205,'DCHOJAI077387',0,32,32,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (206,'DCHOJAI505300',1,60,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09',''),
+ (207,'DCHOJAI389141',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-09','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'ntpl_prn_ns230675',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (2,'NTPL_ARR_SS348193',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (3,'ntpl_prn_ns068438',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','govt hospital gulabbagh purnia'),
+ (4,'NTPL_PRN_NS344882',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Anil kumar'),
+ (5,'ntpl_sup_ss347725',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','no'),
+ (6,'Ntpl_ksg_ns477554',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','SHAHBAZ ALAM '),
+ (7,'ntpl_ktr_ns499505',10,6,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','NAGAR NIGAM KATIHAR'),
+ (8,'NTPL_PRN_NS241411',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ZILA PARISHAD PURNIA'),
+ (9,'ntpl_bgs_ns083450',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','SHAMHO AKAHA KURHA BLOCK');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (10,'NTPL_MDP_NS481024',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','10-11-2020'),
+ (11,'NTPL_SHS_NS355301',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (12,'NTPL_bgs_ns322323',12,3,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (13,'NTPL_PRN_NS049795',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','k nagar block neeraj kumar'),
+ (14,'NTPL_KSG_NS225323',14,2,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Report'),
+ (15,'ntpl_bgs_ns041397',7,3,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','samsa panchayat bhawan'),
+ (16,'NTPL_MDP_NS151129',2,3,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','roshan'),
+ (17,'NTPL_MDP_NS202241',11,1,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ranveer kumar sdo office madhepura'),
+ (18,'NTPL_SUP_NS067752',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (19,'NTPL_KHG_NS475503',30,0,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','mamta kumari'),
+ (20,'NTPL_KSG_NS298576',3,5,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (21,'ntpl_khg_ns116606',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Navrang Raj'),
+ (22,'ntpl_khg_ss317195',4,2,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (23,'NTPL_PRN_NS025588',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Public issue / over crowd'),
+ (24,'NTPL_BGS_NS126104',18,3,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','suraj'),
+ (25,'NTPL_PRN_NS200070',4,5,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Md Sohrab Alam Bhawanipur Block'),
+ (26,'NTPL_KHG_NS329479',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','uday kumar'),
+ (27,'NTPL_PRN_NS194124',10,0,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (28,'ntpl_khg_ns247339',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',' Rohit kumar nirala'),
+ (29,'NTPL_ARR_NS287481',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','NAGAR PRISHAD ARARIA'),
+ (30,'NTPL_ARR_SS331740',11,3,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (31,'NTPL_MDP_NS479098',10,5,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (32,'ntpl_mdp_ns246809',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','no'),
+ (33,'NTPL_PRN_NS135936',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (34,'NTPL_SUP_NS477709',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (35,'ntpl_prn_ns410302',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (36,'ntpl_prn_ns476875',8,5,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (37,'NTPL_KSG_NS475633',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','karan kumar sharma ');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (38,'NTPL_ARR_NS399303',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Gyaneshwar kumar sah nagar panchayat jogbani'),
+ (39,'NTPL_BGS_NS090621',6,8,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Niraj kumar'),
+ (40,'NTPL_SHS_SS355043',10,6,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (41,'NTPL_KSG_NS108883',6,0,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (42,'NTPL_SHS_NS431400',26,0,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (43,'ntpl_arr_ns464500',7,4,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','KURSAKANTA,BLOCK'),
+ (44,'ntpl_khg_ns477023',14,4,18,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (45,'NTPL_PRN_NS164671',10,0,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Rinkesh kumar'),
+ (46,'ntpl_prn_ns262442',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Absent / On leave');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (47,'NTPL_KTR_SS350687',5,6,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','AZAMNAGAR BLOCK'),
+ (48,'NTPL_KHG_NS182311',5,6,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','RAMESHWAR KUMAR'),
+ (49,'NTPL_KSG_NS235268',5,1,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (50,'HOJBHN_164964',0,47,47,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (51,'DCHOJAI506978',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELECTRICITY PROBLEM'),
+ (52,'NTPL_ARR_SS353395',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (53,'HOJBHN_085175',0,51,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (54,'NTPL_ARR_NS241359',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Mohammad Aziz Husain Palasi'),
+ (55,'NTPL_BGS_NS099629',17,12,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','shashikant kumar'),
+ (56,'Ntpl_shs_ss304059',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (57,'NTPL_KTR_NS120921',3,3,6,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (58,'DCHOJAI467259',0,13,13,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','due to iris scanner problem and poor power supply unable to enrol more resident '),
+ (59,'NTPL_SHS_NS025682',2,3,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (60,'NTPL_BGS_NS442922',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (61,'NTPL_SUP_NS168001',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Device problem'),
+ (62,'NTPL_MDP_NS481229',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (63,'NTPL_SUP_NS469771',21,3,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (64,'NTPL_MDP_NS161561',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (65,'ntpl_arr_ns198852',7,1,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','eod madhav kumar');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (66,'NTPL_SHS_NS478945',10,1,11,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (67,'NTPL_BGS_SS276541',19,19,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','CHERIA BARIYARPUR BLOCK'),
+ (68,'HOJBHN_365379',0,14,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Health problem'),
+ (69,'NTPL_SHS_NS331132',8,11,19,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ok'),
+ (70,'NTPL_SUP_NS041497',2,1,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (71,'NTPL_SHS_SS211062',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (72,'hojbhn_480401',0,37,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity Problem'),
+ (73,'ntpl_khg_ns290832',3,5,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','PRASHANT KUMAR'),
+ (74,'NTPL_KTR_SS333814',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','kursela block'),
+ (75,'HOJBHN_096779',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Absent / On leave');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (76,'HOJBHN_391018',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Absent / On leave'),
+ (77,'NTPL_BGS_NS160315',17,5,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (78,'HOJBHN_315991',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','resident absent'),
+ (79,'NTPL_KTR_NS478796',12,2,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (80,'NTPL_BGS_NS093227',9,7,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (81,'NGNBHN_108015',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (82,'ntpl_sup_ns188114',22,4,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','csv'),
+ (83,'NGNBHN_467406',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Location space problem'),
+ (84,'NTPL_KTR_NS074368',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (85,'NTPL_BGS_NS257608',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (86,'ntpl_sup_ns194876',4,4,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (87,'NTPL_KTR_SS313806',13,1,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (88,'NTPL_KTR_NS323419',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (89,'NTPL_KTR_NS123742',7,2,9,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (90,'ntpl_prn_ns188004',5,3,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (91,'ntpl_bgs_ns397959',9,5,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (92,'NTPL_PRN_NS241162',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (93,'NTPL_SUP_NS207917',8,5,16,0,0,-3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (94,'NTPL_SHS_NS043445',4,1,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Block Hq Patarghat'),
+ (95,'HOJBHN_466674',0,61,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (96,'NTPL_PRN_NS295784',4,4,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (97,'hojbhn_457110',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricty Problem'),
+ (98,'HOJBHN_383821',0,8,8,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Printer Problem'),
+ (99,'NTPL_PRN_NS328854',8,19,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (100,'NTPL_KTR_NS476576',7,0,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (101,'NTPL_KTR_NS111423',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (102,'NTPL_BGS_NS098452',12,4,16,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','manjhaul anumandal'),
+ (103,'HOJBHN_411160',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Resident absent'),
+ (104,'ntpl_bgs_ns226571',12,2,14,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (105,'NTPL_KTR_SS304362',3,0,3,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (106,'NTPL_KTR_NS034042',14,1,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','SAMUDAYIK BHAWAN KANTIYA'),
+ (107,'NTPL_PRN_NS039715',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (108,'NTPL_SHS_SS319100',9,1,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (109,'ntpl_bgs_ns145100',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ok'),
+ (110,'DCHOJAI096205',0,44,44,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','N/A'),
+ (111,'NTPL_KTR_SS275200',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (112,'HOJBHN_472588',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (113,'NTPL_BGS_NS092087',5,2,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (114,'NGNBHN260058',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ID Inactive'),
+ (115,'NTPL_SUP_NS295998',21,10,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (116,'ntpl_bgs_ns368470',32,19,50,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (117,'NTPL_KTR_NS337763',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (118,'NTPL_KTR_NS172084',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Public issue / over crowd'),
+ (119,'NTPL_KTR_NS127780',11,1,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (120,'HOJBHN_458845',3,54,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (121,'DCHOJAI498948',0,46,46,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (122,'NTPL_KTR_NS097743',18,4,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (123,'HOJBHN_450287',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (124,'NTPL_KTR_NS497595',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (125,'ntpl_bgs_ns143929',33,3,33,0,0,3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','New -3\r\nDemographic - 23\r\nBiomatric - 3\r\nMandatory Biomatric - 4');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (126,'NTPL_SUP_NS230340',14,17,34,0,0,-3,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (127,'NTPL_bgs_ns476444',13,4,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (128,'DCHOJAI441006',0,26,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELETRICITY PROBLEM'),
+ (129,'HOJBHN_311088',3,30,32,0,0,1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Laptop problems'),
+ (130,'hojbhn_367109',1,30,31,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','No more residents '),
+ (131,'DCHOJAI502179',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (132,'NTPL_KTR_NS311046',22,13,33,0,0,2,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (133,'NTPL_KTR_NS277790',12,0,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (134,'NTPL_ARR_NS149474',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (135,'NTPL_KTR_NS315748',23,1,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (136,'DCHOJAI506739',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','verry poor power supply not even to work properly  '),
+ (137,'NGNBHN_418845',0,23,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (138,'NGNBHN524203',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Device problem'),
+ (139,'Ntpl_bgs_ss345166',7,3,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Birpur Paanchayat Bhavan'),
+ (140,'NTPL_ARR_NS038856',13,8,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Murli Manohar DM Office Araria'),
+ (141,'NTPL_KTR_NS099158',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','MANSAHI BLOCK'),
+ (142,'HOJBHN_458816',0,56,56,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','no more resident'),
+ (143,'NGNBHN_475114',3,31,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','poor residents'),
+ (144,'DCHOJAI515788',0,28,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Resident absent');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (145,'HOJBHN_452720',2,27,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','electricity problem'),
+ (146,'NTPL_KTR_NS487920',7,5,12,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (147,'NTPL_KTR_SS327846',12,9,21,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (148,'NGNBHN_449102',0,10,10,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','centre transfer to school'),
+ (149,'HOJBHN_452733',2,26,28,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity Problem'),
+ (150,'NTPL_KSG_NS058705',23,10,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','report'),
+ (151,'ntpl_bgs_ns368607',5,0,5,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (152,'NTPL_KTR_NS198961',14,39,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (153,'NGNBHN188663',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Device problem,Other'),
+ (154,'DCHOJAI385412',0,49,49,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (155,'HOJBHN_225543',0,57,57,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (156,'NTPL_KTR_NS256442',4,0,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (157,'HOJBHN_450339',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (158,'HOJBHN_464443',1,47,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (159,'NTPL_KTR_NS215219',6,1,7,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (160,'DCHOJAI385374',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Location not allotated / shifted'),
+ (161,'NGNBHN_143511',3,23,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Poor residents'),
+ (162,'DCHOJAI480447',0,48,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity Problems'),
+ (163,'DCHOJAI130625',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Eletricity problem'),
+ (164,'HOJBHN_097390',0,58,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (165,'NGNBHN_341700',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','System registration pending'),
+ (166,'DCHOJAI479490',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (167,'NTPL_ARR_NS127438',3,1,4,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (168,'DCHOJAI479733',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (169,'NTPL_BGS_NS093183',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (170,'HOJBHN_304674',1,57,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (171,'HOJBHN_479040',1,57,58,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (172,'DCHOJAI080225',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','cemara problem'),
+ (173,'NTPL_KSG_NS238304',2,0,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (174,'HOJBHN_355537',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (175,'DCHOJAI459124',3,58,61,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity  problems'),
+ (176,'NTPL_SUP_NS239156',21,14,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (177,'NTPL_KSG_NS159716',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity problem'),
+ (178,'DCHOJAI527874',0,23,23,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Laptop problem'),
+ (179,'DCHOJAI389141',0,45,45,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (180,'HOJBHN_458569',1,50,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','residend are mainor so finger late'),
+ (181,'DCHOJAI096870',1,50,51,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','10-11-2020'),
+ (182,'NTPL_PRN_NS445189',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity problem'),
+ (183,'DCHOJAI162681',0,22,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','health problem');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (184,'Dchojai526563',0,15,15,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (185,'NTPL_ARR_NS202070',1,0,1,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','DRDA ARARIA BRHMANAND JHA'),
+ (186,'NGNBHN_404447',2,18,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELECTRICITY PROBLEM'),
+ (187,'DCHOJAI478735',0,22,22,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','IRIS, ELECTRIC PROBLAM'),
+ (188,'DCHOJAI384778',0,24,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','laptop issue'),
+ (189,'DCHOJAI370355',0,83,83,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (190,'HOJBHN_474429',0,33,33,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELECTRICITY PROBLEM'),
+ (191,'NGNBHN_403503',0,25,25,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity problem printer problem and long distance'),
+ (192,'DCHOJAI071611',1,23,24,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','LAPTOP CONFIGUARATION PROBLEMS');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (193,'DCHOJAI106234',0,53,53,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (194,'DCHOJAI484469',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Iris problem'),
+ (195,'HOJBHN_457380',0,64,64,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (196,'DCHOJAI408781',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Other'),
+ (197,'DCHOJAI110583',2,35,37,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (198,'DCHOJAI487385',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (199,'NGNBHN_479402',7,19,26,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (200,'NGNBHN_391909',1,37,38,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity Problem'),
+ (201,'DCHOJAI478005',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','RESIDENT ABSENT'),
+ (202,'DCHOJAI510814',5,38,43,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (203,'MOR_BHN326072',1,67,68,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (204,'HOJBHN_096795',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELECTRICITY PROBLEM......'),
+ (205,'DCHOJAI525285',0,27,27,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity Problem'),
+ (206,'DCHOJAI462048',0,29,29,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELETRICITY PROBLEM'),
+ (207,'NGNBHN_153773',2,40,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Electricity issues'),
+ (208,'HOJBHN_472585',0,60,60,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (209,'NGNBHN_488631',19,11,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','There is a meeting held in GP Office. enrolling is start lately. '),
+ (210,'DCHOJAI11500',0,30,30,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','3 days report '),
+ (211,'HOJBHN_450638',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Absent / On leave');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (212,'DCHOJAI365375',0,42,42,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (213,'NGNBHN_413672',7,68,75,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (214,'DCHOJAI469979',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','worked half time at open field.and then shifted in a store room..and electricity problem..'),
+ (215,'HOJBHN_452498',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','ELECTRICITY PROBLEM'),
+ (216,'DCHOJ_216025',2,69,71,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','MY MISTAKE 2 UPDATE DONE '),
+ (217,'NGNBHN_195059',0,17,17,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','poor resident & verifier meeting attend'),
+ (218,'HOJBHN_448024',0,35,35,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (219,'DCHOJAI479734',0,79,79,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (220,'DCHOJAI505300',3,56,59,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (221,'NGNBHN_449185',4,89,94,0,0,-1,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','good'),
+ (222,'DCHOJAI510852',0,20,20,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','MY HEALTH CONDITION IS NOT GOOD'),
+ (223,'HOJBHN_386189',0,67,67,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (224,'DCHOJAI338953',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','electricity problem'),
+ (225,'NTPL_KSG_NS174799',0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','Public issue / over crowd'),
+ (226,'HOJBHN_449248',0,40,40,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (227,'DCHOJAI478006',1,47,48,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','1 OFFLINE UPDATE'),
+ (228,'DCHOJAI077387',0,34,34,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10',''),
+ (229,'NTPL_SHS_NS087097',1,1,2,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,'2020-11-10','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (1,'NTPL_KSG_NS174799',2,0,2,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','Block HQ Pothiya','18017','18016','2020-11-11','BLOCK HQ KISHANGANJ'),
+ (2,'ntpl_prn_ns230675',6,0,6,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','Jalalgarh','27008','27008','2020-11-11','Block office jalalgarh'),
+ (3,'ntpl_prn_ns068438',10,9,19,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','Sadar Hospitel Purnea ','27014','27014','2020-11-11','govt hospital gulabbagh purnia'),
+ (4,'NTPL_SUP_NS067752',3,5,8,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Bhapthayi','36040','36055','2020-11-11',''),
+ (5,'NTPL_MDP_NS039294',0,0,0,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','DRCC Madhepura','20012','20012','2020-11-11','Other'),
+ (6,'NTPL_BGS_NS126104',19,2,21,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Teghara Block','05049','05049','2020-11-11','suraj');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (7,'NTPL_ARR_NS149474',5,8,13,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','HAYATPUR SAMUDAYIK BHAWAN, BHAG MOHABBAT','01047','01047','2020-11-11','xxxxx'),
+ (8,'NTPL_PRN_NS344882',10,5,15,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Banmankhi Block','27003','27003','2020-11-11','Anil kumar'),
+ (9,'NTPL_bgs_ns322323',23,3,26,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','BMP Camp Begusarai','05061','05061','2020-11-11',''),
+ (10,'NTPL_KSG_NS159716',10,3,13,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','PB GANGI','18038','18038','2020-11-11','Eod Report'),
+ (11,'ntpl_khg_ns475825',14,2,16,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','gogri block','17014','17014','2020-11-11','chandani kumari'),
+ (12,'NTPL_SHS_NS025682',14,7,21,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Block HQ Mahshi','29009','29031','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (13,'NTPL_MDP_NS151129',3,1,4,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Guwalpara','20042','20042','2020-11-11','roshan '),
+ (14,'ntpl_bgs_ns083450',10,3,13,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Samho Block','05028','05038','2020-11-11','SHAMHO AKAHA KURHA BLOCK'),
+ (15,'HOJBHN_458816',0,34,34,0,0,0,'General Administration Department, Assam','Assam','Hojai','Nilbagan SS Ltd','80021','80021','2020-11-11','my health problem'),
+ (16,'NTPL_SHS_NS355301',3,1,4,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','SDO Office Simri Baktiyarpur','29015','29015','2020-11-11',''),
+ (17,'ntpl_khg_ns477023',12,7,19,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','d.r.c.c khagaria','17002','17002','2020-11-11',''),
+ (18,'NTPL_SHS_NS043445',13,8,21,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Sor bazar Block HQ','29038','29038','2020-11-11','Block Hq Patarghat');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (19,'MOR_BHN464984',1,25,26,0,0,0,'General Administration Department, Assam','Assam','Morigaon','Doloigaon GP office','11813','11813','2020-11-11',''),
+ (20,'NTPL_PRN_NS295784',10,1,11,0,0,0,'Rural Development Department, Bihar-1','Bihar','Purnea','Amour block','27037','27037','2020-11-11',''),
+ (21,'NTPL_PRN_NS049795',13,3,16,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','K. Nagar','27031','27034','2020-11-11','K NAGAR BLOCK NEERAJ KUMAR'),
+ (22,'NTPL_MDP_NS202241',7,1,8,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Alamnagar','20040','20055','2020-11-11','ranveer kumar sdo office madhepura'),
+ (23,'ntpl_prn_ns437007',18,5,23,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','Kasba Block','27045','27045','2020-11-11',''),
+ (24,'Ntpl_ksg_ns477554',10,3,13,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','NAGAR PARISHAD KISHANGANJ','18022','18022','2020-11-11','SHAHBAZ ALAM');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (25,'NTPL_MDP_NS479098',8,4,12,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Udakishunganj','20013','20013','2020-11-11',''),
+ (26,'ntpl_bgs_ns477396',34,7,41,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Chhaurahi Block','05053','05053','2020-11-11','chhaurahi block'),
+ (27,'ntpl_khg_ss317195',9,2,11,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','khagaria block','17023','17023','2020-11-11',''),
+ (28,'ntpl_bgs_ns368607',15,3,18,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Bachhawara Block','05085','05085','2020-11-11',''),
+ (29,'NTPL_ARR_SS348193',9,0,9,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','BHARGAMA ','01002','01002','2020-11-11',''),
+ (30,'ntpl_mdp_ns246809',8,8,16,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Supaul','36049','36049','2020-11-11','NO'),
+ (31,'ntpl_ktr_ns499505',15,9,24,0,0,0,'Rural Development Department, Bihar-1','Bihar','Katihar','RDD PEC NAGAR NIGAM KATIHAR, NAGAR NIGAM KATIHAR, Katihar, Katihar, Katihar, Bihar - 854105','16031','16031','2020-11-11','NAGAR NIGAM KATIHAR');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (32,'ntpl_khg_ns247339',21,5,26,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','alauli block','17016','17016','2020-11-11','Rohit kumar nirala'),
+ (33,'NTPL_PRN_NS025588',0,0,0,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Ruspur Khagha, Mirganj','27046','27046','2020-11-11','Public issue / over crowd'),
+ (34,'NTPL_KHG_NS329479',13,7,20,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','beldaur blok','17013','17013','2020-11-11','uday kumar'),
+ (35,'NGNBHN_148770',0,0,0,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Abdul Ahad Ansary','27812','27812','2020-11-11','Device problem'),
+ (36,'NTPL_MDP_NS161561',2,0,2,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Ghaladh','20010','20016','2020-11-11',''),
+ (37,'NTPL_PRN_NS194124',7,1,8,0,0,0,'Rural Development Department, Bihar-1','Bihar','Purnea','Barhara Kothi(BKOTHI)Bihar','27052','27052','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (38,'NTPL_ARR_NS287481',5,3,8,0,0,0,'Rural Development Department, Bihar','Bihar','Araria','Nagar Parishad, Araria','01031','01031','2020-11-11','NAGAR PRISHAD ARARIA '),
+ (39,'ntpl_prn_ns410302',7,0,7,0,0,0,'Rural Development Department, Bihar-1','Bihar','Purnea','Banmankhi anumandal','27018','27018','2020-11-11',''),
+ (40,'ntpl_khg_ns290832',15,4,19,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','samaharnalay khagaria','17022','17022','2020-11-11','prashant kumar'),
+ (41,'HOJBHN_411160',0,17,17,0,0,0,'General Administration Department, Assam','Assam','Hojai','Nandapur GP Office','80061','80061','2020-11-11','Poor Electricity'),
+ (42,'NTPL_BGS_NS090621',6,5,11,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Chamtha-3 Panchyat Bhawan','05083','05093','2020-11-11','Niraj kumar'),
+ (43,'DCHOJAI484469',0,8,8,0,0,0,'General Administration Department, Assam','Assam','Hojai','Namati G.P. Office','80093','80093','2020-11-11','NO ELECTRICITY SINCE MORNING 11 AM TO TILL NOW DUE TO CUTTING TREE BRANCHES');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (44,'NTPL_MDP_NS468510',20,3,23,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Udakishunganj','20035','20043','2020-11-11',''),
+ (45,'ntpl_khg_ns116606',10,0,10,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','nagar palika khagaria','17027','17027','2020-11-11',''),
+ (46,'NTPL_KTR_NS323419',15,3,18,0,0,0,'Rural Development Department, Bihar','Bihar','Katihar','Panchayat Bhawan Bijhara','16045','16045','2020-11-11',''),
+ (47,'NTPL_ARR_SS353395',2,2,4,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','sikthi khoragachh panchayt','01026','01026','2020-11-11',''),
+ (48,'ntpl_prn_ns188004',7,0,7,0,0,0,'Rural Development Department, Bihar-1','Bihar','Purnea','Sadar Hospitel Purnea ','27048','27048','2020-11-11',''),
+ (49,'ntpl_arr_ns464500',19,7,26,0,0,0,'Rural Development Department, Bihar','Bihar','Araria','Kursakanta','01029','01029','2020-11-11','kursakanta,block');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (50,'NTPL_SHS_NS431400',20,8,28,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','DRDA Saharsa','29027','29027','2020-11-11',''),
+ (51,'NTPL_ARR_NS399303',8,0,8,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','DM OFFICE ARARIA','01025','01025','2020-11-11','Gyaneshwar kumar sah nagar panchayat jogbani'),
+ (52,'NTPL_MDP_NS481024',14,1,15,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Murliganj','20014','20014','2020-11-11','11/11/2020'),
+ (53,'NTPL_PRN_NS200070',17,2,19,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','BHAWANIPUR','27005','27031','2020-11-11','Md Sohrab Alam Bhawanipur Block'),
+ (54,'NTPL_BGS_NS099629',18,7,25,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Mansurchak block','05022','05022','2020-11-11','shashikant kumar'),
+ (55,'ntpl_prn_ns135936',18,5,23,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Amour Block Purnea - ll','27035','27036','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (56,'ntpl_prn_ns445189',20,2,22,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Sub Purnea ,Purnea','27019','27019','2020-11-11',''),
+ (57,'ntpl_prn_ns476875',22,3,25,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Nagar Nigam Banmankhi','27033','27038','2020-11-11',''),
+ (58,'NTPL_PRN_NS241411',21,0,21,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Jila Parishad Purnia','27015','27015','2020-11-11','zila parishad purnia'),
+ (59,'ntpl_arr_ns198852',8,0,8,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','HANSA PANCHAYAT SARKAR BHAWAN','01046','01046','2020-11-11','eod madhav kumar'),
+ (60,'NTPL_KTR_NS074368',11,1,13,0,0,-1,'Rural Development Department, Bihar','Bihar','Katihar','Panchayat Bhawan BALIYA BELON','16039','16039','2020-11-11',''),
+ (61,'NTPL_PRN_NS164671',16,1,17,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','D R C C','27012','27012','2020-11-11','Rinkesh kumar');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (62,'NTPL_ARR_SS331740',32,1,33,0,0,0,'Rural Development Department, Bihar-1','Bihar','Araria','NagarParishad Forbisganj','01043','01043','2020-11-11',''),
+ (63,'ntpl_bgs_ns041397',11,6,17,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Panchyat Bhawan Samsa','05090','05090','2020-11-11','samsa panchayat bhawan'),
+ (64,'NTPL_SUP_NS168001',23,8,31,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Trivaniganj','36005','36006','2020-11-11',''),
+ (65,'NTPL_SHS_SS355043',0,0,0,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha',' Block HQ Satarkatiya','29011','29011','2020-11-11','Absent / On leave'),
+ (66,'Ntpl_shs_ss304059',5,0,5,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','DRDA Saharsa','29004','29004','2020-11-11',''),
+ (67,'NTPL_KHG_NS475503',62,5,67,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','s.d.o.office khagaria','17001','17001','2020-11-11','mamta kumari khg 17001');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (68,'ntpl_sup_ss347725',23,4,27,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','DRCC Supaul','36008','36011','2020-11-11','NO'),
+ (69,'NTPL_PRN_NS328854',12,15,27,0,0,0,'Rural Development Department, Bihar','Bihar','Purnea','Sub Baisi  ,Purnea-','27017','27070','2020-11-11',''),
+ (70,'NTPL_SHS_NS478945',26,0,26,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Block HQ Shalkuwa','29009','29009','2020-11-11',''),
+ (71,'HOJBHN_452720',0,24,26,0,0,-2,'General Administration Department, Assam','Assam','Hojai','Forest IB Lanka, Part-I','80009','80009','2020-11-11','Resident Absent'),
+ (72,'NTPL_KTR_SS350687',24,10,34,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Azamnagar Block','16030','16048','2020-11-11','azamnagar block'),
+ (73,'NTPL_SHS_NS087097',2,2,4,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Block Head Kahara','29028','29035','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (74,'NTPL_KTR_SS304362',12,2,14,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Barsoi Block','16051','16051','2020-11-11',''),
+ (75,'HOJBHN_164964',0,43,43,0,0,0,'General Administration Department, Assam','Assam','Hojai','State Vety. Dispencery, Murajhar','80015','80015','2020-11-11',''),
+ (76,'NTPL_SUP_NS041497',16,3,19,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Raghopur','36019','36022','2020-11-11',''),
+ (77,'NTPL_KTR_SS333814',8,0,8,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','BARARI BLOCK','16010','16037','2020-11-11','kursela block'),
+ (78,'NTPL_KTR_NS120921',6,2,8,0,0,0,'Rural Development Department, Bihar-1','Bihar','Katihar','Dandkhora Block','16055','16055','2020-11-11',''),
+ (79,'NGNBHN_475114',2,12,14,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Enamul Hoque','27870','27870','2020-11-11','poor resident'),
+ (80,'HOJBHN_311088',4,30,32,0,0,2,'General Administration Department, Assam','Assam','Hojai','Jamunamukh VDP office','80035','80014','2020-11-11','Electricity Problems');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (81,'NTPL_KTR_NS478796',12,3,15,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','DHQ','16006','16006','2020-11-11',''),
+ (82,'NGNBHN_362778',7,21,28,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Zahangir Alom','27823','27826','2020-11-11','Electricity problem'),
+ (83,'NTPL_BGS_NS098452',22,4,26,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Sub. Division Manjhaul','05030','05080','2020-11-11','manjhaul anumandal'),
+ (84,'NTPL_KHG_NS407698',9,11,20,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','nagar panchayat gogri jamalpur','17025','17025','2020-11-11','sujit kumar'),
+ (85,'DCHOJAI527874',0,0,0,0,0,0,'GAD, Assam','Assam','Hojai','Milik Basti GP Office','70029','70029','2020-11-11','Device problem'),
+ (86,'NTPL_SHS_SS319100',7,5,12,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Block HQ  Navhatta','29029','29007','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (87,'HOJBHN_315991',1,44,45,0,0,0,'General Administration Department, Assam','Assam','Hojai','Nakhuti JFMC Community Hall','80001','80001','2020-11-11',''),
+ (88,'NTPL_KSG_NS298576',11,5,16,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','PB Dasyatoli hat bahadurganj','18040','18040','2020-11-11',''),
+ (89,'ntpl_prn_ns262442',19,1,20,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','Dhamdaha','27007','27007','2020-11-11',''),
+ (90,'NGNBHN_459428',3,39,42,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Saddam Hussain','27829','27829','2020-11-11','power issue'),
+ (91,'NTPL_KTR_NS034042',19,4,23,0,0,0,'Rural Development Department, Bihar','Bihar','Katihar','Dhaparsiya Panchayat Bhawan','16043','16041','2020-11-11','SAMUDAYIK BHAWAN KANTIYA'),
+ (92,'NTPL_KSG_NS058705',21,3,24,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','PB TULSIYA','18037','18037','2020-11-11','REPORT');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (93,'NTPL_ARR_NS448108',5,14,19,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','SADAR HOSPITAL IN CAMPUS','01063','01063','2020-11-11',''),
+ (94,'NTPL_SUP_NS469771',4,0,4,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Trivaniganj SDO Office','36028','36028','2020-11-11',''),
+ (95,'NTPL_KSG_NS238304',9,8,17,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','BLOCK HQ TERHAGACHH','18044','18044','2020-11-11',''),
+ (96,'NGNBHN_108015',0,0,0,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Ariful Hoque','20259','20259','2020-11-11','Device problem'),
+ (97,'NTPL_KSG_NS235268',27,4,31,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','PSB PAHARKATTA','18046','18046','2020-11-11',''),
+ (98,'NTPL_KTR_NS172084',6,0,6,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','PRANPUR BLOCK','16019','16019','2020-11-11','Pranpur Block '),
+ (99,'NTPL_KHG_NS182311',17,4,21,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','mansi block','17012','17024','2020-11-11','RAMESHWAR KUMAR');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (100,'HOJBHN_466674',1,61,64,0,0,-2,'General Administration Department, Assam','Assam','Hojai','Farmapar G.P. office','80010','80010','2020-11-11',''),
+ (101,'HOJBHN_365379',0,35,35,0,0,0,'General Administration Department, Assam','Assam','Hojai','Kapashbari Water supply scheme','80016','80016','2020-11-11','Eletricity problem'),
+ (102,'NTPL_BGS_NS442922',9,4,13,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','DRCC Begusarai','05047','05047','2020-11-11',''),
+ (103,'NTPL_BGS_NS092087',6,0,6,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Bakhari Block','05046','05046','2020-11-11',''),
+ (104,'NTPL_KTR_NS123742',25,3,28,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','KATIHAR SDO OFFICE','16015','16015','2020-11-11',''),
+ (105,'NTPL_KIS_NS161360',30,10,40,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','Block HQ Kochadhaman','18024','18024','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (106,'NGNBHN_468085',5,23,28,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Mubarak Hussain','27822','27822','2020-11-11','poor residents'),
+ (107,'NTPL_BGS_SS276541',26,10,36,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Cheria bariarpur block','05066','05066','2020-11-11','CHERIA BARIYARPUR BLOCK'),
+ (108,'ntpl_bgs_ns226571',2,0,2,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Sadar Block Begusarai','05010','05010','2020-11-11',''),
+ (109,'NTPL_PRN_NS241162',2,1,3,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','Sub Dhamdha ,Dhamdaha','27016','27016','2020-11-11','suman kumar dhamdaha anumandal '),
+ (110,'NTPL_ARR_NS241359',15,5,20,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','PALASI BLOCK IN CAMPUS 2','01042','01042','2020-11-11','Mohammad Aziz Husain Palasi'),
+ (111,'NTPL_SUP_NS295998',48,2,50,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Marauna','36051','36037','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (112,'NTPL_MDP_NS481229',12,6,18,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Singheshwar','20001','20001','2020-11-11',''),
+ (113,'NTPL_SUP_NS207917',23,6,29,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ Pipra','36009','36035','2020-11-11',''),
+ (114,'NTPL_KSG_NS475633',6,3,9,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','Block HQ Terhagachh','18012','18070','2020-11-11',''),
+ (115,'HOJBHN_085175',0,52,52,0,0,0,'General Administration Department, Assam','Assam','Hojai','Sarkey Bosti G. P. Office,','80004','80004','2020-11-11',''),
+ (116,'NTPL_KTR_NS097743',40,34,74,0,0,0,'Rural Development Department, Bihar-1','Bihar','Katihar','DRCC AADHAR CENTER, JILA NIBANDHAN SAH PRAMARSH KENDRA, Katihar, Katihar, Katihar, Bihar - 854105','16078','16078','2020-11-11',''),
+ (117,'NTPL_KTR_NS099158',12,3,15,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Mansahi Block','16011','16053','2020-11-11','MANSAHI BLOCK');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (118,'ntpl_sup_ns188114',31,7,38,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Nagar Panchyat Birpur','36018','36048','2020-11-11','csv'),
+ (119,'hojbhn_480401',0,41,41,0,0,0,'General Administration Department, Assam','Assam','Hojai','Udali Lankajan Pipe Water Supply Scheme','80040','80040','2020-11-11','N/A'),
+ (120,'NTPL_SHS_NS331132',10,1,11,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','Nagar Panchyat Simribaktiyarpur','29030','29047','2020-11-11','ok'),
+ (121,'NTPL_KHG_SS346186',12,9,21,0,0,0,'Rural Development Department, Bihar','Bihar','khagaria','Chautham block','17033','17033','2020-11-11',''),
+ (122,'NTPL_SUP_NS477709',18,17,35,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','SDO Office Supaul','36019','36054','2020-11-11','SDO OFFICE SUPAUL'),
+ (123,'NTPL_KTR_NS256442',27,1,28,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','KORAH BLOCK','16033','16033','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (124,'NTPL_KTR_SS313806',21,4,25,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Zilla Prishad Office','16027','16027','2020-11-11',''),
+ (125,'NTPL_BGS_NS257608',28,5,33,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Nagar Nigam Begusarai','05043','05044','2020-11-11',''),
+ (126,'DCHOJAI096205',0,40,40,0,0,0,'General Administration Department, Assam','Assam','Hojai','Udali Lankajan Pipe Water Supply Scheme, Part-B','70012','70012','2020-11-11','N/A'),
+ (127,'NGNBHN_341700',0,0,0,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Fakharuddin Ali Ahmed','20336','20336','2020-11-11','System registration pending'),
+ (128,'NTPL_KTR_NS277790',0,0,7,0,0,-7,'Rural Development Department, Bihar','Bihar','KATIHAR','AMDABAD BLOCK','16025','16025','2020-11-11',''),
+ (129,'NTPL_ARR_NS326985',9,0,9,0,0,0,'Rural Development Department, Bihar','Bihar','ARARIA','NARPATGANJ BLOCK IN CAMPUS','01040','01028','2020-11-11','virendra kumar mahto forbesganj block forbesganj csv report ');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (130,'DCHOJAI385374',0,0,0,0,0,0,'General Administration Department, Assam','Assam','Hojai','Kapashbari SS Ltd','70001','70001','2020-11-11','Location not allotated / shifted'),
+ (131,'Ntpl_bgs_ss345166',9,6,15,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Virpur Block','05020','05042','2020-11-11','Birpur Block'),
+ (132,'ntpl_sup_ns194876',8,7,15,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','SDO Office Nirmali','36035','36044','2020-11-11',''),
+ (133,'DCHOJAI398716',0,64,21,0,0,43,'General Administration Department, Assam','Assam','Hojai','Ranipukhuri G.P. Office, Part-B','00000','70033','2020-11-11','SYSTEM PROBLEM AND CURRENT DISTRABING'),
+ (134,'NTPL_KTR_NS337763',3,0,3,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','NAGAR NIGAM KATIHAR','16016','16016','2020-11-11',''),
+ (135,'NTPL_MDP_NS067993',4,0,4,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Shankarpur','20032','20035','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (136,'NTPL_KTR_SS327846',13,3,16,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Katihar Block','16052','16052','2020-11-11',''),
+ (137,'NTPL_KTR_NS111423',3,4,7,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Pahlagarh Panchayat Bhawan','16063','16074','2020-11-11',''),
+ (138,'NTPL_KTR_NS497595',5,3,8,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','KADWA BLOCK','16066','16066','2020-11-11',''),
+ (139,'ntpl_bgs_ns143929',24,5,29,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','BMP Camp Begusarai','05084','05084','2020-11-11','New - 5\r\nDemographic -13\r\nBiometric - 4\r\nMandatory Biometric - 7'),
+ (140,'NTPL_PRN_NS039715',5,4,9,0,0,0,'Rural Development Department, Bihar','Bihar','PURNEA','NAGAR NIGAM PURNEA','27013','27013','2020-11-11','Nagar Nigam Purnia'),
+ (141,'NTPL_KTR_NS127780',7,2,9,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','MANIHARI BLOCK','16043','16043','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (142,'NTPL_bgs_ns476444',12,5,17,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Brauni Block','05062','05062','2020-11-11',''),
+ (143,'NTPL_KSG_NS225323',33,19,52,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','Block HQ Dighal Bank','18008','18006','2020-11-11','Report'),
+ (144,'NGNBHN_463299',4,31,35,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Mustafizur Rahman','27803','27803','2020-11-11','Update EPFO problem Costumer Request Verify accept this problem'),
+ (145,'NTPL_SHS_SS211062',0,9,9,0,0,0,'Rural Development Department, Bihar','Bihar','Saharsha','SDO Office Saharsa','29002','29002','2020-11-11',''),
+ (146,'NTPL_ARR_NS202070',14,3,17,0,0,0,'Rural Development Department, Bihar','Bihar','Araria','PALASI','01006','01035','2020-11-11','drda office araria brhmanand jha'),
+ (147,'NTPL_BGS_NS160315',22,0,22,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Nagar Parishad Bihat','05001','05001','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (148,'NTPL_BGS_NS093227',9,0,9,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','PEC,malipur','05086','05086','2020-11-11',''),
+ (149,'NTPL_KSG_NS108883',9,4,13,0,0,0,'Rural Development Department, Bihar','Bihar','Kishanganj','DRCC Kishanganj ','18013','18002','2020-11-11',''),
+ (150,'NTPL_KTR_NS487920',7,1,8,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Baisagobindpur Panchayat Bhawan','16070','16070','2020-11-11',''),
+ (151,'NGNBHN_467406',0,26,26,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Inamul Hoque','27831','27831','2020-11-11','Electrical problam'),
+ (152,'DCHOJAI506978',0,38,38,0,0,0,'GAD, Assam','Assam','Hojai','Padumpukhuri G.P. office','80075','80075','2020-11-11',''),
+ (153,'NTPL_KTR_NS476576',19,3,22,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','SDO OFFICE BARSOI','16003','16003','2020-11-11',''),
+ (154,'DCHOJAI441006',0,30,30,0,0,0,'General Administration Department, Assam','Assam','Hojai','B.M.B. High School, Lumding','70003','70003','2020-11-11','ELETRICITY PROBLEM');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (155,'DCHOJAI479733',0,55,55,0,0,0,'General Administration Department, Assam','Assam','Hojai','Khagarijan G.P. office','80067','80067','2020-11-11',''),
+ (156,'ntpl_bgs_ns397959',22,19,41,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai',' NAOKOTHI BLOCK','05052','05052','2020-11-11',''),
+ (157,'DCHOJAI506739',0,43,45,0,0,-2,'General Administration Department, Assam','Assam','Hojai','Changmaji G.P. office','80073','80073','2020-11-11','ele problem '),
+ (158,'ntpl_bgs_ns368470',12,20,32,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Head Quater Begusarai-l','05045','05045','2020-11-11',''),
+ (159,'NGNBHN_403503',0,40,40,0,0,0,'General Administration Department, Assam','Assam','Nagaon','Abdul Al Faruk','20275','20275','2020-11-11','printer problem ,electricity problem,and long distance'),
+ (160,'NTPL_KTR_NS315748',7,3,10,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','NAGAR PANCHAYAT BARSOI','16004','16004','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (161,'NTPL_SHS_NS468786',22,3,25,0,0,0,'Rural Development Department, Bihar','Bihar','Madhepura','Block HQ Singheshwar','29016','20038','2020-11-11','Good'),
+ (162,'NTPL_KTR_NS198961',16,33,49,0,0,0,'Rural Development Department, Bihar','Bihar','KATIHAR','Pahlagarh Panchayat Bhawan','16087','16080','2020-11-11',''),
+ (163,'NTPL_SUP_NS230340',38,12,50,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','Block HQ  Pratapganj','36006','36009','2020-11-11',''),
+ (164,'HOJBHN_452733',21,2,23,0,0,0,'General Administration Department, Assam','Assam','Hojai','Forest IB Lanka, Part-II','80008','80008','2020-11-11','Resident Absent'),
+ (165,'HOJBHN_383821',0,0,0,0,0,0,'General Administration Department, Assam','Assam','Hojai','Hayang GP office','80018','80018','2020-11-11','Device problem'),
+ (166,'NTPL_SUP_NS239156',39,19,58,0,0,0,'Rural Development Department, Bihar','Bihar','Supaul','SDO Office Nirmali','36037','36052','2020-11-11','');
+INSERT INTO `tbl_attendance` (`slno`,`operator_id`,`updatecorrection`,`enrollment`,`original_enrollment`,`csv_upco`,`csv_newen`,`en_diff`,`dept`,`state`,`district`,`pec_location`,`stid_db`,`stid_csv`,`created_DTTM`,`remarks`) VALUES 
+ (167,'NTPL_BGS_NS093183 ',0,0,0,0,0,0,'Rural Development Department, Bihar','Bihar','Begusarai','Nagar Panchyat Bakhari','05068','05068','2020-11-11','Other'),
+ (1,'DC HOJAI104672',0,1,1,0,0,0,'General Administration Department, Assam','Assam','Hojai','Barfuti GP Office','00000','00000','2020-11-16','Electricity problem'),
+ (1,'HOJBHN_464443',20,1,21,1,20,0,'General Administration Department, Assam','Assam','Hojai','Adarsha Model High School, Kaki','80038','80038','2020-10-02',''),
+ (1,'HOJBHN_464443',0,5,5,0,5,0,'General Administration Department, Assam','Assam','Hojai','Adarsha Model High School, Kaki','80038','80038','2020-10-01','Electricity problem,Device problem');
+/*!40000 ALTER TABLE `tbl_attendance` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `attendance_db`.`tbl_coordinator`
+--
+
+DROP TABLE IF EXISTS `tbl_coordinator`;
+CREATE TABLE `tbl_coordinator` (
+  `slno` int(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `district` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `co_id` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role_id` int(10) NOT NULL,
+  `activity_status` int(10) NOT NULL,
+  PRIMARY KEY (`slno`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance_db`.`tbl_coordinator`
+--
+
+/*!40000 ALTER TABLE `tbl_coordinator` DISABLE KEYS */;
+INSERT INTO `tbl_coordinator` (`slno`,`state`,`district`,`username`,`co_id`,`password`,`role_id`,`activity_status`) VALUES 
+ (1,'Assam','All','SS','AS_001','password',1,1),
+ (2,'Assam','Hojai ','sandhi','AS_HOJ_002','password',2,1);
+/*!40000 ALTER TABLE `tbl_coordinator` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `attendance_db`.`tbl_operator`
+--
+
+DROP TABLE IF EXISTS `tbl_operator`;
+CREATE TABLE `tbl_operator` (
+  `sl_no` int(100) NOT NULL AUTO_INCREMENT,
+  `dept` text NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `district` varchar(100) NOT NULL,
+  `operator_id` varchar(100) NOT NULL,
+  `pec_location` varchar(1000) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `station_id` varchar(50) DEFAULT NULL,
+  `emp_status` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=624 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance_db`.`tbl_operator`
+--
+
+/*!40000 ALTER TABLE `tbl_operator` DISABLE KEYS */;
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (1,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS038856','DM OFFICE ARARIA','Murli Manohar','password','01035',1),
+ (2,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS049379','NAGAR PARISHAD','MD ABUTALIB ','password','01037',1),
+ (3,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS127438','SDO office Forbesganj','Shamim Akhtar','!sha123@','01023',1),
+ (4,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS131977','sikthi block','Baijnath Kumar','password','01024',1),
+ (5,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS175587','Forbesganj','RAKESH KUMAR CHOURASIYA','password','01028',0),
+ (6,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS202070','PALASI','BRHAMANAND','password','01006',1),
+ (7,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS202071','JOKIHAT ','Nandan Kumar Thakur','password','01004',0),
+ (8,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS232683','DRCC - 854311','Md Meraz Alam','password','01027',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (9,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS287481','Nagar Parishad, Araria','Aamir Reza','password','01031',1),
+ (10,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS326026','Raniganj','GAUTAM KUMAR','password','01030',1),
+ (11,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS338311','Narpatganj Block','Abhishek Kumar','password','01034',1),
+ (12,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS399303','DM OFFICE ARARIA','GYANESHWAR KUMAR SAH','password','01025',1),
+ (13,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_NS464500','Kursakanta','Shahid Alam','password','01029',1),
+ (14,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_SS348193','BHARGAMA ','ASHISH KUMAR (Araria)','password','01002',1),
+ (15,'Rural Development Department, Bihar','Bihar','Araria','NTPL_ARR_SS349652','NP (FORBISGANJ)','MD SHAHNAWAJ ALAM','password','01014',0),
+ (16,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_SS353395','sikthi khoragachh panchayt','Shabbir Alam','Sham123@','01026',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (17,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_PRN_NS442500','S D O OFFICE ARARIA','Jaynarayan Bishwas','password','01009',0),
+ (18,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS202073','JOKIHAT ','Md Muntazir Alam','password','01038',0),
+ (19,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS215859','SDO Office Farbisganj','Arun Kumar Mehta(Araria)','password','01055',1),
+ (20,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS398088','ARARIA SADAR','LALEET KUMAR','password','01062',1),
+ (21,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_SS317740','FORBESGANJ BLOCK IN CAMPUS','MD MOHSIN ALAM','password','01043',1),
+ (22,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS130944','JOKIHAT SISONA PANCHAYT BHAWAN','MD HASNAIN ALAM','password','01050',1),
+ (23,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS326985','NARPATGANJ BLOCK IN CAMPUS','VIRENDRA KUMAR MAHTO','password','01040',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (24,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS414653','SIKTHI BLOCK IN CAMPUS 2','MD SHAMSAD ALAM','password','01041',1),
+ (25,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS241359','PALASI BLOCK IN CAMPUS 2','MOHAMMAD AZIZ HUSAIN','password','01042',1),
+ (26,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS480808','SDO ARARIA','AASHNA KHATONN','password','01053',1),
+ (27,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS491646','MADHURA PASHCHIM PANCHAYAT BHAWAN','salman','password','01054',1),
+ (28,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS149474','HAYATPUR SAMUDAYIK BHAWAN, BHAG MOHABBAT','SHAMSUL HUDA','Shamsul@123','01047',1),
+ (29,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS198852','HANSA PANCHAYAT SARKAR BHAWAN','MADHAV KUMAR','password','01046',1),
+ (30,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS114829','KANKHUDIYA PANCHAYAT SARKAR BHAWAN','kshitiz kumar choudhary','password','01051',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (31,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS225698','AURAHI PURV PANCHAYAT SARKAR BHAWAN','MOHAMMAD WASEEM AKHTAR','password','01048',1),
+ (32,'Rural Development Department, Bihar','Bihar','ARARIA','NTPL_ARR_NS448108','SADAR HOSPITAL IN CAMPUS','MOHAMMAD taufique','password','01063',1),
+ (33,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS034185','Sahebpur Kamal Block','Gautam Kumar','password','05007',0),
+ (34,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS083450','Samho Block','Satyendra Kumar','password','05028',1),
+ (35,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS090621','Chamtha-3 Panchyat Bhawan','Niraj Kumar','password','05083',1),
+ (36,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS093183','Nagar Panchyat Bakhari','Mukesh Kumar','password','05068',1),
+ (37,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS098452','Sub. Division Manjhaul','Yugal Kishor','password','05030',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (38,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS099629','Mansurchak block','Shashikant Kumar','password','05022',1),
+ (39,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS126104','Teghara Block','Suraj Kumar','password','05049',1),
+ (40,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS149512','Garhpura Block','Love Kumar','password','05083',1),
+ (41,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS160315','Nagar Parishad Bihat','Nitish Kumar','password','05001',1),
+ (42,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS161164','Dandari Block','Nitish Kumar','password','05006',0),
+ (43,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS226571','Sadar Block Begusarai','Pramod Kumar das','password','05010',1),
+ (44,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS241887','Sub. Division Balia','Vikash Kumar','password','05029',0),
+ (45,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS257608','Nagar Nigam Begusarai','Dheeraj Kumar','password','05043',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (46,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS270599','Bakhari Block','Krishna Kumar','password','05046',0),
+ (47,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS277548','Nagar Panchyat Balia','Niranjan Kumar','password','05015',0),
+ (48,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS287934','Sadar Anumandal Begusarai','Kusumlata Kumari','password','05014',1),
+ (49,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS321791','Matihani Block','Virendar Kumar','password','05054',0),
+ (50,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS322323','BMP Camp Begusarai','MD. Shamim Alam','password','05061',1),
+ (51,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS344887','Sub. Division Teghara','Niraj Kumar','password','05048',0),
+ (52,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS368470','Head Quater Begusarai-l','Rakesh Kumar Ranjan','password','05045',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (53,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS411804','Khodawandpur Block','Abhishek Kumar','password','05021',0),
+ (54,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS440902','Nagar Panchyat Teghara','Prakash Kumar','password','05067',0),
+ (55,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS442922','DRCC Begusarai','Dejee Kumari','password','05047',1),
+ (56,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS476149','Naukothi Block','Krishnakant Kumar','password','05052',0),
+ (57,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS476444','Brauni Block','Md Kurban','password','05062',1),
+ (58,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS477396','Chhaurahi Block','Seema Kumari','password','05053',1),
+ (59,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS478470','head Quater Begusarai-ll','Ranjan Kumar','password','05073',1),
+ (60,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_SS283296','Cheriabariyarpur Block','Mithilesh kumar','password','05002',0);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (61,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_SS329440','Bhagwanpur Block','Priya devi','password','05018',0),
+ (62,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_SS345166','Virpur Block','Suraj Kumar Sah','password','05020',1),
+ (63,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS145100','SDO Office Bakhari','Govinda','password','05008',1),
+ (64,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS092087','Bakhari Block','Uttam Kumar','password','05046',1),
+ (65,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS041397','Panchyat Bhawan Samsa','Sanjay Paswan','password','05090',1),
+ (66,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS143929','BMP Camp Begusarai','Swapnil Raja','password','05084',1),
+ (67,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS368607','Bachhawara Block','Ashwani Kumar','password','05085',1),
+ (68,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_SS276541','Cheria bariarpur block','Arjun Kumar Tanti','password','05066',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (69,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS093227','PEC,malipur','Amardeep Kumar','password','05086',1),
+ (70,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS397959',' NAOKOTHI BLOCK','Amresh Kumar','password','05052',1),
+ (71,'Rural Development Department, Bihar','Bihar','Begusarai','NTPL_BGS_NS262173','Baliya Block','Nandkishor Rajak','password','05094',1),
+ (72,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS002380','KURSELA BLOCK','ABHISHEK KUMAR','password','16023',1),
+ (73,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS005741','DANKHORA BLOCK','RAJU KUMAR SHARMA','password','16031',1),
+ (74,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS034042','Dhaparsiya Panchayat Bhawan','BIKASH KUMAR MANDAL','password','16043',1),
+ (75,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS074368','Panchayat Bhawan BALIYA BELON','Akhlaque Ansari','password','16039',1),
+ (76,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS097037','HASSANGANJ BLOCK',' SADDAM HUSAIN','password','16050',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (77,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS098127','Abadpur Panchayat Bhawan','Md Ashraf','password','16040',0),
+ (78,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS098981','BASGAWN PANCHAYAT BHAWAN','Abhishek Kumar','password','16036',0),
+ (79,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS099158','Mansahi Block','Mohammad Ansarul Haque','password','16011',1),
+ (80,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS114281','Katihar Block','Abdul Rahman','password','16014',0),
+ (81,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS123742','KATIHAR SDO OFFICE','KESHAV KUMAR JHA','password','16015',1),
+ (82,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS137827','BALRAMPUR BLOCK','VIKRAM KUMAR SAH','password','16028',0),
+ (83,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS154605','NAGAR PANCHAYAT MANIHARI','MD NAUSAR ALAM','password','16034',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (84,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS172084','PRANPUR BLOCK','MD SHABBIR ALAM','password','16019',1),
+ (85,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS176060','KADWA BLOCK','MD GULAM MUSTAFA','password','16020',0),
+ (86,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS197986','Barsoi Block','ZEENAT PARWEEN KHATOON','password','16029',0),
+ (87,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS215219','BASGAWN PANCHAYAT BHAWAN','MUQUTADA HASSAN','password','16032',1),
+ (88,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS221201','Balrampur Panchayat Bhawan','Md Manzer Alam','password','16042',1),
+ (89,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS251322','Pahlagarh Panchayat Bhawan','Sonam Kumari','password','16046',0),
+ (90,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS253068','KORAH BLOCK','RAKESH KUMAR SINGH','password','16033',0);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (91,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS272161','Kantiya Panchayat Bhawan','Laxman Yadav','password','16041',1),
+ (92,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS311046','NTPL PANCHAYAT SANJHA, NTPL PANCHAYAT SAHJA, Katihar, Pranpur, Sahja, Bihar - 854107','SANJAY KUMAR RAM','password','16017',1),
+ (93,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS315748','NAGAR PANCHAYAT BARSOI','MD REHAN FAZAL','password','16004',1),
+ (94,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS323419','Panchayat Bhawan Bijhara','Saquibul Iqubal','password','16045',1),
+ (95,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS337763','NAGAR NIGAM KATIHAR','JAMALUDDIN','password','16016',1),
+ (96,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS396119','SAMELI BLOCK','AMIT KUMAR','password','16008',0),
+ (97,'Rural Development Department, Bihar','Bihar','Katihar','NTPL_KTR_NS414494','DRCC KATIHAR','Sahnawaz Khan','password','16044',0);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (98,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS426165','AMDABAD BLOCK','Ejaj Akhtar','password','16025',0),
+ (99,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS472369','Azamnagar Block','Nagma Khatoon','password','16030',0),
+ (100,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS475630','Falka Block','VINIT KUMAR PANDIT','password','16007',1),
+ (101,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS475677','KURSELA BLOCK','GAUTAM KUMAR','password','16023',0),
+ (102,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS476576','SDO OFFICE BARSOI','PAPAY SAHA','password','16003',1),
+ (103,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS476756','HASSANGANJ BLOCK','MUHAMMAD ASIK','password','16006',0),
+ (104,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS477344','KADWA BLOCK','MD MUSHARRAF','password','16020',0),
+ (105,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS275200','MANIHARI SDO OFFICE','ABRAR AHMED','password','16013',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (106,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS304362','Barsoi Block','MD ASGAR','password','16051',1),
+ (107,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS313806','Zilla Prishad Office','Mahesh Kumar','password','16027',1),
+ (108,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS327846','Katihar Block','MD ISHTIYAQUE ABBAS','password','16052',1),
+ (109,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS333814','BARARI BLOCK','KUMAR GAURAV','password','16010',1),
+ (110,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS349349','Barsoi Block','MD MEHMOOD ALAM','password','16057',0),
+ (111,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS152271','AMDABAD BLOCK','MD USMAN','password','00000',0),
+ (112,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS161642','MANIHAR NAGAR PANCHAYAT','MD YOUSUF','password','00000',0),
+ (113,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS225006','MANSAHI BLOCK','Md Mainul Haque','password','00000',0);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (114,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS406143','SAMELI BLOCK','PARMOD KUMAR  MANDAL','password','16033',1),
+ (115,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS117717','DRCC KATIHAR','MD ZABEER  AKHTAR','password','16044',1),
+ (116,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS394079','Abadpur Panchayat Bhawan','MD Gulam Rabbani','password','16040',0),
+ (117,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS306643','KADWA BLOCK','SRIKANT THAKUR','password','16020',0),
+ (118,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS111423','Pahlagarh Panchayat Bhawan','ISHTIYAQUE HUSSAIN','password','16063',1),
+ (119,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS478796','DHQ','MD SHARIF','password','16006',1),
+ (120,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS338252','BALRAMPUR BLOCK','MD ARIF HUSSAIN','password','16083',1),
+ (121,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS487920','Baisagobindpur Panchayat Bhawan','MD SHABBIR ALAM','password','16070',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (122,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS382236','Abadpur Panchayat Bhawan','MD AZAM','password','16057',1),
+ (123,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS497595','KADWA BLOCK','MD AJAJ AHMAD','password','16066',1),
+ (124,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS277790','AMDABAD BLOCK','TANBIR HUSSAIN','password','16025',1),
+ (125,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS198961','Pahlagarh Panchayat Bhawan','MD AFROJ HUSSAIN','As@12345','16087',1),
+ (126,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS256442','KORAH BLOCK','RANJEET KUMAR SINGH','password','16033',1),
+ (127,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_SS350687','Azamnagar Block','MD WASIM REZA','password','16030',2),
+ (128,'Rural Development Department, Bihar','Bihar','KATIHAR','NTPL_KTR_NS127780','MANIHARI BLOCK','KUNDAN KUMAR THAKUR','password','16043',2),
+ (129,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ns116606','nagar palika khagaria','navrang raj','password','17027',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (130,'Rural Development Department, Bihar','Bihar','khagaria','NTPL_KHG_NS133645','anumandal gogri','ashish kumar','password','17008',0),
+ (131,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_NS136191','A.P.H.C.nayagoan parbatta','kumar vishal','password','17009',1),
+ (132,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_NS182311','mansi block','rameshwar kumar','password','17012',1),
+ (133,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ns247339','alauli block','rohit kumar nirala','password','17016',1),
+ (134,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ns290832','samaharnalay khagaria','prashant kumar','password','17022',1),
+ (135,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_NS329479','beldaur blok','uday kumar','password','17013',1),
+ (136,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ns475503','s.d.o.office khagaria','mamta kumari','password','17001',1),
+ (137,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ns475825','gogri block','chandani kumari','password','17014',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (138,'Rural Development Department, Bihar','Bihar','khagaria','NTPL_KHG_NS477023','d.r.c.c khagaria','gaurav kumar patwan','password','17002',1),
+ (139,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_ss317195','khagaria block','abhay kumar','password','17023',1),
+ (140,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_NS134841','parbatta block','Chandan Kumar','password','00000',0),
+ (141,'Rural Development Department, Bihar','Bihar','khagaria','ntpl_khg_NS024692','D.R.D.A.khagaria','Diwakar Kumar','password','00000',0),
+ (142,'Rural Development Department, Bihar','Bihar','khagaria','NTPL_KHG_NS491605','parbatta block','Fruti Kumari','password','17034',1),
+ (143,'Rural Development Department, Bihar','Bihar','khagaria','NTPL_KHG_SS346186','Chautham block','Mithun Kumar','Mithun@2904##','17033',1),
+ (144,'Rural Development Department, Bihar','Bihar','khagaria','NTPL_KHG_NS407698','nagar panchayat gogri jamalpur','Sujit Kumar','password','17025',1),
+ (145,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KIS_NS161360','Block HQ Kochadhaman','Ashique Reza(Kishanganj)','password','18024',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (146,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KIS_NS471430','Block HQ Bhadurganj','Abu Shams(Kishanganj)','password','18022',0),
+ (147,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS108883','DRCC Kishanganj ','Mohsin Alam (Kishanganj)','password','18013',1),
+ (148,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS155069','Block HQ Thakurganj','Md Abu Talha (Kishanganj)','password','18032',0),
+ (149,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS156493','Nagar Panchayat Thakurganj','Mohammad Isa Hashmi(Kishanganj)','password','18011',1),
+ (150,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS174799','Block HQ Pothiya','Md Taufique Alam (Kishanganj)','password','18017',1),
+ (151,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS225323','Block HQ Dighal Bank','Bhim Prashad Ganesh(Kishanganj)','password','18008',1),
+ (152,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS250425','SDO Office Kishanganj','Mohammad Hatim (Kishanganj)','password','18012',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (153,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS260421','Nagarparishad Kishanganj','Md Arghawan (Kishanganj)','password','18003',0),
+ (154,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS260456','Block HQ kishanganj','Chandra Mohan Ray (Kishanganj)','password','18014',0),
+ (155,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS272769','DRDA Kishanganj','Md Anwar Alam (Kishanganj)','password','18009',1),
+ (156,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS379447','Nagar Panchyat Bahadurganj','Ruhani Khatoon(Kishanganj)','password','18003',0),
+ (157,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS475633','Block HQ Terhagachh','Karan Kumar Sharma(Kishanganj)','password','18012',1),
+ (158,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KIS_NS413535','Block HQ Thakurganj','Tanwir Alam','password','00000',0),
+ (159,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS174940 ','Nagar Panchyat Bahadurganj','Gulnaz Perween','password','00000',0);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (160,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS490326','SDO Office Kishanganj','Lusi praween(Kishanganj)','password','18016',1),
+ (161,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS058705','PB TULSIYA',' Kaisar(Kishanganj)','password','18037',1),
+ (162,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS192083','MP KHAGRA HALIM CHOWK ','Kapil Dev Mandal(Kishanganj)','password','18045',1),
+ (163,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS477554','NAGAR PARISHAD KISHANGANJ','Shahbaz Alam(Kishanganj)','password','18022',1),
+ (164,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS419097','BLOck HQ BAHADURGANJ','Md Akhlaque Alam(Kishanganj)','password','18035',1),
+ (165,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS238304','BLOCK HQ TERHAGACHH','Kanhaiya Kumar Mahato(Kishanganj)','password','18044',1),
+ (166,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS325890','NPB BAHADURGANJ','Md Sohail Akmal(Kishanganj)','password','18039',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (167,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS235268','PSB PAHARKATTA','ZAKI ANWAR(Kishanganj)','password','18046',1),
+ (168,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS159716','PB GANGI','Md Ishraque Gouhar(Kishanganj)','password','18038',1),
+ (169,'Rural Development Department, Bihar','Bihar','Kishanganj','NTPL_KSG_NS298576','PB Dasyatoli hat bahadurganj','Md Sarfaraz Alam(Kishanganj)','password','18040',1),
+ (170,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS039294','DRCC Madhepura','Shubham Kumar (Madhepura)','password','20012',1),
+ (171,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS039615','Block HQ Kumarkhand','Amit Kumar(Madhepura)','password','20030',1),
+ (172,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS067993','Block HQ Shankarpur','Vikash Kumar (Madhepura)','password','20032',1),
+ (173,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS161561','Block HQ Ghaladh','Jayshankar kumar(Madhepura)','password','20010',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (174,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS161719','Block HQ  Gamhariya','Ramanand Kumar (Madhepura)','password','20013',0),
+ (175,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS167137','Nagar Panchyat Murliganj','Rajesh Kumar (Madhepura)','password','20018',0),
+ (176,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS167533','Block HQ Alam Nagar','Ashif Suhail  (Madhepura)','password','20003',1),
+ (177,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS169233','SDO Office Madhepura','Ranjay Raj (Madhepura)','password','20007',0),
+ (178,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS183730','Block HQ Guwalpara','Divakar Kumar (Madhepura)','password','20004',1),
+ (179,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS201221','Nagar Parishad Madhepura','Aditya Das (Madhepura)','Kajalsona','20024',1),
+ (180,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS253513','SDO Office Udakishunganj','Rangam Kumar (Madhepura)','password','20008',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (181,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS419115','Block HQ  Purani','Dilip Kumar (Madhepura)','password','20005',1),
+ (182,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS434941','Block HQ Bihariganj','Rajeev Kumar Pandit(Madhepura)','password','20021',1),
+ (183,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS468510','Block HQ Udakishunganj','Subodh Kumar (Madhepura)','password','20035',1),
+ (184,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS470632','DRDA Madhepura','Subhash kumar (Madhepura)','password','20039',0),
+ (185,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_NDP_NS479028','Block HQ Chousha','Imran Ali (Madhepura)','password','20034',1),
+ (186,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS190097','Block HQ Madhepura','SUMAN KUMAR','password','00000',0),
+ (187,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_SHS_NS468786','Block HQ Singheshwar','Vikash Kumar (Madhepura)','9708294955','29016',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (188,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS479098','Block HQ Udakishunganj','Amit Kumar(Madhepura)','password','20013',1),
+ (189,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS481024','Block HQ Murliganj','Aditya Raj(Madhepura)','password','20014',1),
+ (190,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS481229','Block HQ Singheshwar','Lakshman Das(Madhepura)','password','20001',1),
+ (191,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS483353','DRDA Madhepura','Mohammad Sajid Raza(Madhepura)','password','20006',1),
+ (192,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS202241','Block HQ Alamnagar','Ranveer Kumar(Madhepura)','password','20040',1),
+ (193,'Rural Development Department, Bihar','Bihar','Madhepura','NTPL_MDP_NS151129','Block HQ Guwalpara','Roshan Kumar(Madhepura)\n','roshan','20042',1),
+ (194,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS025588','Ruspur Khagha, Mirganj','Ram Kumar','ramkumar','27046',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (195,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS039715','NAGAR NIGAM PURNEA','SAJAN KUMAR','password','27013',1),
+ (196,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS049795','K. Nagar','NEERAJ KUMAR','password','27031',1),
+ (197,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS068438','Sadar Hospitel Purnea ','Md Shukruddin','password','27014',1),
+ (198,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS135936','Amour Block Purnea - ll','Azhar Alam','password','27035',1),
+ (199,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS164671','D R C C','RINKESH KUMAR ','password','27012',1),
+ (200,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS200070','BHAWANIPUR','MD SOHRAB ALAM','password','27005',1),
+ (201,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS230675','Jalalgarh','DHANANJAY KUMAR JHA','21071989','27008',1),
+ (202,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS241162','Sub Dhamdha ,Dhamdaha','SUMAN KUMAR','password','27016',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (203,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS241411','Jila Parishad Purnia','SANTOSH KUMAR','password','27015',1),
+ (204,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS262442','Dhamdaha','KHUSNOOR ALAM','password','27007',1),
+ (205,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS264056','S D O Office Banmankhi','uday kumar','password','27018',0),
+ (206,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS300681','Baisi Block','Kumar Raj','password','27040',0),
+ (207,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS321526','Rupauli','SANTOSH KUMAR','password','27011',1),
+ (208,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS328854','Sub Baisi  ,Purnea-','Ajay Kumar Sharma','password','27017',1),
+ (209,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS344882','Banmankhi Block','Anil Kumar','password','27003',1),
+ (210,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS387650','BAISA','Md Nasir','password','27002',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (211,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS396258','Amour Block Purnea ','EHRAR ALAM','password','27030',1),
+ (212,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_NS437007','Kasba Block','Subodh Kumar','password','27045',1),
+ (213,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS437369','Purnea East Block','Guddu Kumar','password','27048',1),
+ (214,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS445189','Sub Purnea ,Purnea','Rinku Kumari','27019','27019',1),
+ (215,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS476875','Nagar Nigam Banmankhi','Laltu Kumar','password','27033',1),
+ (216,'Rural Development Department, Bihar','Bihar','PURNEA','NTPL_PRN_SS329640','SHREE NAGER BLOCK ,PURNEA','Prabhat Kumar','password','27032',1),
+ (217,'Rural Development Department, Bihar','Bihar','Purnea','NTPL_PRN_NS437004','BKOTHI','Bipin Kumar Mistri','password','27052',1),
+ (218,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS025682','Block HQ Mahshi','Bhavesh Kumar(Saharsa)','12345678','29009',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (219,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS087097','Block Head Kahara','Chakradhar kumar(Saharsa)','password','29028',1),
+ (220,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS185599','Block HQ Banmaithari','Vipin Kumar Malakar(Saharsa)','Bipin@123','29021',1),
+ (221,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS225417',' Block HQ Sonbarsa','Love Kumar(Saharsa)','password','29025',0),
+ (222,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS252340','Block HQ Patargath','Rakesh Kumar(Saharsa)','password','29008',0),
+ (223,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS331132','Nagar Panchyat Simribaktiyarpur','Phool Kumar (Saharsa)','password','29030',1),
+ (224,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS355301','SDO Office Simri Baktiyarpur','Kundan kumar(Saharsa)','password','29015',1),
+ (225,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS431400','DRDA Saharsa','Amar kumar(Saharsa)','password','29027',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (226,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS439163','Nagar Parishad Saharsa','Pradeep Kumar(Saharsa)','password','29022',1),
+ (227,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS453121','Sor bazar Block HQ','Jay Kumar Sah(Saharsa)','password','29024',0),
+ (228,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS478945','Block HQ Shalkuwa','Krishna Kumar (Saharsa)','password','29009',1),
+ (229,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_SS197059','DRCC Saharsa','Sonu Kumar(Saharsa)','password','29001',1),
+ (230,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_SS211062','SDO Office Saharsa','Rajeev Kumar(Saharsa)','Rajeev3350','29002',1),
+ (231,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_SS304059','DRDA Saharsa','Pawan Kumar Das(Saharsa)','password','29004',1),
+ (232,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_SS319100','Block HQ  Navhatta','Rohit Kumar(Saharsa)','password','29029',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (233,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_SS355043',' Block HQ Satarkatiya','MD. Muntazir Alam(Saharsa)','Alam@123','29011',1),
+ (234,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS350850','Block HQ Patarghat','Bandelal kumar (Saharsa)','bandelal@4695','29033',1),
+ (235,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS477532',' Block HQ Sonbarsa','Godavari kumari(Saharsa)','password','29034',1),
+ (236,'Rural Development Department, Bihar','Bihar','Saharsha','NTPL_SHS_NS043445','Sor bazar Block HQ','Munna kumar(Saharsa)','Munna@123','29038',1),
+ (237,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SHS_NS477391','Block HQ Nirmali','Babita Kumari(Supaul)','password','36030',1),
+ (238,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS041497','Block HQ Raghopur','Baijnath Kumar (Supaul)','password','36019',1),
+ (239,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS067752','Block HQ Bhapthayi','Amar Kumar(Supaul)','password','36040',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (240,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS099989','Block HQ Chhatapur','Pradip Kumar Chaudhary (Supaul)','password','34034',1),
+ (241,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS168001','Block HQ Trivaniganj','Mithilesh Kumar (Supaul)','password','36005',1),
+ (242,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS188114','Nagar Panchyat Birpur','Omprakash Nirala (Supaul)','password','36018',1),
+ (243,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS194876','SDO Office Nirmali','Saddam Hussan(Supaul)','password','36035',1),
+ (244,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS207917','Block HQ Pipra','Sanjay Kumar (Supaul)','password','36009',1),
+ (245,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS215225','Nagar Panchyat Birpur','Rajesh Kumar (Supaul)','password','36014',0),
+ (246,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS230340','Block HQ  Pratapganj','Shankar Thakur(Supaul)','password','36006',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (247,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS256841','Block HQ Marona','Rambilash Choudhary (Supaul)','password','36003',0),
+ (248,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS420777','Block HQ  Supaul','Guriya Kumari (Supaul)','password','36017',0),
+ (249,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS435703','Nagar Panchyat Nirmali','Anjali Kumari (Supaul)','password','36004',0),
+ (250,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS469771','Trivaniganj SDO Office','Mantu Kumar(Supaul)','password','36028',1),
+ (251,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS477614','Block HQ. Basantpur','Ranjeet Kumar(Supaul)','password','36039',1),
+ (252,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS477709','SDO Office Supaul','Arjun Shah(Supaul)','password','36019',1),
+ (253,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_SS337900','DRDA Supaul','Sunil Kumar','password','36045',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (254,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_SS340429','SDO Office Nirmali','Manish Kumar Choudhary(Supaul)','password','36037',0),
+ (255,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_SS347694','Block HQ Pipra','Madan Kumar(Supaul)','password','36040',0),
+ (256,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_SS347725','DRCC Supaul','Jayanand Mandal (Supaul)','password','36008',1),
+ (257,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS262453','DRDA Supaul','Arun Kumar Mehta','password','00000',0),
+ (258,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS326788','Block HQ Chhatapur','Jitendra Kumar Thakur','password','00000',0),
+ (259,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS239156','SDO Office Nirmali','Raj Kumar Panjiyar(Supaul)','Manish@12345','36037',1),
+ (260,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS024984','Nagar Parishad Supaul','Mukesh Kumar(Supaul)','password','36036',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (261,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS098819','DRDA Supaul','Lalit Kumar Sah(Supaul)','password','36047',1),
+ (262,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_MDP_NS246809','Block HQ Supaul','Mritunjay Kumar Ram(Supaul)','password','36049',1),
+ (263,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS239188','Block HQ Marauna','Dharmendra Kumar Sah(Supaul)','password','36051',0),
+ (264,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS260427','Nagar Panchyat Nirmali','Snajeev Kumar Ray (Supaul)','password','36004',1),
+ (265,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_ NS214377','Block HQ Pipra','Pramod Kumar(Supaul)','password','36040',1),
+ (266,'Rural Development Department, Bihar','Bihar','Supaul','NTPL_SUP_NS295998','Block HQ Marauna','Mahesh Kumar Mehta(Supaul)','Mahesh@12345','36051',1),
+ (267,'General Administration Department, Assam','Assam','Hojai','HOJBHN_315991','Nakhuti JFMC Community Hall','Sahidul Hoque Laskar','Sahid@786','80001',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (268,'General Administration Department, Assam','Assam','Hojai','HOJBHN_367109','Mowalana Abdul Hannan Khan HS','Inamul Haque','mahabharat','80046',1),
+ (269,'General Administration Department, Assam','Assam','Hojai','HOJBHN_401045','State Vety. Dispencery, Derapathar','Imran Hussain','password','80037',1),
+ (270,'General Administration Department, Assam','Assam','Hojai','HOJBHN_085175','Sarkey Bosti G. P. Office,','Dujahan Ali','password','80004',1),
+ (271,'General Administration Department, Assam','Assam','Hojai','HOJBHN_225543','Doboka Municipal Borad','Hifzur Rahman','password','80005',1),
+ (272,'General Administration Department, Assam','Assam','Hojai','HOJBHN_096779','Udali GP Office','Azahar Uddin Ahmed','38714141','80007',1),
+ (273,'General Administration Department, Assam','Assam','Hojai','DCHOJAI531312','Laskar Panchali High School','Mehboob Ahmed','password','70017',1),
+ (274,'General Administration Department, Assam','Assam','Hojai','HOJBHN_452733','Forest IB Lanka, Part-II','Mehbub Ahmed','password','80008',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (275,'General Administration Department, Assam','Assam','Hojai','HOJBHN_452720','Forest IB Lanka, Part-I','Masum Yuhan','password','80009',1),
+ (276,'General Administration Department, Assam','Assam','Hojai','HOJBHN_466674','Farmapar G.P. office','Mohammed Ayub Ahmed','password','80010',1),
+ (277,'General Administration Department, Assam','Assam','Hojai','HOJBHN_304674','Hojai Girls College Community Hall','Aftar Hussain','password','80011',1),
+ (278,'General Administration Department, Assam','Assam','Hojai','HOJBHN_386189','Ex. Army Association Hall','Bhagya Jyoti Kakati','password','80042',1),
+ (279,'General Administration Department, Assam','Assam','Hojai','HOJBHN_450638','Komrakata High School','Mintu Nath','password','80013',1),
+ (280,'General Administration Department, Assam','Assam','Hojai','HOJBHN_311088','Jamunamukh VDP office','Rose Bhuyan Chowdhry','password','80035',1),
+ (281,'General Administration Department, Assam','Assam','Hojai','HOJBHN_164964','State Vety. Dispencery, Murajhar','Sabir Ahmed','password','80015',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (282,'General Administration Department, Assam','Assam','Hojai','HOJBHN_365379','Kapashbari Water supply scheme','Sayed Ahmed','password','80016',1),
+ (283,'General Administration Department, Assam','Assam','Hojai','HOJBHN_355537','Sub Center (PHC), Purana Kaki','Gautam Dekaraja','password','80017',1),
+ (284,'General Administration Department, Assam','Assam','Hojai','DCHOJAI502179','Ambari Sub-Center','Abid Hussain','password','80098',1),
+ (285,'General Administration Department, Assam','Assam','Hojai','DCHOJAI096870','Kaki Public Health Centre','Firuz Ahmed','786786','00000',1),
+ (286,'General Administration Department, Assam','Assam','Hojai','HOJBHN_448024','Harolongphar ME School','Asenla Nandi','password','80032',1),
+ (287,'General Administration Department, Assam','Assam','Hojai','HOJBHN_458816','Nilbagan SS Ltd','Rose Ahmed Barbhuyan','password','80021',1),
+ (288,'General Administration Department, Assam','Assam','Hojai','HOJBHNS_147089','Samarali GP Office','Md Mahbub Alom','password','80079',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (289,'General Administration Department, Assam','Assam','Hojai','HOJBHN_096795','M.E. Teacher Association Hall','Ashab Uddin Sikder','password','80023',1),
+ (290,'General Administration Department, Assam','Assam','Hojai','DCHOJAI441006','B.M.B. High School, Lumding','Simla Pradhan','password','70003',1),
+ (291,'General Administration Department, Assam','Assam','Hojai','DCHOJAI462048','Pachim Lumding Gaon Panchayat','Ankita Dutta','password','70006',1),
+ (292,'General Administration Department, Assam','Assam','Hojai','HOJBHN_457380','Kanduli Mari Gaon Panchyat office','Burhan Uddin Laskar','password','80086',1),
+ (293,'General Administration Department, Assam','Assam','Hojai','DCHOJ_216025','Haji Mufasil Ali Memorial Hall.','Najmul Hussain Laskar','password','80054',1),
+ (294,'General Administration Department, Assam','Assam','Hojai','DCHOJAI526563','Burungatoli G.P. office','Nazrul Amin','password','70014',1),
+ (295,'General Administration Department, Assam','Assam','Hojai','HOJBHN_474429','Bhalukmari GP Office','MANOJ DAS','password','80029',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (296,'General Administration Department, Assam','Assam','Hojai','DCHOJAI096205','Udali Lankajan Pipe Water Supply Scheme, Part-B','Haiqul Islam','78244612','70012',1),
+ (297,'General Administration Department, Assam','Assam','Hojai','HOJBHN_472588','Dhal Pukhuri G.P Office,','Prodip Sahu','password','80068',1),
+ (298,'General Administration Department, Assam','Assam','Hojai','HOJBHN_449248','Dakhin Lumding Gaon Panchyat Office','Dipankar Mitra','password','80020',1),
+ (299,'General Administration Department, Assam','Assam','Hojai','HOJBHN_479040','Oxcek pather GP','Shajahan Ahmed','Sha@863','80048',1),
+ (300,'General Administration Department, Assam','Assam','Hojai','HOJBHN_161805','Baliram GP Office','Nashir Uddin','password','80044',1),
+ (301,'General Administration Department, Assam','Assam','Hojai','HOJBHN_383821','Hayang GP office','Biddyuth Namasudra','password','80018',1),
+ (302,'General Administration Department, Assam','Assam','Hojai','HOJBHN_411160','Nandapur GP Office','Kanhaiya Lal Chauhan','password','80061',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (303,'General Administration Department, Assam','Assam','Hojai','HOJBHN_458845','HAJI AK GIRLS HS','Raju Ghosh','password','80003',1),
+ (304,'General Administration Department, Assam','Assam','Hojai','HOJBHN_464443','Adarsha Model High School, Kaki','Sanjib Saikia','password','80038',1),
+ (305,'General Administration Department, Assam','Assam','Hojai','HOJBHN_452498','Amtola BMC,','Harun Roshid','password','80062',1),
+ (306,'General Administration Department, Assam','Assam','Hojai','DCHOJAI48447','Doboka Gaon Panchyat office','Shaidul Alom Laskar','password','80066',1),
+ (307,'General Administration Department, Assam','Assam','Hojai','DCHOJAI459124','Barbali GP office','Nashir Uddin','password','00000',1),
+ (308,'General Administration Department, Assam','Assam','Hojai','DCHOJAI506739','Changmaji G.P. office','Kamal Hussain','password','80073',1),
+ (309,'General Administration Department, Assam','Assam','Hojai','DCHOJAI510852','Bardolong G.P. office','Mohsin Ahmed','password','80072',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (310,'General Administration Department, Assam','Assam','Hojai','DCHOJAI510814','PHE office, Simlai Pathar','Rekib Ahmed','password','80069',1),
+ (311,'General Administration Department, Assam','Assam','Hojai','DCHOJAI1506978','Padumpukhuri G.P. office','Malay Biswas','password','80075',1),
+ (312,'General Administration Department, Assam','Assam','Hojai','DCHOJAI478005','Janakalyan SS LTD','Mintu Debnath','password','80091',1),
+ (313,'General Administration Department, Assam','Assam','Hojai','DCHOJAI487385','Sutargaon GP Office','Anwar Hussain','password','80089',1),
+ (314,'General Administration Department, Assam','Assam','Hojai','HOJBHN_450339','Radhanagar G.P. office','Nithu Das','password','80025',1),
+ (315,'General Administration Department, Assam','Assam','Hojai','HOJBHN_450287','Singari Basti GP Office','Ashok Nath','password','80055',1),
+ (316,'General Administration Department, Assam','Assam','Hojai','DCHOJAI479734','Derapathar G.P. office','Benjir Alom','password','80064',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (317,'General Administration Department, Assam','Assam','Hojai','DCHOJAI385412','Kaki Thaisuper G.P. office','Hareshwar Kalita','password','80085',1),
+ (318,'General Administration Department, Assam','Assam','Hojai','DCHOJAI479733','Khagarijan G.P. office','Emdadul Islam','password','80067',1),
+ (319,'General Administration Department, Assam','Assam','Hojai','DCHOJAI162681','Ajarbari G.P. office','Sanat Biswas','password','80082',1),
+ (320,'General Administration Department, Assam','Assam','Hojai','HOJBHN_457110','Bamungaon G.P. Office','Rafique Ahmed','password','80006',1),
+ (321,'General Administration Department, Assam','Assam','Hojai','DCHOJAI164995','Ranipukhuri G.P. office','Joy Gopal','password','80084',1),
+ (322,'General Administration Department, Assam','Assam','Hojai','DCHOJAI370355','Kaki Tongia G.P. office','Minhaj Uddin Ahmed','password','80071',1),
+ (323,'General Administration Department, Assam','Assam','Hojai','DCHOJAI365375','Ashinagar G.P. Office','Mehbub Alom','password','80096',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (324,'General Administration Department, Assam','Assam','Hojai','DCHOJAI110583','Islam Nagar G.P. Office','Shahid Ahmed','password','80092',1),
+ (325,'General Administration Department, Assam','Assam','Hojai','DCHOJAI467259','Baluhandar G.P. Office','Imran Hussain','password','80094',1),
+ (326,'General Administration Department, Assam','Assam','Hojai','HOJBHN_472585','Golaghatia Basti G.P. Office','Sudhama Sahoo','password','70007',1),
+ (327,'General Administration Department, Assam','Assam','Hojai','HOJBHN_458668','Gopal Nagar GP Office','Alok Gupta','password','00000',1),
+ (328,'General Administration Department, Assam','Assam','Hojai','DCHOJAI389141','Pub Dhaniram Pathar G.P. Office','Ali Zahan Khan','password','80090',1),
+ (329,'General Administration Department, Assam','Assam','Hojai','HOJBHN_363269','Charlock G.P. Office','Mohibul Alam Chowdhury','password','80035',1),
+ (330,'General Administration Department, Assam','Assam','Hojai','DCHOJAI080225','Akashi Ganga G.P. Office','Anisul Islam','password','70018',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (331,'General Administration Department, Assam','Assam','Hojai','DCHOJAI521168','Jamuna G.P. Office','Taibur Rahman','password','80087',1),
+ (332,'General Administration Department, Assam','Assam','Hojai','DCHOJAI484469','Namati G.P. Office','Abdul Basit','password','80093',1),
+ (333,'General Administration Department, Assam','Assam','Hojai','DCHOJAI478006','Lanka Veta G.P. Office','Akash Debnath','password','80097',1),
+ (334,'General Administration Department, Assam','Assam','Hojai','DCHOJAI130625','Chowdhury Bazar G.P. Office','Jabir Hussain','password','70002',1),
+ (335,'General Administration Department, Assam','Assam','Hojai','HOJBHN_458569','Bhelowguri G.P. Office','Guljar Hussain','password','80033',1),
+ (336,'General Administration Department, Assam','Assam','Hojai','DCHOJAI391018','Tilla Bazar Community Hall','Abdul Jalil','password','80077',1),
+ (337,'General Administration Department, Assam','Assam','Hojai','DCHOJAI408781','Karoiyani G.P Office','Abdul Zalil','password','70016',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (338,'General Administration Department, Assam','Assam','Hojai','DCHOJAI068926','Nagayapam GP Office','Semim Ahmed Chowdhury','password','70011',1),
+ (339,'General Administration Department, Assam','Assam','Hojai','DCHOJAI071611','Joynagar GP Office','Sabir Ahmed','password','00000',1),
+ (340,'General Administration Department, Assam','Assam','Hojai','DCHOJAI480447','Borhawar GP Office','Sabir Ahmed','SabirHP','70022',1),
+ (341,'General Administration Department, Assam','Assam','Hojai','DCHOJAI525285','Charing Pathar GP Office','Alfas Uddin','password','80088',1),
+ (342,'General Administration Department, Assam','Assam','Hojai','DCHOJAI398716','Ranipukhuri G.P. Office, Part-B','Ramesh Chauhan','password','00000',1),
+ (343,'General Administration Department, Assam','Assam','Hojai','DCHOJAI479490','Laskar Panchali High School, Part- B','Abdul Hannan','password','70015',1),
+ (344,'General Administration Department, Assam','Assam','Hojai','DCHOJAI338953','Rajbari G.P. office','Man Mohan Singh','Mohan123@','80051',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (345,'General Administration Department, Assam','Assam','Hojai','DC HOJAI104672','Barfuti GP Office','Ali Ahmed','password','00000',1),
+ (346,'General Administration Department, Assam','Assam','Hojai','DCHOJAI469979','Pub Lumding GP Office','Rintu Paul','password','70023',1),
+ (347,'General Administration Department, Assam','Assam','Hojai','DCHOJAI077387','Kandura Bura Gaon GP Office','Jilhas Uddin Laskar','Jilhaz@1989','70004',1),
+ (348,'General Administration Department, Assam','Assam','Hojai','HOJBHN_097390','No.1 Kaki GP Office','Awwal Hazarika','password','80019',1),
+ (349,'General Administration Department, Assam','Assam','Hojai','DCHOJAI385374','Kapashbari SS Ltd','Zakaria Alom Chowdhury','Assam@11','70001',1),
+ (350,'General Administration Department, Assam','Assam','Hojai','DCHOJAI078652','Hojai Marketing WCCS','Muzzam Hussain Chowdhury','eassltdhji','70019',1),
+ (351,'General Administration Department, Assam','Assam','Hojai','DCHOJAI505300','Hojai Marketing WCCS','Ankit Gupta','password','80076',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (352,'General Administration Department, Assam','Assam','Hojai','DCHOJAI133494','Tilla Bazar Community Hall, Part-B','Sankar Das','password','00000',1),
+ (353,'General Administration Department, Assam','Assam','Hojai','DCHOJAI515788','Lanka Marketing WCCS','Iktider Alam','password','80078',1),
+ (354,'General Administration Department, Assam','Assam','Hojai','HOJBHN_480401','Udali Lankajan Pipe Water Supply Scheme','Ashraful Islam Azad','ashraful@123','80040',1),
+ (355,'General Administration Department, Assam','Assam','Hojai','DCHOJAI384778','Farmapar G.P. Office, Part- B','Siraj Uddin','password','70005',1),
+ (356,'General Administration Department, Assam','Assam','Hojai','DCHOJAI000295','No.1 Lumding SS LTD','Ajoy Sarkar','password','70008',1),
+ (357,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS120921','Dandkhora Block','NITESH KUMAR','password','16055',1),
+ (358,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS238656','RDD PEC ADHAAR SEVA KENDRA, RDD_PEC_ABADPUR PANCHYAT BHAWAN NEAR HIGH SCHOOL ROAD ABADPUR 2, Katihar, Barsoi, Abadpur, Bihar - 855102','Md Shahid Raza','password','16040',2);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (359,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS170425','Dherua Samurdayik Bhavan, Samurdayik Bhavan Dherua, Katihar, Hasanganj, Dherwa, Bihar - 854337','Md Firoz Alam','password','16050',2),
+ (360,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS499505','RDD PEC NAGAR NIGAM KATIHAR, NAGAR NIGAM KATIHAR, Katihar, Katihar, Katihar, Bihar - 854105','Ravindra Kumar Sharma','password','16031',2),
+ (361,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS154770','Dandkhora Block','Govind Kumar','password','00000',1),
+ (362,'Rural Development Department, Bihar-1','Bihar','Katihar','NTPL_KTR_NS097743','DRCC AADHAR CENTER, JILA NIBANDHAN SAH PRAMARSH KENDRA, Katihar, Katihar, Katihar, Bihar - 854105','Ravi Kumar','password','16078',1),
+ (363,'Rural Development Department, Bihar-1','Bihar','Araria','NTPL_ARR_SS331740','NagarParishad Forbisganj','Md Mohsin Alam ','password','01043',1),
+ (364,'Rural Development Department, Bihar-1','Bihar','Supaul','NTPL_SUP_NS198023','SDO Office Birpur','Pravin Kumar Mehta','basant@121@','36045',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (365,'Rural Development Department, Bihar-1','Bihar','Purnea','NTPL_PRN_NS410302','Banmankhi anumandal','Md. Arsad','password','27018',1),
+ (366,'Rural Development Department, Bihar-1','Bihar','Purnea','NTPL_PRN_NS194124','Barhara Kothi(BKOTHI)Bihar','Rohit kumar','password','27052',1),
+ (367,'Rural Development Department, Bihar-1','Bihar','Purnea','NTPL_PRN_NS188004','Sadar Hospitel Purnea ','Sikandar Kumar','password','27048',1),
+ (368,'Rural Development Department, Bihar-1','Bihar','Purnea','NTPL_PRN_NS259059','Kasba Nagar Panchayat','Sansar Alam','password','27064',1),
+ (369,'Rural Development Department, Bihar-1','Bihar','Purnea','NTPL_PRN_NS295784','Amour block','Munna Sharma','password','27037',1),
+ (370,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN311089','Morigaon Municipality Board','Faruk Abdulla','password','11808',1),
+ (371,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN320533','DRDA Office Morigaon','Usman Ali','password','11820',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (372,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN374084','Solmari GP ','Dildar Hussain','password','11809',1),
+ (373,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN469875','Morigaon Rev. Circle','Mazahirul Islam','password','11811',1),
+ (374,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN458640','Morigaon ZP Office','Jahirul Islam','password','11815',1),
+ (375,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN439908','Bhurbandha Dev.Block Office','Osman Goni','password','11803',1),
+ (376,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN105808','Rajagadhuwa GP Office','Sohidul islam','password','11823',1),
+ (377,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN095775','Lengribori GP Office','Azizul Hoque ','password','11825',1),
+ (378,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN447470','Bowalguri GP Office','Kuhinur Aktara','password','11818',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (379,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN449389','Laharighat Dev. Block','Kismat Ali','password','11832',1),
+ (380,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN414355','Tatikata GP office','Muklesur Rahman','password','11824',1),
+ (381,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN202540','Kushtoli GP Office','Sanjoy Saikia','password','11827',1),
+ (382,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN464984','Doloigaon GP office','Toslima Begum','Jamil5945@','11813',1),
+ (383,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN337696','Moirabari Dev. Block Office','Imran Hussain','password','11822',1),
+ (384,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN238411','Tinsukia Mahamara GP Office','Mostafizur Rahman ','password','11819',1),
+ (385,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN330107','Bhuragaon GP office','Nur Hussain','password','11853',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (386,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN330078','Garua GP Office','Swapan mandal','password','11802',1),
+ (387,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN340466','Mikibheta Rev. circle','Abu Bakkar Siddique','password','11830',1),
+ (388,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN383347','Dolongghat Dev. Block','DIPANKAR DEKA','password','11807',1),
+ (389,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN456578','Kathani GP Office','Afjalur Rahman','password','11816',1),
+ (390,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN459433','Jaluguti GP Office','Ashraful Islam','password','11810',1),
+ (391,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN268388','Boha Borjhari GP office','Guru Prasad Medhi','password','11829',1),
+ (392,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN449158','Telahi GP office','Join Uddin','password','11817',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (393,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN428094','Kuranibori GP office','Md. Mofidus Jaman','password','11828',1),
+ (394,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN336371','Jagiroad GP office','Md. Mirzanul Hoque','password','11804',1),
+ (395,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN300111','Mayong GP Office','Ananta Biswas','password','11831',1),
+ (396,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN462868','Mayong Dev. Block','Akhil Biswas','password','11805',1),
+ (397,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN331486','Burgaon GP office','Joydev Sarkar','password','11812',1),
+ (398,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN365516','Nellie GP office','Ajoy Patar','password','11814',1),
+ (399,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN462591','DatialboriGP office','Mustak Zakaria','password','11838',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (400,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN494454','Monaha GP Office','Azahar Ali','password','11856',1),
+ (401,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN332043','Laharighat GP Office','Harun Al Rashid','password','11861',1),
+ (402,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN327921','Jargaon GP Office','Kanai Mandal','password','11863',1),
+ (403,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN335761','Moirabari GP Office','Mofidul Islam','password','11854',1),
+ (404,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN397929','Asigar Gagalmari  GP Office','Faizul Hoque','password','11839',1),
+ (405,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN326072','Ahatguri GP Office','Dhrubajit Hazarika','password','11838',1),
+ (406,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN314258','Bordubatup GP Office','Nirmal Kr Sarkar','password','11836',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (407,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN341462','Tulsibori GP Office','Md. Muklesur Rahman','password','11839',1),
+ (408,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN485463','Gagalmari Office','Mainul Hoque','password','11853',1),
+ (409,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN474937','Kacharibori office','AQUIB ULLAH','password','11891',1),
+ (410,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN505511','Silsang GP Office','Wahid Khan','password','11851',1),
+ (411,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN450365','Goriabori GP Office','Washim Akram Mollik','password','11850',1),
+ (412,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN455856','Borchapori GP office','Khairul Islam','password','11845',1),
+ (413,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN365377','Balidunga GP Office','Ahidul Islam','password','11837',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (414,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN368049','Ulubari GP Office','Abu Nasar Wahid','password','11834',1),
+ (415,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN293265','KALMOUBARI  GP Office','MAKBUL HUSSAIN','password','11890',1),
+ (416,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN449218','Borbori GP Office','Harun Rashid','password','11842',1),
+ (417,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN401543','Dhupguri GP Office','SADDAM HUSSAIN','password','11866',1),
+ (418,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN362570','Buraburi GP office','Sofiullah Ahmed','password','11859',1),
+ (419,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN487014','Baralimari GP office','Rimpa Saha','password','11848',1),
+ (420,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN374583','Hatimuria GP Office','Rabbul Hussain','password','11848',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (421,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN459427','Barpak GP Office','PRASENJEET DAS','Jio@2019','11867',1),
+ (422,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN336003','Bhurbandha GP office','Jehirul Islam','password','11846',1),
+ (423,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN456585','Dhumkura GP Office','Mofidul Islam','password','11875',1),
+ (424,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN506772','Tarabori GP office','Omar Faruque','password','11852',1),
+ (425,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN336440','Baghjap GP office','Himadri Nath','password','11874',1),
+ (426,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN459397','Lehpati GP Office','Mobin Ahmed','password','11858',1),
+ (427,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN324019','Borchala GP office','Anuar Hussain','password','11849',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (428,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN323237','GHAGUA GP Office','MEDINI BORDOLOI','password','11873',1),
+ (429,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN366263','BAGHARA GP Office','Rashidul Alom','password','11880',1),
+ (430,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN3185625','JAGIBHAKAT GAON Office','BHAKSKAR NARAYAN DEURI','password','11897',1),
+ (431,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN332077','GARMARI GP Office','SAFIQUL ISLAM','password','11881',1),
+ (432,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN478001','MIKIRBHETA GP Office','BHUPEN CHANDRA PATAR','password','11869',1),
+ (433,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN373956','LUCHONABORI GP Office','TAQBINUL HUSSAIN','password','11879',1),
+ (434,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN269061','NAGABANDHA GP Office','HABIBUR RAHMAN SIDDQUEE','password','11882',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (435,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN508488','RANGADARIA GP Office','MD ATIUR RAHMAN','password','11898',1),
+ (436,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN479001','PAVAKATI ( MAYONG)','REKIB UDDIN AHMED','password','11878',1),
+ (437,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN413383','Kapili Dev. Block Office','Ashif Uddin Ahmed','password','11861',1),
+ (438,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN519772','DUNGABARI  GP Office','BINOY KUMAR','password','11876',1),
+ (439,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN294208','Mikirgaon  GP Office','INAMUL HOQUE','password','11883',1),
+ (440,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN23399','Paghali  GP Office','ANARUL HOQUE','password','11846',1),
+ (441,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN516138','Paliguri  GP Office','NRIPEN MANDAL','password','11854',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (442,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN508001','Habi Barangabari GP Office','Hokikul Islam','password','11992',1),
+ (443,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN493119','Deosal GP Office',' SADDAM HUSSAIN','password','18902',1),
+ (444,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN455945','Bhuragaon Rev. Circle Office','MOKIBUR MOLLIK','password','11883',1),
+ (445,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN408972','Bhakatgaon  GP Office','Raj Kumar Bordoloi','password','11865',1),
+ (446,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN497309','AZARBARI GP Office','RIJU MONI SAIKIA','password','11871',1),
+ (447,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN371604','UATTAR DHARAMTUL GP','ARUP KUMAR NATH','password','11892',1),
+ (448,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN394923','Jaribor  GP Office','RAZDUL ISLAM','password','11838',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (449,'General Administration Department, Assam','Assam','Morigaon','MOR-BHN368729','SIPUKARI GP OFFICE','MOTIBUR RAHMAN','password','11882',1),
+ (450,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN505477','Lowbunga GP Office','Washim Akram','password','11870',1),
+ (451,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN306896','BARANGABARI GP Office','MRINAL KUMAR HAZARIKA','password','11868',1),
+ (452,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN373218','Tengaguri GP Office','MD EKRAMUL HOQUE','password','11896',1),
+ (453,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN333496','MANIPUR GP Office','AMULYA CHANDRA BISWAS','password','11894',1),
+ (454,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN518039','GOPALKRISNA TEA STATE','NAYAN JYOTI PURU','password','11877',1),
+ (455,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN133297','Gova GP Office','ELIAS HASSAN','password','11893',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (456,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN485308','Borbhagia GP Office','GIRIN KR NATH','password','11884',1),
+ (457,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN354764','HAIBARGAON GP Office','SAMIN AKTAR','password','11900',1),
+ (458,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN044783','Digalbori GP Office','Joy Kumar Brahma','password','11897',1),
+ (459,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN334659','CHABUKDHARA GP Office','AMAR SENAPATI','password','11903',1),
+ (460,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN458319','BORCHILA GP Office','DADUL BORDOLOI','password','11904',1),
+ (461,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN087494','Dandua GP Office','Bablu Choudhury','password','11908',1),
+ (462,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN524878','Niz-Chaharia GP Office','KAMDEV BISWAS','password','11900',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (463,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN487383','Chariabahi GP ','MUZAFFOR SALIM','password','11889',1),
+ (464,'General Administration Department, Assam','Assam','Morigaon','MOR_BHN471443','Kowargaon GP office','Siva Prasad Baruah','password','11895',1),
+ (465,'GAD, Assam','Assam','Hojai','HOJBHN_391018','Tilla Bazar Community Hall','Abdul Jalil','password','80077',1),
+ (466,'GAD, Assam','Assam','Hojai','DCHOJAI506978','Padumpukhuri G.P. office','Malay Biswas','password','80075',1),
+ (467,'GAD, Assam','Assam','Hojai','DCHOJAI484471','Hindu Block G.P. office','Shaidul Alom Laskar','password','80066',1),
+ (468,'GAD, Assam','Assam','Hojai','DCHOJAI498948','Samarali GP Office','Md Mahbub Alom','password','80079',1),
+ (469,'GAD, Assam','Assam','Hojai','DCHOJAI527874','Milik Basti GP Office','Nurul Sekh','password','70029',1),
+ (470,'GAD, Assam','Assam','Hojai','DCHOJAI478735','No.1 Lumding SS LTD','Ajoy Sarkar','password','70008',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (471,'GAD, Assam','Assam','Hojai','DCHOJAI508018','Kaki SS LTD','Badrul Hoque','password','70038',1),
+ (472,'GAD, Assam','Assam','Hojai','DCHOJAI104672','Barfuti GP Office','Ali Ahmed','password','70025',1),
+ (473,'GAD, Assam','Assam','Hojai','DCHOJAI106234','Hojai SS LTD','Anwar Hussain Laskar','password','70019',1),
+ (474,'GAD, Assam','Assam','Hojai','DCHOJAI11500','Doboka Gaon Panchyat office','Taiyabur Rahman','password','70030',1),
+ (475,'GAD, Assam','Assam','Hojai','DCHOJAI534695','Dimorupar G.P. Office','Rasid Ahmed','password','70036',1),
+ (476,'GAD, Assam','Assam','Hojai','DCHOJAI535085','Barpukhuri G.P. office','Rahul Roy','password','70035',1),
+ (477,'GAD, Assam','Assam','Hojai','DCHOJAI527858','HAJI AK GIRLS HS, Part- B','Mukitur Rahman','password','70041',1),
+ (478,'GAD, Assam','Assam','Hojai','DCHOJAI354844','Kanduli Mari Gaon Panchyat office, Part- B','Anwar Hussain Laskar','password','70042',1),
+ (479,'GAD, Assam','Assam','Hojai','DCHOJAI534797','Baluhundar GP Office, Part-B','Riajul Hoque','password','70043',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (480,'GAD, Assam','Assam','Hojai','DCHOJAI525077','Burungatoli G.P. Office, Part-B','Asab Uddin Barbhuyan','password','70040',1),
+ (481,'GAD, Assam','Assam','Hojai','DCHOJAI534937','Ashinagar GP Office, Part-B','Sayed Sabid Hussain','password','70044',1),
+ (482,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_074053','Beuti Dutta','D.C\'s Office, Nagaon','password','27819',1),
+ (483,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_069549','Anower Hussain','Kaliadinga G.P. Office','password','27820',1),
+ (484,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_417978','Hibjur Rahman','Amlakhi K.A. M.E. Madrasa','password','27892',1),
+ (485,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_449102','Zulfikar Ali','Lahkarghat GP','123456','27806',1),
+ (486,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_049997','Minar Hussain','Dhingbori Chapori GP Office','password','20216',1),
+ (487,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_153773','Faij Uddin','Fhutaljhar G.P. Office','password','27813',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (488,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_263039','Md Sidratul Hussain','Nagaon Zilla Parishad, Nagaon','password','27857',1),
+ (489,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_361529','Girin Borah','Khagarijan Dev. Block','password','27824',1),
+ (490,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_052322','Shyam Kr Das','Pakhimoria Dev. Block','password','27828',1),
+ (491,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_139586','Anil Kumar Singh','Kuthari GP Office','password','27801',1),
+ (492,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_266466','Dildar Hussain','Tarabari ME School','password','27814',1),
+ (493,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_418845','Arifur Rahman','Katanigaon GP','password','27843',1),
+ (494,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_449185','Muhit Khandakar','Jengoni GP office ','password','27809',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (495,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_362778','Zahangir Alom','Lawkhowa Edn. Block','password','27823',1),
+ (496,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_449582','Md Jehirul Islam','Nagaon Municilipality Board','password','27817',1),
+ (497,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_411041','Rima Ray','PHE (Mohkhuli)','password','27849',1),
+ (498,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_101825','Nazmul Hussain','O/O the CDPO, Rupahi ICDS','password','27810',1),
+ (499,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_455259','Satbindar Singh','Kampur Town Committee','password','27844',1),
+ (500,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_398547','Sayed Ali','Anjukpani GP Office','password','20339',1),
+ (501,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_403503','Abdul Al Faruk','Amguri GP','password','20275',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (502,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_398552','Musaraf Ali','Bamuni GP','password','27852',1),
+ (503,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_370817','Ahsan Ullah','Bechemari Community Hall','password','370817',1),
+ (504,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_160833','Musfiqur Rahman','Borghuli GP Office','password','27848',1),
+ (505,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_368587','Abdul Haque','Kathiatoli Inspection Bunglow','password','27296',1),
+ (506,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_458833','Rashmi Rekha Hazarika','Pachim Kaliabor Dev. Block','password','27802',1),
+ (507,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_413672','Abdul Mofiz','Hatipara G.P. Office','password','27807',1),
+ (508,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_156460','Papu Moni Bora','Barhampur Dev. Block','password','27833',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (509,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_425558','Anarul Haque','Skill Dev. Center, Amsoi','password','27885',1),
+ (510,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_463299','Mustafizur Rahman','O/O the SDO Â©, Kaliabor','password','27803',1),
+ (511,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_424385','Ashraful Alom Choudhury','Bakulguri GP Office','password','27804',1),
+ (512,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_148770','Abdul Ahad Ansary','Bagalajan GP Office','password','27812',1),
+ (513,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_463867','Mostufa Amin','Borbheti GP','password','27811',1),
+ (514,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_397026','Ajoy Kumar Sahu','Samaguri Rev. Circle','password','397026',1),
+ (515,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_189144','Khandakar Abusaleh Ahmed','Circle Officer, Raha Rev. Circle','password','27883',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (516,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_433982','Julfikar Ali','Gerjaipam GP Office','password','27846',1),
+ (517,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_459428','Saddam Hussain','Rowmari A.H. High School','password','27829',1),
+ (518,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_049987','Bebika Boro','O/O the Circle Officer, Rupahi Rev. Circle','password','27847',1),
+ (519,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_412454','Najmina Khatun','O/O the Circle Officer, Dhing Rev. Circle','password','27860',1),
+ (520,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_413582','Utpal Das','O/O the Raha Town Committee, Raha','password','27853',1),
+ (521,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_423438','Kabi Kamal Bora','PWD Rural Roads Sub-Divn., Samaguri','password','27855',1),
+ (522,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_455924','Santosh Kumar Nath','Circle Officer, Kampur Rev. Circle, Kampur','password','27854',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (523,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_068139','Mrinal Deka','Nagaon Sadar Rev. Circle','password','27825',1),
+ (524,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_051454','Pulakesh Hazarika','O/O the Circle Officer, Kaliabor Rev. Circle, Kaliabor','password','27850',1),
+ (525,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_480241','Pinki Saikia','Kaliabor Dev. Block','password','27818',1),
+ (526,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_475114','Enamul Hoque','Borghat community hall','password','27870',1),
+ (527,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_467406','Inamul Hoque','Dhaniabheti Balak Muktab Vidyalaya','INAMUL786@','27831',1),
+ (528,'General Administration Department, Assam','Assam','Nagaon','DCNGN412075','Rezaul Alom','Dollonghat Dev. Block','password','27875',1),
+ (529,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_488204','Mustafizur Rahman','Saharia GP, ','password','20222',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (530,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_460440','Elias Alom Farazi','Mahguri GP','password','20207',1),
+ (531,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_153771','Elius Mirza','Kenduguri','password','20211',1),
+ (532,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_424364','Injamul Hoque','Kadamoni GP','password','20213',1),
+ (533,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_066896','Tajamal Hussain','Tinsukia GP','password','20208',1),
+ (534,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_449558','Tazzammal Hussain','Kathpara GP','password','27865',1),
+ (535,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_070286','Ziaul Rahman','Chatian GP','password','20230',1),
+ (536,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_S487566','Faizul Hoque','Jaramari Longia GP','password','20209',1),
+ (537,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_477257','Sah Jahangir Alom','Maheripar GP','password','20218',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (538,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_488631','Azhar Uddin Faraji','Mowamari GP','password','20217',1),
+ (539,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_495327','Mofidul Islam','Ambagan GP','password','20220',1),
+ (540,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_515517','Mukshidul Khan','Alitangoni Jamuguri GP','password','20331',1),
+ (541,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_073982','Ajibur Rahman','Moiradhaj GP','password','20227',1),
+ (542,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_110823','Mashuk Amin Akanda','Kandhulimari GP','password','20232',1),
+ (543,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_109534','Parbina Begum','Sologuri GP','password','20229',1),
+ (544,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_487362','Atawr Rahman','Kachua GP','password','20269',1),
+ (545,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_070592','Hifjur Rahman','Rampur Salapathar GP','password','20226',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (546,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_518987','Debakanta Das','Amtola GP','password','20205',1),
+ (547,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_269780','Omar Farooque','Tubuki Jarani GP','password','20202',1),
+ (548,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_468085','Mubarak Hussain','Rupahi Edn. Block','password','27822',1),
+ (549,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_195059','Motiur Rahman','Borbheti GP','password','20210',1),
+ (550,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_487384','Shoriful Islam','Patia Chapori GP','password','20239',1),
+ (551,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_439952','Amit Das Roy','Jiajuri Tea Estate','password','20228',1),
+ (552,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_475363','Aktar Hussain','Rangaloo GP','password','20223',1),
+ (553,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_218106','Rafiul Islam','Niz Katheatoli GP','password','20236',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (554,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_395717','Asraful Alam','Dakhin Khatowal GP','password','20337',1),
+ (555,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_479402','Merajul Haque','Kandoli GP','password','20238',1),
+ (556,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_404447','BIPAN PODDAR','Longjup GP','password','20237',1),
+ (557,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_465909','Julfikar Ahmed','Katahguri GP','password','20279',1),
+ (558,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_386576','Muktar Hussain','Lawgaon GP','password','20272',1),
+ (559,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_475827','Ribul Ahmed','DIGHALIATI','password','20278',1),
+ (560,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_405010','Khairul Islam','Bharaguri GP','password','20289',1),
+ (561,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_475269','Ikramul Hoque','Rangagora GP','password','20243',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (562,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_262746','Faridul Islam','Gereki GP','password','20262',1),
+ (563,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_331542','Farid Ahmed','Garukhuda GP','password','20240',1),
+ (564,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_391909','Baharul Islam','Dhupaguri GP','password','20242',1),
+ (565,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_074820','Sharif Amin','Niz Dhing GP','password','20277',1),
+ (566,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_523846','Mukabbir Hussain','Sonaibera Simoluati GP','password','20266',1),
+ (567,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_078748','Mahmuda Begum','Halowagaon GP','password','20280',1),
+ (568,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_521128','Musaraf Hussain','BALIKATIA GP','password','20264',1),
+ (569,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_376933','Md.Abdul Hye','Batadrava GP','password','20265',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (570,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_328863','Basitul Hassan Md Irshad','Saidoria GP','password','20341',1),
+ (571,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_510366','Taiabur Rahman','Hatijujua GP','password','20231',1),
+ (572,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_108015','Ariful Hoque','Tuktuki GP','password','20259',1),
+ (573,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_143511','Imran Hussain','Laowkhowa GP','password','20260',1),
+ (574,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_072055','Mahadi Alam','Jengoni Kaladuba GP','password','20255',1),
+ (575,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_502988','Najmul Hoque','Rupahi GP','password','20261',1),
+ (576,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_314122','Mofidul Islam','GODAIMARI','password','20256',1),
+ (577,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_292258','Roshidul Hoque','BARGHAT','password','20248',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (578,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_103901','Samsul Bahar','Deb Narikoli GP','password','20271',1),
+ (579,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_265462','Asif Ullah Muzaddadi','Bilotia GP','password','20254',1),
+ (580,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_378911','Abu Hanifa','Kanchanpur GP','password','20257',1),
+ (581,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_377619','Rabbul Hassan','Kandhulimari Parmaibheti GP','password','20263',1),
+ (582,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_501552','Shoriful Islam','Sutirpar GP','password','20282',1),
+ (583,'General Administration Department, Assam','Assam','Nagaon','NGNBHN090935','Ashraful Alam','Ashraful Alam','password','20221',1),
+ (584,'General Administration Department, Assam','Assam','Nagaon','NGNBHN394541','Rabiul Awal','UTTAR PACHIM PUBTHORIA GP','password','20340',1),
+ (585,'General Administration Department, Assam','Assam','Nagaon','NGNBHN528642','Mehboob Faruk','KAWAIMARI GP','password','20323',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (586,'General Administration Department, Assam','Assam','Nagaon','NGNBHN477774','Abul Hussain','Jewmari GP','password','20291',1),
+ (587,'General Administration Department, Assam','Assam','Nagaon','NGNBHN188663','Hamid Ullah','BAGARIGURI','password','20293',1),
+ (588,'General Administration Department, Assam','Assam','Nagaon','NGNBHN194990','Rashidul Hoque','Uppar Dumdumia GP','password','20319',1),
+ (589,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_337072','Komrul Hussain','Hahchara Gaon, Moirabari, Nagaon, Assam','password','20314',1),
+ (590,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_500525','Biswajit Das','Dakhinpat GP','password','20246',1),
+ (591,'General Administration Department, Assam','Assam','Nagaon','NGNBHN054349','Abul Kalam Azad','Lakhar Gaon Dhing Nagaon','password','20321',1),
+ (592,'General Administration Department, Assam','Assam','Nagaon','NGNBHN056570','Abdus Sazid','Kathpara GP','password','20309',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (593,'General Administration Department, Assam','Assam','Nagaon','NGNBHN088064','Mustakul Islam','Maj Jajori GP','password','20318',1),
+ (594,'General Administration Department, Assam','Assam','Nagaon','NGNBHN131811','Shahin Sha Masud','Balikatia GP (ii)','password','20298',1),
+ (595,'General Administration Department, Assam','Assam','Nagaon','NGNBHN131989','Atanu Dey','Chankhula GP','password','20347',1),
+ (596,'General Administration Department, Assam','Assam','Nagaon','NGNBHN524203','Azizur Rahman','Bilotia GP','password','20315',1),
+ (597,'General Administration Department, Assam','Assam','Nagaon','NGNBHN344477','Abdul Khaleque','Magurmari GP','password','20325',1),
+ (598,'General Administration Department, Assam','Assam','Nagaon','NGNBHN375287','Mehbub Amin Ahmed','Borghat GP','password','20301',1),
+ (599,'General Administration Department, Assam','Assam','Nagaon','NGNBHN528761','Habijul Islam','Niz Hatichung GP','password','20308',1),
+ (600,'General Administration Department, Assam','Assam','Nagaon','NGNBHN373947','Billal Uddin','Bhatiakhali GP','password','20305',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (601,'General Administration Department, Assam','Assam','Nagaon','NGNBHN329902','Md Guljar Hussain','Magurgaon GP','password','20321',1),
+ (602,'General Administration Department, Assam','Assam','Nagaon','NGNBHN445661','Swaib Salekin','Dhingbori Chapori GP','password','20294',1),
+ (603,'General Administration Department, Assam','Assam','Nagaon','NGNBHN515516','Md Mahmudul Hasan','Kachamari GP','password','20219',1),
+ (604,'General Administration Department, Assam','Assam','Nagaon','NGNBHN475969','Saikul Islam','Chapanala GP','password','20213',1),
+ (605,'General Administration Department, Assam','Assam','Nagaon','NGNBHN492488','Abdullah Md Abubakkar Siddique','Sutargaon GP','password','20310',1),
+ (606,'General Administration Department, Assam','Assam','Nagaon','NGNBHN03327','Nurul Amin','Alitangoni Jamuguri GP (ii)','password','20299',1),
+ (607,'General Administration Department, Assam','Assam','Nagaon','NGNBHN108024','Ashiquz Zaman Pathan','Bhumuraguri GP','password','20320',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (608,'General Administration Department, Assam','Assam','Nagaon','NGNBHN422942','Ashraful Alom Choudhury','Amlokhi GP','password','20303',1),
+ (609,'General Administration Department, Assam','Assam','Nagaon','NGNBHN318204','Gulzar Hussain','Bhurbandha GP','password','20285',1),
+ (610,'General Administration Department, Assam','Assam','Nagaon','NGNBHN527078','Mofidul Islam','Dhaniabheti GP','password','20274',1),
+ (611,'General Administration Department, Assam','Assam','Nagaon','NGNBHN500967','Parvish Washi','Rangagora Huj GP','757598Pw@','20295',1),
+ (612,'General Administration Department, Assam','Assam','Nagaon','NGNBHN526807','Jiaur Rahman','Dagaon Dhinggaon GP','password','20287',1),
+ (613,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_381995','Chandan Kumar Kakati','Borpathar GP','password','20268',1),
+ (614,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_514553','HABIBUR RAHMAN','O/O the Block Dev. Office, Raha','password','20290',1),
+ (615,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_525758','Fakar Uddin Ali Ahmed','LALIPATHAR','password','20336',1);
+INSERT INTO `tbl_operator` (`sl_no`,`dept`,`state`,`district`,`operator_id`,`pec_location`,`username`,`password`,`station_id`,`emp_status`) VALUES 
+ (616,'General Administration Department, Assam','Assam','Nagaon','NGNBHN494126','Ikramul Hussain','SENCHOWA GP','password','20307',1),
+ (617,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_392176','Shahidul Islam','Gotonga GP','password','20270',1),
+ (618,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_110813','Rousan Ali','Borbheti GP','password','20276',1),
+ (619,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_501703','Sabbir Ali','Juria GP','password','20284',1),
+ (620,'General Administration Department, Assam','Assam','Nagaon','NGNBHN260058','Mafidul Islam','Sologuri GP(ii)','password','20322',1),
+ (621,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_341700','Fakharuddin Ali Ahmed','Moiradhaj GP','password','20336',1),
+ (622,'General Administration Department, Assam','Assam','Nagaon','NGNBHN_065565','Md Baharul Islam','Dhupaguri GP','password','20242',1),
+ (623,'General Administration Department, Assam','Assam','Nagaon','NGNBHN516341','Abu Sharif','Lawkhowa Dev. Block','password','20330',1);
+/*!40000 ALTER TABLE `tbl_operator` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `attendance_db`.`tbl_outrangetime`
+--
+
+DROP TABLE IF EXISTS `tbl_outrangetime`;
+CREATE TABLE `tbl_outrangetime` (
+  `item_no` int(50) NOT NULL,
+  `operator_id` varchar(100) NOT NULL,
+  `created_date` date NOT NULL,
+  `log_DTTM` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance_db`.`tbl_outrangetime`
+--
+
+/*!40000 ALTER TABLE `tbl_outrangetime` DISABLE KEYS */;
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI479733','2020-11-02','08:55:32 Hrs'),
+ (1,'HOJBHN_096779','2020-11-02','19:01:38 Hrs'),
+ (1,'HOJBHN_097390','2020-11-02','19:04:38 Hrs'),
+ (1,'HOJBHN_474429','2020-11-02','19:09:54 Hrs'),
+ (1,'DCHOJAI077387','2020-11-03','08:53:00 Hrs'),
+ (2,'DCHOJAI077387','2020-11-03','08:40:03 Hrs'),
+ (3,'DCHOJAI077387','2020-11-03','08:22:42 Hrs'),
+ (4,'DCHOJAI077387','2020-11-03','07:58:04 Hrs'),
+ (1,'NTPL_SUP_NS239156','2020-11-03','08:46:54 Hrs'),
+ (1,'DCHOJAI484469','2020-11-03','08:46:28 Hrs'),
+ (1,'HOJBHN_096779','2020-11-03','19:00:30 Hrs'),
+ (1,'HOJBHN_479040','2020-11-03','19:09:25 Hrs'),
+ (2,'HOJBHN_479040','2020-11-03','19:03:10 Hrs'),
+ (1,'DCHOJAI467259','2020-11-03','19:05:29 Hrs'),
+ (1,'DCHOJAI338953','2020-11-03','19:01:00 Hrs'),
+ (1,'HOJBHN_363269','2020-11-03','19:26:42 Hrs'),
+ (2,'HOJBHN_363269','2020-11-03','19:17:17 Hrs'),
+ (3,'HOJBHN_363269','2020-11-03','19:00:59 Hrs'),
+ (1,'HOJBHN_450638','2020-11-03','19:12:41 Hrs'),
+ (2,'HOJBHN_450638','2020-11-03','19:09:34 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'HOJBHN_450638','2020-11-03','19:04:27 Hrs'),
+ (1,'HOJBHN_449248','2020-11-03','19:34:16 Hrs'),
+ (2,'HOJBHN_449248','2020-11-03','19:22:53 Hrs'),
+ (3,'HOJBHN_449248','2020-11-03','19:11:55 Hrs'),
+ (1,'HOJBHN_457380','2020-11-03','19:27:33 Hrs'),
+ (2,'HOJBHN_457380','2020-11-03','19:22:12 Hrs'),
+ (3,'HOJBHN_457380','2020-11-03','19:18:09 Hrs'),
+ (4,'HOJBHN_457380','2020-11-03','19:12:36 Hrs'),
+ (5,'HOJBHN_457380','2020-11-03','19:08:30 Hrs'),
+ (6,'HOJBHN_457380','2020-11-03','19:03:20 Hrs'),
+ (1,'HOJBHN_448024','2020-11-03','19:25:47 Hrs'),
+ (2,'HOJBHN_448024','2020-11-03','19:15:45 Hrs'),
+ (3,'HOJBHN_448024','2020-11-03','19:05:02 Hrs'),
+ (1,'HOJBHN_450287','2020-11-03','19:22:56 Hrs'),
+ (2,'HOJBHN_450287','2020-11-03','19:05:13 Hrs'),
+ (1,'DCHOJAI479733','2020-11-04','08:55:06 Hrs'),
+ (2,'DCHOJAI479733','2020-11-04','08:45:26 Hrs'),
+ (1,'NTPL_MDP_NS151129','2020-11-04','08:49:04 Hrs'),
+ (2,'NTPL_MDP_NS151129','2020-11-04','08:37:20 Hrs'),
+ (1,'NTPL_SUP_NS239156','2020-11-04','08:56:53 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'NTPL_SUP_NS239156','2020-11-04','08:50:50 Hrs'),
+ (3,'NTPL_SUP_NS239156','2020-11-04','08:46:16 Hrs'),
+ (4,'NTPL_SUP_NS239156','2020-11-04','08:39:56 Hrs'),
+ (5,'NTPL_SUP_NS239156','2020-11-04','08:35:26 Hrs'),
+ (6,'NTPL_SUP_NS239156','2020-11-04','08:29:48 Hrs'),
+ (7,'NTPL_SUP_NS239156','2020-11-04','08:25:16 Hrs'),
+ (8,'NTPL_SUP_NS239156','2020-11-04','08:20:46 Hrs'),
+ (9,'NTPL_SUP_NS239156','2020-11-04','08:17:29 Hrs'),
+ (10,'NTPL_SUP_NS239156','2020-11-04','08:13:32 Hrs'),
+ (11,'NTPL_SUP_NS239156','2020-11-04','08:09:16 Hrs'),
+ (12,'NTPL_SUP_NS239156','2020-11-04','08:06:25 Hrs'),
+ (1,'HOJBHN_097390','2020-11-04','19:04:52 Hrs'),
+ (1,'HOJBHN_474429','2020-11-04','19:01:55 Hrs'),
+ (1,'ntpl_sup_ns198023','2020-11-04','08:56:53 Hrs'),
+ (2,'ntpl_sup_ns198023','2020-11-04','08:46:53 Hrs'),
+ (3,'ntpl_sup_ns198023','2020-11-04','08:40:18 Hrs'),
+ (1,'DCHOJAI441006','2020-11-04','19:02:23 Hrs'),
+ (1,'DCHOJAI479734','2020-11-04','19:16:49 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'DCHOJAI479734','2020-11-04','19:06:40 Hrs'),
+ (3,'DCHOJAI479734','2020-11-04','19:01:46 Hrs'),
+ (1,'NTPL_SUP_NS295998','2020-11-04','19:24:47 Hrs'),
+ (2,'NTPL_SUP_NS295998','2020-11-04','19:18:10 Hrs'),
+ (3,'NTPL_SUP_NS295998','2020-11-04','19:08:03 Hrs'),
+ (4,'NTPL_SUP_NS295998','2020-11-04','19:01:08 Hrs'),
+ (5,'NTPL_SUP_NS295998','2020-11-04','08:58:00 Hrs'),
+ (6,'NTPL_SUP_NS295998','2020-11-04','08:52:17 Hrs'),
+ (7,'NTPL_SUP_NS295998','2020-11-04','08:45:02 Hrs'),
+ (8,'NTPL_SUP_NS295998','2020-11-04','08:35:15 Hrs'),
+ (9,'NTPL_SUP_NS295998','2020-11-04','08:30:09 Hrs'),
+ (10,'NTPL_SUP_NS295998','2020-11-04','08:16:02 Hrs'),
+ (11,'NTPL_SUP_NS295998','2020-11-04','08:11:06 Hrs'),
+ (12,'NTPL_SUP_NS295998','2020-11-04','08:01:01 Hrs'),
+ (1,'DCHOJAI370355','2020-11-04','19:20:31 Hrs'),
+ (2,'DCHOJAI370355','2020-11-04','19:14:11 Hrs'),
+ (3,'DCHOJAI370355','2020-11-04','19:08:21 Hrs'),
+ (1,'HOJBHN_458816','2020-11-04','19:26:17 Hrs'),
+ (2,'HOJBHN_458816','2020-11-04','19:18:42 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'HOJBHN_458816','2020-11-04','19:11:30 Hrs'),
+ (4,'HOJBHN_458816','2020-11-04','19:00:13 Hrs'),
+ (1,'HOJBHN_401045','2020-11-04','19:09:36 Hrs'),
+ (2,'HOJBHN_401045','2020-11-04','19:02:33 Hrs'),
+ (1,'HOJBHN_457380','2020-11-04','19:25:02 Hrs'),
+ (2,'HOJBHN_457380','2020-11-04','19:18:32 Hrs'),
+ (3,'HOJBHN_457380','2020-11-04','19:12:50 Hrs'),
+ (4,'HOJBHN_457380','2020-11-04','19:06:30 Hrs'),
+ (5,'HOJBHN_457380','2020-11-04','19:02:03 Hrs'),
+ (1,'DCHOJAI515788','2020-11-04','19:24:30 Hrs'),
+ (2,'DCHOJAI515788','2020-11-04','19:14:02 Hrs'),
+ (3,'DCHOJAI515788','2020-11-04','19:05:29 Hrs'),
+ (1,'DCHOJAI479490','2020-11-04','19:17:45 Hrs'),
+ (2,'DCHOJAI479490','2020-11-04','19:07:35 Hrs'),
+ (1,'HOJBHN_450287','2020-11-04','19:35:24 Hrs'),
+ (2,'HOJBHN_450287','2020-11-04','19:25:30 Hrs'),
+ (3,'HOJBHN_450287','2020-11-04','19:18:56 Hrs'),
+ (4,'HOJBHN_450287','2020-11-04','19:12:14 Hrs'),
+ (5,'HOJBHN_450287','2020-11-04','19:06:13 Hrs'),
+ (1,'DCHOJAI162681','2020-11-04','19:00:30 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI510852','2020-11-04','19:38:36 Hrs'),
+ (2,'DCHOJAI510852','2020-11-04','19:32:56 Hrs'),
+ (3,'DCHOJAI510852','2020-11-04','19:28:00 Hrs'),
+ (4,'DCHOJAI510852','2020-11-04','19:22:24 Hrs'),
+ (5,'DCHOJAI510852','2020-11-04','19:14:17 Hrs'),
+ (6,'DCHOJAI510852','2020-11-04','19:09:28 Hrs'),
+ (1,'HOJBHN_450638','2020-11-04','19:36:57 Hrs'),
+ (2,'HOJBHN_450638','2020-11-04','19:26:29 Hrs'),
+ (3,'HOJBHN_450638','2020-11-04','19:21:29 Hrs'),
+ (4,'HOJBHN_450638','2020-11-04','19:14:01 Hrs'),
+ (5,'HOJBHN_450638','2020-11-04','19:08:04 Hrs'),
+ (6,'HOJBHN_450638','2020-11-04','19:04:32 Hrs'),
+ (1,'HOJBHN_448024','2020-11-04','19:29:08 Hrs'),
+ (2,'HOJBHN_448024','2020-11-04','19:16:19 Hrs'),
+ (3,'HOJBHN_448024','2020-11-04','19:02:00 Hrs'),
+ (1,'DCHOJAI505300','2020-11-04','19:37:30 Hrs'),
+ (1,'DCHOJAI510814','2020-11-04','19:50:22 Hrs'),
+ (2,'DCHOJAI510814','2020-11-04','19:38:48 Hrs'),
+ (3,'DCHOJAI510814','2020-11-04','19:29:50 Hrs'),
+ (4,'DCHOJAI510814','2020-11-04','19:21:22 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (5,'DCHOJAI510814','2020-11-04','19:12:34 Hrs'),
+ (6,'DCHOJAI510814','2020-11-04','19:01:20 Hrs'),
+ (1,'DCHOJAI338953','2020-11-04','19:54:04 Hrs'),
+ (2,'DCHOJAI338953','2020-11-04','19:43:48 Hrs'),
+ (3,'DCHOJAI338953','2020-11-04','19:35:53 Hrs'),
+ (4,'DCHOJAI338953','2020-11-04','19:28:56 Hrs'),
+ (5,'DCHOJAI338953','2020-11-04','19:20:23 Hrs'),
+ (6,'DCHOJAI338953','2020-11-04','19:08:55 Hrs'),
+ (1,'DCHOJAI078652','2020-11-04','20:42:16 Hrs'),
+ (2,'DCHOJAI078652','2020-11-04','20:35:29 Hrs'),
+ (3,'DCHOJAI078652','2020-11-04','20:29:22 Hrs'),
+ (4,'DCHOJAI078652','2020-11-04','20:24:55 Hrs'),
+ (5,'DCHOJAI078652','2020-11-04','20:14:27 Hrs'),
+ (6,'DCHOJAI078652','2020-11-04','20:08:37 Hrs'),
+ (7,'DCHOJAI078652','2020-11-04','20:02:11 Hrs'),
+ (8,'DCHOJAI078652','2020-11-04','19:56:42 Hrs'),
+ (9,'DCHOJAI078652','2020-11-04','19:45:46 Hrs'),
+ (10,'DCHOJAI078652','2020-11-04','19:36:17 Hrs'),
+ (11,'DCHOJAI078652','2020-11-04','19:29:39 Hrs'),
+ (12,'DCHOJAI078652','2020-11-04','19:23:06 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (13,'DCHOJAI078652','2020-11-04','19:18:28 Hrs'),
+ (14,'DCHOJAI078652','2020-11-04','19:06:53 Hrs'),
+ (15,'DCHOJAI078652','2020-11-04','19:01:19 Hrs'),
+ (1,'NTPL_MDP_NS151129','2020-11-05','08:56:55 Hrs'),
+ (1,'DCHOJAI479733','2020-11-05','08:59:16 Hrs'),
+ (2,'DCHOJAI479733','2020-11-05','08:50:51 Hrs'),
+ (1,'NTPL_SUP_NS239156','2020-11-05','08:57:54 Hrs'),
+ (2,'NTPL_SUP_NS239156','2020-11-05','08:54:23 Hrs'),
+ (3,'NTPL_SUP_NS239156','2020-11-05','08:50:45 Hrs'),
+ (4,'NTPL_SUP_NS239156','2020-11-05','08:46:49 Hrs'),
+ (5,'NTPL_SUP_NS239156','2020-11-05','08:44:02 Hrs'),
+ (6,'NTPL_SUP_NS239156','2020-11-05','08:40:58 Hrs'),
+ (7,'NTPL_SUP_NS239156','2020-11-05','08:37:06 Hrs'),
+ (8,'NTPL_SUP_NS239156','2020-11-05','08:31:37 Hrs'),
+ (9,'NTPL_SUP_NS239156','2020-11-05','08:24:34 Hrs'),
+ (10,'NTPL_SUP_NS239156','2020-11-05','08:21:39 Hrs'),
+ (11,'NTPL_SUP_NS239156','2020-11-05','08:18:30 Hrs'),
+ (12,'NTPL_SUP_NS239156','2020-11-05','08:15:13 Hrs'),
+ (13,'NTPL_SUP_NS239156','2020-11-05','08:09:35 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'HOJBHN_452720','2020-11-05','19:00:14 Hrs'),
+ (1,'HOJBHN_450287','2020-11-05','19:01:39 Hrs'),
+ (1,'DCHOJ_216025','2020-11-05','19:06:06 Hrs'),
+ (2,'DCHOJ_216025','2020-11-05','19:00:30 Hrs'),
+ (1,'DCHOJAI078652','2020-11-05','19:10:07 Hrs'),
+ (2,'DCHOJAI078652','2020-11-05','19:01:01 Hrs'),
+ (1,'DCHOJAI370355','2020-11-05','19:15:13 Hrs'),
+ (2,'DCHOJAI370355','2020-11-05','19:10:46 Hrs'),
+ (3,'DCHOJAI370355','2020-11-05','19:03:13 Hrs'),
+ (1,'HOJBHN_450638','2020-11-05','19:16:29 Hrs'),
+ (2,'HOJBHN_450638','2020-11-05','19:06:31 Hrs'),
+ (3,'HOJBHN_450638','2020-11-05','19:02:11 Hrs'),
+ (1,'DCHOJAI515788','2020-11-05','19:21:17 Hrs'),
+ (2,'DCHOJAI515788','2020-11-05','19:14:35 Hrs'),
+ (3,'DCHOJAI515788','2020-11-05','19:07:25 Hrs'),
+ (1,'DCHOJAI510814','2020-11-05','19:19:52 Hrs'),
+ (2,'DCHOJAI510814','2020-11-05','19:09:09 Hrs'),
+ (1,'DCHOJAI459124','2020-11-05','19:13:25 Hrs'),
+ (1,'HOJBHN_452498','2020-11-05','19:31:46 Hrs'),
+ (2,'HOJBHN_452498','2020-11-05','19:12:55 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'HOJBHN_452498','2020-11-05','19:03:27 Hrs'),
+ (1,'DCHOJAI467259','2020-11-05','19:39:26 Hrs'),
+ (2,'DCHOJAI467259','2020-11-05','19:31:06 Hrs'),
+ (3,'DCHOJAI467259','2020-11-05','19:23:30 Hrs'),
+ (4,'DCHOJAI467259','2020-11-05','19:03:05 Hrs'),
+ (1,'HOJBHN_450339','2020-11-05','19:28:37 Hrs'),
+ (2,'HOJBHN_450339','2020-11-05','19:15:11 Hrs'),
+ (3,'HOJBHN_450339','2020-11-05','19:07:21 Hrs'),
+ (1,'DCHOJAI487385','2020-11-05','19:00:57 Hrs'),
+ (1,'HOJBHN_448024','2020-11-05','19:38:58 Hrs'),
+ (2,'HOJBHN_448024','2020-11-05','19:26:18 Hrs'),
+ (3,'HOJBHN_448024','2020-11-05','19:10:56 Hrs'),
+ (1,'DCHOJAI479490','2020-11-05','19:32:06 Hrs'),
+ (2,'DCHOJAI479490','2020-11-05','19:20:37 Hrs'),
+ (3,'DCHOJAI479490','2020-11-05','19:13:59 Hrs'),
+ (4,'DCHOJAI479490','2020-11-05','19:06:59 Hrs'),
+ (1,'HOJBHN_457380','2020-11-05','19:49:21 Hrs'),
+ (2,'HOJBHN_457380','2020-11-05','19:43:53 Hrs'),
+ (3,'HOJBHN_457380','2020-11-05','19:35:52 Hrs'),
+ (4,'HOJBHN_457380','2020-11-05','19:29:47 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (5,'HOJBHN_457380','2020-11-05','19:23:01 Hrs'),
+ (6,'HOJBHN_457380','2020-11-05','19:16:47 Hrs'),
+ (7,'HOJBHN_457380','2020-11-05','19:09:27 Hrs'),
+ (1,'HOJBHN_096795','2020-11-05','19:46:02 Hrs'),
+ (2,'HOJBHN_096795','2020-11-05','19:35:55 Hrs'),
+ (3,'HOJBHN_096795','2020-11-05','19:29:31 Hrs'),
+ (4,'HOJBHN_096795','2020-11-05','19:23:48 Hrs'),
+ (5,'HOJBHN_096795','2020-11-05','19:03:32 Hrs'),
+ (1,'DCHOJAI510852','2020-11-05','20:53:28 Hrs'),
+ (2,'DCHOJAI510852','2020-11-05','20:40:23 Hrs'),
+ (3,'DCHOJAI510852','2020-11-05','20:30:01 Hrs'),
+ (4,'DCHOJAI510852','2020-11-05','20:21:43 Hrs'),
+ (5,'DCHOJAI510852','2020-11-05','20:14:15 Hrs'),
+ (6,'DCHOJAI510852','2020-11-05','19:40:56 Hrs'),
+ (7,'DCHOJAI510852','2020-11-05','19:33:56 Hrs'),
+ (8,'DCHOJAI510852','2020-11-05','19:17:28 Hrs'),
+ (9,'DCHOJAI510852','2020-11-05','19:14:17 Hrs'),
+ (10,'DCHOJAI510852','2020-11-05','19:10:24 Hrs'),
+ (11,'DCHOJAI510852','2020-11-05','19:03:36 Hrs'),
+ (1,'DCHOJAI338953','2020-11-05','20:32:34 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'DCHOJAI338953','2020-11-05','20:10:23 Hrs'),
+ (3,'DCHOJAI338953','2020-11-05','19:59:35 Hrs'),
+ (4,'DCHOJAI338953','2020-11-05','19:51:06 Hrs'),
+ (5,'DCHOJAI338953','2020-11-05','19:37:22 Hrs'),
+ (6,'DCHOJAI338953','2020-11-05','19:28:49 Hrs'),
+ (7,'DCHOJAI338953','2020-11-05','19:21:21 Hrs'),
+ (8,'DCHOJAI338953','2020-11-05','19:11:28 Hrs'),
+ (9,'DCHOJAI338953','2020-11-05','19:03:25 Hrs'),
+ (1,'DCHOJAI385412','2020-11-06','08:59:22 Hrs'),
+ (2,'DCHOJAI385412','2020-11-06','08:51:09 Hrs'),
+ (3,'DCHOJAI385412','2020-11-06','08:38:14 Hrs'),
+ (4,'DCHOJAI385412','2020-11-06','08:23:37 Hrs'),
+ (5,'DCHOJAI385412','2020-11-06','08:14:31 Hrs'),
+ (6,'DCHOJAI385412','2020-11-06','08:07:33 Hrs'),
+ (7,'DCHOJAI385412','2020-11-06','08:00:44 Hrs'),
+ (8,'DCHOJAI385412','2020-11-06','07:53:23 Hrs'),
+ (9,'DCHOJAI385412','2020-11-06','07:44:35 Hrs'),
+ (10,'DCHOJAI385412','2020-11-06','07:33:09 Hrs'),
+ (11,'DCHOJAI385412','2020-11-06','07:20:37 Hrs'),
+ (12,'DCHOJAI385412','2020-11-06','07:06:43 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (13,'DCHOJAI385412','2020-11-06','06:53:46 Hrs'),
+ (14,'DCHOJAI385412','2020-11-06','06:45:24 Hrs'),
+ (15,'DCHOJAI385412','2020-11-06','06:37:23 Hrs'),
+ (1,'NTPL_SUP_NS230340','2020-11-06','08:57:40 Hrs'),
+ (2,'NTPL_SUP_NS230340','2020-11-06','08:50:53 Hrs'),
+ (3,'NTPL_SUP_NS230340','2020-11-06','08:38:43 Hrs'),
+ (4,'NTPL_SUP_NS230340','2020-11-06','08:30:46 Hrs'),
+ (5,'NTPL_SUP_NS230340','2020-11-06','08:23:41 Hrs'),
+ (6,'NTPL_SUP_NS230340','2020-11-06','08:18:30 Hrs'),
+ (7,'NTPL_SUP_NS230340','2020-11-06','08:10:51 Hrs'),
+ (8,'NTPL_SUP_NS230340','2020-11-06','08:04:32 Hrs'),
+ (9,'NTPL_SUP_NS230340','2020-11-06','07:57:53 Hrs'),
+ (10,'NTPL_SUP_NS230340','2020-11-06','07:52:18 Hrs'),
+ (1,'DCHOJAI479733','2020-11-06','08:57:38 Hrs'),
+ (2,'DCHOJAI479733','2020-11-06','08:48:47 Hrs'),
+ (3,'DCHOJAI479733','2020-11-06','08:39:54 Hrs'),
+ (4,'DCHOJAI479733','2020-11-06','08:28:48 Hrs'),
+ (1,'HOJBHN_452720','2020-11-06','19:03:16 Hrs'),
+ (1,'DCHOJAI484469','2020-11-06','08:47:02 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'DCHOJAI484469','2020-11-06','08:24:49 Hrs'),
+ (3,'DCHOJAI484469','2020-11-06','08:17:25 Hrs'),
+ (4,'DCHOJAI484469','2020-11-06','08:10:39 Hrs'),
+ (5,'DCHOJAI484469','2020-11-06','08:00:32 Hrs'),
+ (1,'HOJBHN_457380','2020-11-06','19:04:08 Hrs'),
+ (1,'DCHOJAI515788','2020-11-06','19:14:19 Hrs'),
+ (2,'DCHOJAI515788','2020-11-06','19:03:53 Hrs'),
+ (1,'HOJBHN_449248','2020-11-06','19:16:04 Hrs'),
+ (2,'HOJBHN_449248','2020-11-06','19:03:14 Hrs'),
+ (1,'HOJBHN_448024','2020-11-06','19:21:55 Hrs'),
+ (2,'HOJBHN_448024','2020-11-06','19:09:45 Hrs'),
+ (1,'DCHOJAI502179','2020-11-06','19:27:35 Hrs'),
+ (2,'DCHOJAI502179','2020-11-06','19:14:57 Hrs'),
+ (3,'DCHOJAI502179','2020-11-06','19:03:36 Hrs'),
+ (1,'NTPL_KTR_NS478796','2020-11-06','19:25:43 Hrs'),
+ (2,'NTPL_KTR_NS478796','2020-11-06','19:21:11 Hrs'),
+ (3,'NTPL_KTR_NS478796','2020-11-06','19:16:30 Hrs'),
+ (4,'NTPL_KTR_NS478796','2020-11-06','19:09:04 Hrs'),
+ (5,'NTPL_KTR_NS478796','2020-11-06','19:04:27 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI510814','2020-11-06','19:34:02 Hrs'),
+ (2,'DCHOJAI510814','2020-11-06','19:24:34 Hrs'),
+ (3,'DCHOJAI510814','2020-11-06','19:12:17 Hrs'),
+ (1,'DCHOJAI479490','2020-11-06','19:42:26 Hrs'),
+ (2,'DCHOJAI479490','2020-11-06','19:34:05 Hrs'),
+ (3,'DCHOJAI479490','2020-11-06','19:22:39 Hrs'),
+ (4,'DCHOJAI479490','2020-11-06','19:15:37 Hrs'),
+ (5,'DCHOJAI479490','2020-11-06','19:09:03 Hrs'),
+ (1,'DCHOJAI525285','2020-11-06','19:30:10 Hrs'),
+ (2,'DCHOJAI525285','2020-11-06','19:02:08 Hrs'),
+ (1,'DCHOJAI467259','2020-11-06','20:05:44 Hrs'),
+ (2,'DCHOJAI467259','2020-11-06','19:56:33 Hrs'),
+ (3,'DCHOJAI467259','2020-11-06','19:47:40 Hrs'),
+ (4,'DCHOJAI467259','2020-11-06','19:40:06 Hrs'),
+ (5,'DCHOJAI467259','2020-11-06','19:31:06 Hrs'),
+ (6,'DCHOJAI467259','2020-11-06','19:14:42 Hrs'),
+ (7,'DCHOJAI467259','2020-11-06','19:01:09 Hrs'),
+ (1,'HOJBHN_363269','2020-11-06','20:14:22 Hrs'),
+ (2,'HOJBHN_363269','2020-11-06','19:47:02 Hrs'),
+ (3,'HOJBHN_363269','2020-11-06','19:40:34 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'HOJBHN_363269','2020-11-06','19:31:20 Hrs'),
+ (5,'HOJBHN_363269','2020-11-06','19:20:48 Hrs'),
+ (6,'HOJBHN_363269','2020-11-06','19:10:56 Hrs'),
+ (7,'HOJBHN_363269','2020-11-06','19:01:03 Hrs'),
+ (1,'DCHOJAI389141','2020-11-06','20:25:39 Hrs'),
+ (2,'DCHOJAI389141','2020-11-06','20:12:01 Hrs'),
+ (3,'DCHOJAI389141','2020-11-06','20:00:48 Hrs'),
+ (4,'DCHOJAI389141','2020-11-06','19:50:41 Hrs'),
+ (5,'DCHOJAI389141','2020-11-06','19:43:02 Hrs'),
+ (6,'DCHOJAI389141','2020-11-06','19:33:41 Hrs'),
+ (7,'DCHOJAI389141','2020-11-06','19:24:34 Hrs'),
+ (8,'DCHOJAI389141','2020-11-06','19:15:18 Hrs'),
+ (9,'DCHOJAI389141','2020-11-06','19:07:44 Hrs'),
+ (1,'HOJBHN_096795','2020-11-06','20:30:58 Hrs'),
+ (2,'HOJBHN_096795','2020-11-06','20:23:11 Hrs'),
+ (3,'HOJBHN_096795','2020-11-06','20:15:31 Hrs'),
+ (4,'HOJBHN_096795','2020-11-06','20:07:46 Hrs'),
+ (5,'HOJBHN_096795','2020-11-06','19:53:17 Hrs'),
+ (6,'HOJBHN_096795','2020-11-06','19:45:40 Hrs'),
+ (7,'HOJBHN_096795','2020-11-06','19:39:26 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (8,'HOJBHN_096795','2020-11-06','19:21:16 Hrs'),
+ (9,'HOJBHN_096795','2020-11-06','19:13:49 Hrs'),
+ (10,'HOJBHN_096795','2020-11-06','19:06:36 Hrs'),
+ (1,'DCHOJAI078652','2020-11-06','20:44:50 Hrs'),
+ (2,'DCHOJAI078652','2020-11-06','20:38:34 Hrs'),
+ (3,'DCHOJAI078652','2020-11-06','20:32:38 Hrs'),
+ (4,'DCHOJAI078652','2020-11-06','20:06:50 Hrs'),
+ (5,'DCHOJAI078652','2020-11-06','20:01:03 Hrs'),
+ (6,'DCHOJAI078652','2020-11-06','19:54:49 Hrs'),
+ (7,'DCHOJAI078652','2020-11-06','19:47:43 Hrs'),
+ (8,'DCHOJAI078652','2020-11-06','19:40:11 Hrs'),
+ (9,'DCHOJAI078652','2020-11-06','19:28:25 Hrs'),
+ (10,'DCHOJAI078652','2020-11-06','19:19:17 Hrs'),
+ (11,'DCHOJAI078652','2020-11-06','19:09:25 Hrs'),
+ (12,'DCHOJAI078652','2020-11-06','19:01:41 Hrs'),
+ (1,'DCHOJAI077387','2020-11-06','20:44:26 Hrs'),
+ (2,'DCHOJAI077387','2020-11-06','03:15:04 Hrs'),
+ (3,'DCHOJAI077387','2020-11-06','03:03:13 Hrs'),
+ (4,'DCHOJAI077387','2020-11-06','02:45:38 Hrs'),
+ (5,'DCHOJAI077387','2020-11-06','02:35:08 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'DCHOJAI077387','2020-11-06','02:18:14 Hrs'),
+ (7,'DCHOJAI077387','2020-11-06','02:03:36 Hrs'),
+ (8,'DCHOJAI077387','2020-11-06','01:47:32 Hrs'),
+ (9,'DCHOJAI077387','2020-11-06','01:30:35 Hrs'),
+ (10,'DCHOJAI077387','2020-11-06','01:13:09 Hrs'),
+ (1,'DCHOJAI462048','2020-11-06','19:43:16 Hrs'),
+ (2,'DCHOJAI462048','2020-11-06','19:25:44 Hrs'),
+ (3,'DCHOJAI462048','2020-11-06','19:03:41 Hrs'),
+ (1,'DCHOJAI510852','2020-11-06','20:52:15 Hrs'),
+ (2,'DCHOJAI510852','2020-11-06','20:44:53 Hrs'),
+ (3,'DCHOJAI510852','2020-11-06','20:39:35 Hrs'),
+ (4,'DCHOJAI510852','2020-11-06','20:31:11 Hrs'),
+ (5,'DCHOJAI510852','2020-11-06','20:25:32 Hrs'),
+ (6,'DCHOJAI510852','2020-11-06','20:10:44 Hrs'),
+ (7,'DCHOJAI510852','2020-11-06','19:52:33 Hrs'),
+ (8,'DCHOJAI510852','2020-11-06','19:42:59 Hrs'),
+ (9,'DCHOJAI510852','2020-11-06','19:36:17 Hrs'),
+ (10,'DCHOJAI510852','2020-11-06','19:26:29 Hrs'),
+ (11,'DCHOJAI510852','2020-11-06','19:15:34 Hrs'),
+ (12,'DCHOJAI510852','2020-11-06','19:08:29 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI505300','2020-11-06','20:48:11 Hrs'),
+ (2,'DCHOJAI505300','2020-11-06','20:40:15 Hrs'),
+ (3,'DCHOJAI505300','2020-11-06','20:34:24 Hrs'),
+ (4,'DCHOJAI505300','2020-11-06','20:27:39 Hrs'),
+ (5,'DCHOJAI505300','2020-11-06','20:21:11 Hrs'),
+ (6,'DCHOJAI505300','2020-11-06','20:12:24 Hrs'),
+ (7,'DCHOJAI505300','2020-11-06','20:04:39 Hrs'),
+ (8,'DCHOJAI505300','2020-11-06','19:45:08 Hrs'),
+ (1,'DCHOJAI479733','2020-11-07','08:58:29 Hrs'),
+ (1,'DCHOJAI506978','2020-11-07','08:53:00 Hrs'),
+ (2,'DCHOJAI506978','2020-11-07','08:26:19 Hrs'),
+ (1,'DCHOJ_216025','2020-11-07','19:00:17 Hrs'),
+ (1,'DCHOJAI110583','2020-11-07','07:13:57 Hrs'),
+ (1,'DCHOJAI385412','2020-11-07','19:04:45 Hrs'),
+ (2,'DCHOJAI385412','2020-11-07','08:57:28 Hrs'),
+ (3,'DCHOJAI385412','2020-11-07','08:45:38 Hrs'),
+ (4,'DCHOJAI385412','2020-11-07','08:36:28 Hrs'),
+ (1,'DCHOJAI162681','2020-11-07','19:01:00 Hrs'),
+ (1,'DCHOJAI510852','2020-11-07','19:11:51 Hrs'),
+ (1,'DCHOJAI506739','2020-11-07','19:12:54 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI467259','2020-11-07','19:13:56 Hrs'),
+ (2,'DCHOJAI467259','2020-11-07','19:02:44 Hrs'),
+ (1,'DCHOJAI459124','2020-11-07','19:17:50 Hrs'),
+ (2,'DCHOJAI459124','2020-11-07','19:08:20 Hrs'),
+ (3,'DCHOJAI459124','2020-11-07','19:00:05 Hrs'),
+ (1,'DCHOJAI502179','2020-11-07','19:15:35 Hrs'),
+ (1,'DCHOJAI515788','2020-11-07','19:33:26 Hrs'),
+ (2,'DCHOJAI515788','2020-11-07','19:24:38 Hrs'),
+ (3,'DCHOJAI515788','2020-11-07','19:14:07 Hrs'),
+ (4,'DCHOJAI515788','2020-11-07','19:04:04 Hrs'),
+ (1,'DCHOJAI338953','2020-11-07','19:34:49 Hrs'),
+ (2,'DCHOJAI338953','2020-11-07','19:26:01 Hrs'),
+ (3,'DCHOJAI338953','2020-11-07','19:17:07 Hrs'),
+ (4,'DCHOJAI338953','2020-11-07','19:07:01 Hrs'),
+ (1,'DCHOJAI487385','2020-11-07','19:21:55 Hrs'),
+ (2,'DCHOJAI487385','2020-11-07','19:11:39 Hrs'),
+ (3,'DCHOJAI487385','2020-11-07','19:02:45 Hrs'),
+ (1,'Dchojai526563','2020-11-07','19:32:19 Hrs'),
+ (2,'Dchojai526563','2020-11-07','19:23:40 Hrs'),
+ (3,'Dchojai526563','2020-11-07','19:12:52 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'HOJBHN_457380','2020-11-07','19:47:22 Hrs'),
+ (2,'HOJBHN_457380','2020-11-07','19:40:17 Hrs'),
+ (3,'HOJBHN_457380','2020-11-07','19:35:12 Hrs'),
+ (4,'HOJBHN_457380','2020-11-07','19:30:27 Hrs'),
+ (5,'HOJBHN_457380','2020-11-07','19:27:04 Hrs'),
+ (6,'HOJBHN_457380','2020-11-07','19:22:40 Hrs'),
+ (7,'HOJBHN_457380','2020-11-07','19:18:30 Hrs'),
+ (8,'HOJBHN_457380','2020-11-07','19:14:15 Hrs'),
+ (9,'HOJBHN_457380','2020-11-07','19:06:50 Hrs'),
+ (10,'HOJBHN_457380','2020-11-07','19:02:15 Hrs'),
+ (1,'DCHOJAI479490','2020-11-07','19:47:30 Hrs'),
+ (2,'DCHOJAI479490','2020-11-07','19:41:49 Hrs'),
+ (3,'DCHOJAI479490','2020-11-07','19:35:11 Hrs'),
+ (4,'DCHOJAI479490','2020-11-07','19:28:41 Hrs'),
+ (5,'DCHOJAI479490','2020-11-07','19:20:11 Hrs'),
+ (6,'DCHOJAI479490','2020-11-07','19:10:16 Hrs'),
+ (7,'DCHOJAI479490','2020-11-07','19:01:05 Hrs'),
+ (1,'HOJBHN_474429','2020-11-07','19:47:37 Hrs'),
+ (2,'HOJBHN_474429','2020-11-07','19:36:31 Hrs'),
+ (3,'HOJBHN_474429','2020-11-07','19:27:00 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'HOJBHN_474429','2020-11-07','19:18:46 Hrs'),
+ (5,'HOJBHN_474429','2020-11-07','19:09:29 Hrs'),
+ (1,'DCHOJAI510814','2020-11-07','19:57:13 Hrs'),
+ (2,'DCHOJAI510814','2020-11-07','19:47:31 Hrs'),
+ (3,'DCHOJAI510814','2020-11-07','19:34:30 Hrs'),
+ (4,'DCHOJAI510814','2020-11-07','19:25:15 Hrs'),
+ (5,'DCHOJAI510814','2020-11-07','19:17:26 Hrs'),
+ (6,'DCHOJAI510814','2020-11-07','19:06:40 Hrs'),
+ (1,'DCHOJAI106234','2020-11-07','20:07:05 Hrs'),
+ (2,'DCHOJAI106234','2020-11-07','20:00:44 Hrs'),
+ (3,'DCHOJAI106234','2020-11-07','19:46:59 Hrs'),
+ (4,'DCHOJAI106234','2020-11-07','19:41:21 Hrs'),
+ (5,'DCHOJAI106234','2020-11-07','19:35:49 Hrs'),
+ (6,'DCHOJAI106234','2020-11-07','19:30:40 Hrs'),
+ (7,'DCHOJAI106234','2020-11-07','19:23:44 Hrs'),
+ (8,'DCHOJAI106234','2020-11-07','19:14:54 Hrs'),
+ (9,'DCHOJAI106234','2020-11-07','19:05:28 Hrs'),
+ (10,'DCHOJAI106234','2020-11-07','08:58:28 Hrs'),
+ (11,'DCHOJAI106234','2020-11-07','08:49:21 Hrs'),
+ (12,'DCHOJAI106234','2020-11-07','08:42:04 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (13,'DCHOJAI106234','2020-11-07','08:35:11 Hrs'),
+ (1,'HOJBHN_391018','2020-11-07','20:19:39 Hrs'),
+ (2,'HOJBHN_391018','2020-11-07','19:57:52 Hrs'),
+ (3,'HOJBHN_391018','2020-11-07','19:49:46 Hrs'),
+ (4,'HOJBHN_391018','2020-11-07','19:38:20 Hrs'),
+ (5,'HOJBHN_391018','2020-11-07','19:29:43 Hrs'),
+ (6,'HOJBHN_391018','2020-11-07','19:20:21 Hrs'),
+ (7,'HOJBHN_391018','2020-11-07','19:11:23 Hrs'),
+ (1,'HOJBHN_448024','2020-11-07','20:17:47 Hrs'),
+ (2,'HOJBHN_448024','2020-11-07','20:07:00 Hrs'),
+ (3,'HOJBHN_448024','2020-11-07','19:54:55 Hrs'),
+ (4,'HOJBHN_448024','2020-11-07','19:37:47 Hrs'),
+ (5,'HOJBHN_448024','2020-11-07','19:07:04 Hrs'),
+ (1,'DCHOJAI478735','2020-11-07','19:30:40 Hrs'),
+ (2,'DCHOJAI478735','2020-11-07','19:13:34 Hrs'),
+ (1,'HOJBHN_449248','2020-11-07','20:19:18 Hrs'),
+ (2,'HOJBHN_449248','2020-11-07','20:11:15 Hrs'),
+ (3,'HOJBHN_449248','2020-11-07','20:02:51 Hrs'),
+ (4,'HOJBHN_449248','2020-11-07','19:52:24 Hrs'),
+ (5,'HOJBHN_449248','2020-11-07','19:44:09 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'HOJBHN_449248','2020-11-07','19:36:28 Hrs'),
+ (7,'HOJBHN_449248','2020-11-07','19:26:22 Hrs'),
+ (8,'HOJBHN_449248','2020-11-07','19:18:25 Hrs'),
+ (9,'HOJBHN_449248','2020-11-07','19:09:31 Hrs'),
+ (10,'HOJBHN_449248','2020-11-07','19:01:16 Hrs'),
+ (1,'DCHOJAI389141','2020-11-07','20:26:34 Hrs'),
+ (2,'DCHOJAI389141','2020-11-07','20:16:53 Hrs'),
+ (3,'DCHOJAI389141','2020-11-07','20:06:41 Hrs'),
+ (4,'DCHOJAI389141','2020-11-07','19:55:21 Hrs'),
+ (5,'DCHOJAI389141','2020-11-07','19:41:19 Hrs'),
+ (6,'DCHOJAI389141','2020-11-07','19:31:43 Hrs'),
+ (7,'DCHOJAI389141','2020-11-07','19:19:03 Hrs'),
+ (8,'DCHOJAI389141','2020-11-07','19:01:11 Hrs'),
+ (1,'HOJBHN_452498','2020-11-07','20:26:14 Hrs'),
+ (2,'HOJBHN_452498','2020-11-07','20:11:56 Hrs'),
+ (3,'HOJBHN_452498','2020-11-07','20:04:17 Hrs'),
+ (4,'HOJBHN_452498','2020-11-07','19:55:39 Hrs'),
+ (5,'HOJBHN_452498','2020-11-07','19:48:32 Hrs'),
+ (6,'HOJBHN_452498','2020-11-07','19:40:13 Hrs'),
+ (7,'HOJBHN_452498','2020-11-07','19:31:57 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (8,'HOJBHN_452498','2020-11-07','19:04:26 Hrs'),
+ (1,'DCHOJAI525285','2020-11-07','20:22:37 Hrs'),
+ (2,'DCHOJAI525285','2020-11-07','20:12:24 Hrs'),
+ (3,'DCHOJAI525285','2020-11-07','20:01:54 Hrs'),
+ (4,'DCHOJAI525285','2020-11-07','19:49:46 Hrs'),
+ (5,'DCHOJAI525285','2020-11-07','19:32:01 Hrs'),
+ (6,'DCHOJAI525285','2020-11-07','19:22:34 Hrs'),
+ (1,'HOJBHN_096795','2020-11-07','20:36:47 Hrs'),
+ (2,'HOJBHN_096795','2020-11-07','20:30:12 Hrs'),
+ (3,'HOJBHN_096795','2020-11-07','20:22:37 Hrs'),
+ (4,'HOJBHN_096795','2020-11-07','20:14:47 Hrs'),
+ (5,'HOJBHN_096795','2020-11-07','19:44:59 Hrs'),
+ (6,'HOJBHN_096795','2020-11-07','19:37:03 Hrs'),
+ (7,'HOJBHN_096795','2020-11-07','19:29:15 Hrs'),
+ (8,'HOJBHN_096795','2020-11-07','19:13:15 Hrs'),
+ (9,'HOJBHN_096795','2020-11-07','19:01:38 Hrs'),
+ (1,'DCHOJAI071611','2020-11-07','20:31:39 Hrs'),
+ (2,'DCHOJAI071611','2020-11-07','20:01:55 Hrs'),
+ (3,'DCHOJAI071611','2020-11-07','19:43:34 Hrs'),
+ (4,'DCHOJAI071611','2020-11-07','19:29:25 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (5,'DCHOJAI071611','2020-11-07','19:16:54 Hrs'),
+ (6,'DCHOJAI071611','2020-11-07','19:01:12 Hrs'),
+ (1,'DCHOJAI505300','2020-11-07','20:51:09 Hrs'),
+ (2,'DCHOJAI505300','2020-11-07','20:45:43 Hrs'),
+ (3,'DCHOJAI505300','2020-11-07','20:38:20 Hrs'),
+ (4,'DCHOJAI505300','2020-11-07','20:32:51 Hrs'),
+ (5,'DCHOJAI505300','2020-11-07','20:25:31 Hrs'),
+ (6,'DCHOJAI505300','2020-11-07','20:20:54 Hrs'),
+ (7,'DCHOJAI505300','2020-11-07','20:13:08 Hrs'),
+ (8,'DCHOJAI505300','2020-11-07','20:07:41 Hrs'),
+ (9,'DCHOJAI505300','2020-11-07','19:42:00 Hrs'),
+ (10,'DCHOJAI505300','2020-11-07','19:31:10 Hrs'),
+ (11,'DCHOJAI505300','2020-11-07','19:20:10 Hrs'),
+ (12,'DCHOJAI505300','2020-11-07','19:13:39 Hrs'),
+ (13,'DCHOJAI505300','2020-11-07','19:01:26 Hrs'),
+ (1,'DCHOJAI527874','2020-11-08','00:45:09 Hrs'),
+ (2,'DCHOJAI527874','2020-11-08','00:33:56 Hrs'),
+ (3,'DCHOJAI527874','2020-11-08','00:14:07 Hrs'),
+ (4,'DCHOJAI527874','2020-11-08','00:02:15 Hrs'),
+ (1,'DCHOJAI479733','2020-11-08','08:53:58 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'DCHOJAI479733','2020-11-08','08:46:08 Hrs'),
+ (3,'DCHOJAI479733','2020-11-08','08:37:58 Hrs'),
+ (4,'DCHOJAI479733','2020-11-08','08:28:48 Hrs'),
+ (1,'DCHOJAI106234','2020-11-08','08:54:38 Hrs'),
+ (2,'DCHOJAI106234','2020-11-08','08:46:49 Hrs'),
+ (1,'HOJBHN_096779','2020-11-08','08:57:07 Hrs'),
+ (1,'HOJBHN_479040','2020-11-08','19:04:59 Hrs'),
+ (1,'DCHOJAI130625','2020-11-08','19:14:53 Hrs'),
+ (2,'DCHOJAI130625','2020-11-08','19:03:25 Hrs'),
+ (1,'HOJBHN_448024','2020-11-08','19:11:00 Hrs'),
+ (2,'HOJBHN_448024','2020-11-08','19:00:07 Hrs'),
+ (1,'HOJBHN_391018','2020-11-08','19:22:31 Hrs'),
+ (2,'HOJBHN_391018','2020-11-08','19:15:35 Hrs'),
+ (3,'HOJBHN_391018','2020-11-08','19:09:26 Hrs'),
+ (4,'HOJBHN_391018','2020-11-08','19:02:05 Hrs'),
+ (1,'DCHOJAI506978','2020-11-08','19:08:03 Hrs'),
+ (2,'DCHOJAI506978','2020-11-08','19:01:38 Hrs'),
+ (3,'DCHOJAI506978','2020-11-08','08:49:11 Hrs'),
+ (4,'DCHOJAI506978','2020-11-08','08:40:46 Hrs'),
+ (5,'DCHOJAI506978','2020-11-08','08:32:50 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'DCHOJAI506978','2020-11-08','08:24:01 Hrs'),
+ (7,'DCHOJAI506978','2020-11-08','08:15:16 Hrs'),
+ (8,'DCHOJAI506978','2020-11-08','08:05:17 Hrs'),
+ (9,'DCHOJAI506978','2020-11-08','07:54:11 Hrs'),
+ (1,'DCHOJAI389141','2020-11-08','19:27:59 Hrs'),
+ (1,'HOJBHN_450638','2020-11-08','19:29:58 Hrs'),
+ (2,'HOJBHN_450638','2020-11-08','19:16:09 Hrs'),
+ (3,'HOJBHN_450638','2020-11-08','19:09:56 Hrs'),
+ (4,'HOJBHN_450638','2020-11-08','19:06:05 Hrs'),
+ (1,'DCHOJAI385374','2020-11-08','19:38:06 Hrs'),
+ (2,'DCHOJAI385374','2020-11-08','19:29:13 Hrs'),
+ (3,'DCHOJAI385374','2020-11-08','19:12:17 Hrs'),
+ (4,'DCHOJAI385374','2020-11-08','19:04:51 Hrs'),
+ (1,'HOJBHN_452498','2020-11-08','19:36:40 Hrs'),
+ (2,'HOJBHN_452498','2020-11-08','19:23:36 Hrs'),
+ (3,'HOJBHN_452498','2020-11-08','19:13:13 Hrs'),
+ (1,'DCHOJAI479490','2020-11-08','19:38:37 Hrs'),
+ (2,'DCHOJAI479490','2020-11-08','19:29:26 Hrs'),
+ (3,'DCHOJAI479490','2020-11-08','19:22:25 Hrs'),
+ (4,'DCHOJAI479490','2020-11-08','19:03:55 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI502179','2020-11-08','19:37:23 Hrs'),
+ (2,'DCHOJAI502179','2020-11-08','19:17:52 Hrs'),
+ (3,'DCHOJAI502179','2020-11-08','19:03:38 Hrs'),
+ (1,'HOJBHN_450287','2020-11-08','19:51:47 Hrs'),
+ (2,'HOJBHN_450287','2020-11-08','19:44:43 Hrs'),
+ (3,'HOJBHN_450287','2020-11-08','19:28:33 Hrs'),
+ (4,'HOJBHN_450287','2020-11-08','19:17:15 Hrs'),
+ (5,'HOJBHN_450287','2020-11-08','19:10:58 Hrs'),
+ (6,'HOJBHN_450287','2020-11-08','19:01:55 Hrs'),
+ (1,'HOJBHN_449248','2020-11-08','19:39:27 Hrs'),
+ (2,'HOJBHN_449248','2020-11-08','19:30:01 Hrs'),
+ (3,'HOJBHN_449248','2020-11-08','19:14:59 Hrs'),
+ (4,'HOJBHN_449248','2020-11-08','19:05:42 Hrs'),
+ (1,'HOJBHN_363269','2020-11-08','19:57:45 Hrs'),
+ (2,'HOJBHN_363269','2020-11-08','19:49:49 Hrs'),
+ (3,'HOJBHN_363269','2020-11-08','19:40:13 Hrs'),
+ (4,'HOJBHN_363269','2020-11-08','19:22:46 Hrs'),
+ (5,'HOJBHN_363269','2020-11-08','19:14:37 Hrs'),
+ (6,'HOJBHN_363269','2020-11-08','19:02:17 Hrs'),
+ (1,'DCHOJAI480447','2020-11-08','20:02:15 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'DCHOJAI480447','2020-11-08','19:54:17 Hrs'),
+ (3,'DCHOJAI480447','2020-11-08','19:44:21 Hrs'),
+ (4,'DCHOJAI480447','2020-11-08','19:38:00 Hrs'),
+ (5,'DCHOJAI480447','2020-11-08','19:31:15 Hrs'),
+ (6,'DCHOJAI480447','2020-11-08','19:07:06 Hrs'),
+ (1,'HOJBHN_096795','2020-11-08','20:08:10 Hrs'),
+ (2,'HOJBHN_096795','2020-11-08','19:59:45 Hrs'),
+ (3,'HOJBHN_096795','2020-11-08','19:53:01 Hrs'),
+ (4,'HOJBHN_096795','2020-11-08','19:44:50 Hrs'),
+ (5,'HOJBHN_096795','2020-11-08','19:38:33 Hrs'),
+ (6,'HOJBHN_096795','2020-11-08','19:31:11 Hrs'),
+ (7,'HOJBHN_096795','2020-11-08','19:16:37 Hrs'),
+ (8,'HOJBHN_096795','2020-11-08','19:08:51 Hrs'),
+ (9,'HOJBHN_096795','2020-11-08','19:00:41 Hrs'),
+ (1,'DCHOJAI478735','2020-11-08','19:03:12 Hrs'),
+ (1,'DCHOJAI510852','2020-11-08','19:55:58 Hrs'),
+ (2,'DCHOJAI510852','2020-11-08','19:45:06 Hrs'),
+ (3,'DCHOJAI510852','2020-11-08','19:37:24 Hrs'),
+ (4,'DCHOJAI510852','2020-11-08','19:30:09 Hrs'),
+ (5,'DCHOJAI510852','2020-11-08','19:16:07 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'DCHOJAI510852','2020-11-08','19:02:54 Hrs'),
+ (1,'DCHOJAI365375','2020-11-08','20:16:36 Hrs'),
+ (2,'DCHOJAI365375','2020-11-08','20:09:06 Hrs'),
+ (3,'DCHOJAI365375','2020-11-08','20:00:57 Hrs'),
+ (4,'DCHOJAI365375','2020-11-08','19:49:17 Hrs'),
+ (5,'DCHOJAI365375','2020-11-08','19:39:47 Hrs'),
+ (6,'DCHOJAI365375','2020-11-08','19:33:25 Hrs'),
+ (7,'DCHOJAI365375','2020-11-08','19:24:56 Hrs'),
+ (8,'DCHOJAI365375','2020-11-08','19:08:53 Hrs'),
+ (1,'DCHOJAI071611','2020-11-08','19:12:50 Hrs'),
+ (1,'Dchojai526563','2020-11-08','19:46:04 Hrs'),
+ (2,'Dchojai526563','2020-11-08','19:37:07 Hrs'),
+ (3,'Dchojai526563','2020-11-08','19:18:12 Hrs'),
+ (4,'Dchojai526563','2020-11-08','19:02:35 Hrs'),
+ (1,'DCHOJAI462048','2020-11-08','19:56:12 Hrs'),
+ (2,'DCHOJAI462048','2020-11-08','19:42:50 Hrs'),
+ (3,'DCHOJAI462048','2020-11-08','19:25:43 Hrs'),
+ (4,'DCHOJAI462048','2020-11-08','19:09:43 Hrs'),
+ (1,'NTPL_MDP_NS151129','2020-11-09','08:59:54 Hrs'),
+ (1,'DCHOJAI106234','2020-11-09','08:42:38 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'NTPL_SUP_NS239156','2020-11-09','08:11:54 Hrs'),
+ (1,'HOJBHN_386189','2020-11-09','19:06:05 Hrs'),
+ (1,'DCHOJAI515788','2020-11-09','19:10:07 Hrs'),
+ (2,'DCHOJAI515788','2020-11-09','19:00:42 Hrs'),
+ (1,'HOJBHN_479040','2020-11-09','19:02:55 Hrs'),
+ (1,'DCHOJAI469979','2020-11-09','19:06:00 Hrs'),
+ (1,'HOJBHN_097390','2020-11-09','19:26:08 Hrs'),
+ (2,'HOJBHN_097390','2020-11-09','19:13:35 Hrs'),
+ (1,'HOJBHN_391018','2020-11-09','19:29:13 Hrs'),
+ (2,'HOJBHN_391018','2020-11-09','19:16:32 Hrs'),
+ (3,'HOJBHN_391018','2020-11-09','19:10:33 Hrs'),
+ (4,'HOJBHN_391018','2020-11-09','19:04:07 Hrs'),
+ (1,'DCHOJAI506978','2020-11-09','08:58:42 Hrs'),
+ (2,'DCHOJAI506978','2020-11-09','08:51:16 Hrs'),
+ (3,'DCHOJAI506978','2020-11-09','08:44:52 Hrs'),
+ (4,'DCHOJAI506978','2020-11-09','08:31:25 Hrs'),
+ (5,'DCHOJAI506978','2020-11-09','08:23:48 Hrs'),
+ (1,'DCHOJAI478735','2020-11-09','19:15:59 Hrs'),
+ (2,'DCHOJAI478735','2020-11-09','19:01:18 Hrs'),
+ (1,'HOJBHN_452733','2020-11-09','19:52:16 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (2,'HOJBHN_452733','2020-11-09','19:47:12 Hrs'),
+ (3,'HOJBHN_452733','2020-11-09','19:40:25 Hrs'),
+ (4,'HOJBHN_452733','2020-11-09','19:33:07 Hrs'),
+ (5,'HOJBHN_452733','2020-11-09','19:27:30 Hrs'),
+ (6,'HOJBHN_452733','2020-11-09','19:19:46 Hrs'),
+ (7,'HOJBHN_452733','2020-11-09','19:13:14 Hrs'),
+ (1,'DCHOJAI478006','2020-11-09','19:43:07 Hrs'),
+ (2,'DCHOJAI478006','2020-11-09','19:21:17 Hrs'),
+ (3,'DCHOJAI478006','2020-11-09','19:11:35 Hrs'),
+ (4,'DCHOJAI478006','2020-11-09','19:02:59 Hrs'),
+ (1,'DCHOJAI479733','2020-11-09','08:55:55 Hrs'),
+ (2,'DCHOJAI479733','2020-11-09','08:45:54 Hrs'),
+ (3,'DCHOJAI479733','2020-11-09','08:36:55 Hrs'),
+ (4,'DCHOJAI479733','2020-11-09','08:28:28 Hrs'),
+ (5,'DCHOJAI479733','2020-11-09','08:21:31 Hrs'),
+ (1,'HOJBHN_457380','2020-11-09','19:49:22 Hrs'),
+ (2,'HOJBHN_457380','2020-11-09','19:43:23 Hrs'),
+ (3,'HOJBHN_457380','2020-11-09','19:36:40 Hrs'),
+ (4,'HOJBHN_457380','2020-11-09','19:29:35 Hrs'),
+ (5,'HOJBHN_457380','2020-11-09','19:23:53 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'HOJBHN_457380','2020-11-09','19:17:55 Hrs'),
+ (7,'HOJBHN_457380','2020-11-09','19:13:03 Hrs'),
+ (8,'HOJBHN_457380','2020-11-09','19:04:36 Hrs'),
+ (1,'NTPL_KTR_NS478796','2020-11-09','19:29:01 Hrs'),
+ (2,'NTPL_KTR_NS478796','2020-11-09','19:22:57 Hrs'),
+ (3,'NTPL_KTR_NS478796','2020-11-09','19:18:21 Hrs'),
+ (4,'NTPL_KTR_NS478796','2020-11-09','19:13:04 Hrs'),
+ (5,'NTPL_KTR_NS478796','2020-11-09','19:08:28 Hrs'),
+ (6,'NTPL_KTR_NS478796','2020-11-09','19:02:20 Hrs'),
+ (1,'HOJBHN_474429','2020-11-09','20:10:51 Hrs'),
+ (2,'HOJBHN_474429','2020-11-09','20:01:43 Hrs'),
+ (3,'HOJBHN_474429','2020-11-09','19:52:03 Hrs'),
+ (4,'HOJBHN_474429','2020-11-09','19:43:17 Hrs'),
+ (5,'HOJBHN_474429','2020-11-09','19:34:08 Hrs'),
+ (6,'HOJBHN_474429','2020-11-09','19:25:05 Hrs'),
+ (7,'HOJBHN_474429','2020-11-09','19:16:23 Hrs'),
+ (8,'HOJBHN_474429','2020-11-09','19:08:13 Hrs'),
+ (1,'NTPL_SUP_NS295998','2020-11-09','19:34:37 Hrs'),
+ (2,'NTPL_SUP_NS295998','2020-11-09','19:28:29 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'NTPL_SUP_NS295998','2020-11-09','19:20:38 Hrs'),
+ (4,'NTPL_SUP_NS295998','2020-11-09','19:14:24 Hrs'),
+ (5,'NTPL_SUP_NS295998','2020-11-09','19:05:20 Hrs'),
+ (1,'DCHOJAI459124','2020-11-09','19:01:47 Hrs'),
+ (1,'DCHOJAI479490','2020-11-09','20:05:45 Hrs'),
+ (2,'DCHOJAI479490','2020-11-09','19:55:58 Hrs'),
+ (3,'DCHOJAI479490','2020-11-09','19:46:29 Hrs'),
+ (4,'DCHOJAI479490','2020-11-09','19:38:10 Hrs'),
+ (5,'DCHOJAI479490','2020-11-09','19:27:52 Hrs'),
+ (6,'DCHOJAI479490','2020-11-09','19:19:12 Hrs'),
+ (7,'DCHOJAI479490','2020-11-09','19:13:07 Hrs'),
+ (8,'DCHOJAI479490','2020-11-09','19:04:41 Hrs'),
+ (1,'HOJBHN_448024','2020-11-09','19:57:49 Hrs'),
+ (2,'HOJBHN_448024','2020-11-09','19:45:36 Hrs'),
+ (3,'HOJBHN_448024','2020-11-09','19:17:38 Hrs'),
+ (4,'HOJBHN_448024','2020-11-09','19:07:06 Hrs'),
+ (1,'DCHOJAI385412','2020-11-09','20:04:49 Hrs'),
+ (2,'DCHOJAI385412','2020-11-09','19:55:45 Hrs'),
+ (3,'DCHOJAI385412','2020-11-09','19:27:59 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'DCHOJAI385412','2020-11-09','19:19:25 Hrs'),
+ (5,'DCHOJAI385412','2020-11-09','19:05:50 Hrs'),
+ (1,'HOJBHN_452498','2020-11-09','20:20:29 Hrs'),
+ (2,'HOJBHN_452498','2020-11-09','20:08:06 Hrs'),
+ (3,'HOJBHN_452498','2020-11-09','19:59:32 Hrs'),
+ (4,'HOJBHN_452498','2020-11-09','19:36:20 Hrs'),
+ (5,'HOJBHN_452498','2020-11-09','19:27:04 Hrs'),
+ (6,'HOJBHN_452498','2020-11-09','19:15:24 Hrs'),
+ (7,'HOJBHN_452498','2020-11-09','19:05:10 Hrs'),
+ (1,'HOJBHN_096795','2020-11-09','20:25:03 Hrs'),
+ (2,'HOJBHN_096795','2020-11-09','20:12:29 Hrs'),
+ (3,'HOJBHN_096795','2020-11-09','19:56:33 Hrs'),
+ (4,'HOJBHN_096795','2020-11-09','19:46:38 Hrs'),
+ (5,'HOJBHN_096795','2020-11-09','19:37:59 Hrs'),
+ (6,'HOJBHN_096795','2020-11-09','19:30:19 Hrs'),
+ (1,'HOJBHN_450638','2020-11-09','20:29:25 Hrs'),
+ (2,'HOJBHN_450638','2020-11-09','20:22:49 Hrs'),
+ (3,'HOJBHN_450638','2020-11-09','20:17:55 Hrs'),
+ (4,'HOJBHN_450638','2020-11-09','20:12:52 Hrs'),
+ (5,'HOJBHN_450638','2020-11-09','20:07:40 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (6,'HOJBHN_450638','2020-11-09','20:02:33 Hrs'),
+ (7,'HOJBHN_450638','2020-11-09','19:58:31 Hrs'),
+ (8,'HOJBHN_450638','2020-11-09','19:52:54 Hrs'),
+ (9,'HOJBHN_450638','2020-11-09','19:47:43 Hrs'),
+ (10,'HOJBHN_450638','2020-11-09','19:44:00 Hrs'),
+ (11,'HOJBHN_450638','2020-11-09','19:41:07 Hrs'),
+ (12,'HOJBHN_450638','2020-11-09','19:37:53 Hrs'),
+ (13,'HOJBHN_450638','2020-11-09','19:30:13 Hrs'),
+ (14,'HOJBHN_450638','2020-11-09','19:25:26 Hrs'),
+ (15,'HOJBHN_450638','2020-11-09','19:20:44 Hrs'),
+ (16,'HOJBHN_450638','2020-11-09','19:15:58 Hrs'),
+ (17,'HOJBHN_450638','2020-11-09','19:10:10 Hrs'),
+ (18,'HOJBHN_450638','2020-11-09','19:05:24 Hrs'),
+ (1,'HOJBHN_363269','2020-11-09','19:42:47 Hrs'),
+ (2,'HOJBHN_363269','2020-11-09','19:27:39 Hrs'),
+ (3,'HOJBHN_363269','2020-11-09','19:20:14 Hrs'),
+ (4,'HOJBHN_363269','2020-11-09','19:05:25 Hrs'),
+ (1,'DCHOJAI480447','2020-11-09','20:24:00 Hrs'),
+ (2,'DCHOJAI480447','2020-11-09','20:17:52 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'DCHOJAI480447','2020-11-09','20:11:09 Hrs'),
+ (4,'DCHOJAI480447','2020-11-09','20:02:11 Hrs'),
+ (5,'DCHOJAI480447','2020-11-09','19:54:06 Hrs'),
+ (6,'DCHOJAI480447','2020-11-09','19:43:58 Hrs'),
+ (7,'DCHOJAI480447','2020-11-09','19:37:21 Hrs'),
+ (8,'DCHOJAI480447','2020-11-09','19:24:54 Hrs'),
+ (9,'DCHOJAI480447','2020-11-09','19:14:41 Hrs'),
+ (10,'DCHOJAI480447','2020-11-09','19:05:32 Hrs'),
+ (1,'DCHOJAI510852','2020-11-09','20:43:39 Hrs'),
+ (2,'DCHOJAI510852','2020-11-09','20:34:23 Hrs'),
+ (3,'DCHOJAI510852','2020-11-09','20:27:33 Hrs'),
+ (4,'DCHOJAI510852','2020-11-09','20:20:35 Hrs'),
+ (5,'DCHOJAI510852','2020-11-09','20:15:26 Hrs'),
+ (6,'DCHOJAI510852','2020-11-09','19:52:51 Hrs'),
+ (7,'DCHOJAI510852','2020-11-09','19:41:54 Hrs'),
+ (8,'DCHOJAI510852','2020-11-09','19:36:38 Hrs'),
+ (9,'DCHOJAI510852','2020-11-09','19:30:29 Hrs'),
+ (1,'DCHOJAI338953','2020-11-09','20:41:20 Hrs'),
+ (2,'DCHOJAI338953','2020-11-09','20:30:50 Hrs'),
+ (3,'DCHOJAI338953','2020-11-09','20:20:27 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'DCHOJAI338953','2020-11-09','20:13:08 Hrs'),
+ (5,'DCHOJAI338953','2020-11-09','20:05:20 Hrs'),
+ (6,'DCHOJAI338953','2020-11-09','19:54:12 Hrs'),
+ (7,'DCHOJAI338953','2020-11-09','19:40:55 Hrs'),
+ (8,'DCHOJAI338953','2020-11-09','19:31:03 Hrs'),
+ (9,'DCHOJAI338953','2020-11-09','19:22:05 Hrs'),
+ (10,'DCHOJAI338953','2020-11-09','19:10:53 Hrs'),
+ (11,'DCHOJAI338953','2020-11-09','19:04:12 Hrs'),
+ (1,'DCHOJAI071611','2020-11-09','19:28:17 Hrs'),
+ (2,'DCHOJAI071611','2020-11-09','19:17:01 Hrs'),
+ (3,'DCHOJAI071611','2020-11-09','19:00:50 Hrs'),
+ (1,'DCHOJAI077387','2020-11-09','20:35:15 Hrs'),
+ (2,'DCHOJAI077387','2020-11-09','20:17:25 Hrs'),
+ (3,'DCHOJAI077387','2020-11-09','20:04:48 Hrs'),
+ (4,'DCHOJAI077387','2020-11-09','19:49:24 Hrs'),
+ (5,'DCHOJAI077387','2020-11-09','19:33:30 Hrs'),
+ (6,'DCHOJAI077387','2020-11-09','19:19:21 Hrs'),
+ (1,'DCHOJAI505300','2020-11-09','20:50:39 Hrs'),
+ (2,'DCHOJAI505300','2020-11-09','20:42:02 Hrs'),
+ (3,'DCHOJAI505300','2020-11-09','20:37:17 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'DCHOJAI505300','2020-11-09','20:31:00 Hrs'),
+ (5,'DCHOJAI505300','2020-11-09','20:22:25 Hrs'),
+ (6,'DCHOJAI505300','2020-11-09','20:14:06 Hrs'),
+ (7,'DCHOJAI505300','2020-11-09','19:49:07 Hrs'),
+ (8,'DCHOJAI505300','2020-11-09','19:34:55 Hrs'),
+ (9,'DCHOJAI505300','2020-11-09','19:24:52 Hrs'),
+ (10,'DCHOJAI505300','2020-11-09','19:18:41 Hrs'),
+ (1,'NTPL_MDP_NS151129','2020-11-10','08:50:31 Hrs'),
+ (1,'DCHOJAI506978','2020-11-10','08:55:47 Hrs'),
+ (2,'DCHOJAI506978','2020-11-10','08:47:18 Hrs'),
+ (3,'DCHOJAI506978','2020-11-10','08:38:47 Hrs'),
+ (4,'DCHOJAI506978','2020-11-10','08:21:57 Hrs'),
+ (1,'DCHOJAI479733','2020-11-10','08:54:02 Hrs'),
+ (2,'DCHOJAI479733','2020-11-10','08:45:30 Hrs'),
+ (1,'Dchojai526563','2020-11-10','19:00:39 Hrs'),
+ (1,'NGNBHN_404447','2020-11-10','08:51:26 Hrs'),
+ (2,'NGNBHN_404447','2020-11-10','08:33:52 Hrs'),
+ (3,'NGNBHN_404447','2020-11-10','08:22:49 Hrs'),
+ (4,'NGNBHN_404447','2020-11-10','08:12:09 Hrs'),
+ (5,'NGNBHN_404447','2020-11-10','08:01:37 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJAI384778','2020-11-10','08:52:41 Hrs'),
+ (1,'DCHOJAI370355','2020-11-10','19:22:25 Hrs'),
+ (2,'DCHOJAI370355','2020-11-10','19:13:00 Hrs'),
+ (3,'DCHOJAI370355','2020-11-10','19:05:27 Hrs'),
+ (1,'DCHOJAI106234','2020-11-10','19:29:40 Hrs'),
+ (2,'DCHOJAI106234','2020-11-10','19:20:43 Hrs'),
+ (3,'DCHOJAI106234','2020-11-10','19:14:35 Hrs'),
+ (4,'DCHOJAI106234','2020-11-10','19:07:50 Hrs'),
+ (1,'DCHOJAI484469','2020-11-10','19:26:24 Hrs'),
+ (2,'DCHOJAI484469','2020-11-10','19:16:44 Hrs'),
+ (1,'HOJBHN_457380','2020-11-10','19:37:44 Hrs'),
+ (2,'HOJBHN_457380','2020-11-10','19:33:15 Hrs'),
+ (3,'HOJBHN_457380','2020-11-10','19:28:02 Hrs'),
+ (4,'HOJBHN_457380','2020-11-10','19:20:53 Hrs'),
+ (5,'HOJBHN_457380','2020-11-10','19:14:26 Hrs'),
+ (6,'HOJBHN_457380','2020-11-10','19:07:58 Hrs'),
+ (7,'HOJBHN_457380','2020-11-10','19:00:29 Hrs'),
+ (1,'DCHOJAI110583','2020-11-10','19:37:36 Hrs'),
+ (2,'DCHOJAI110583','2020-11-10','19:27:14 Hrs'),
+ (1,'DCHOJAI487385','2020-11-10','19:40:18 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'NGNBHN_479402','2020-11-10','19:43:00 Hrs'),
+ (2,'NGNBHN_479402','2020-11-10','19:34:30 Hrs'),
+ (3,'NGNBHN_479402','2020-11-10','19:26:46 Hrs'),
+ (4,'NGNBHN_479402','2020-11-10','19:21:14 Hrs'),
+ (5,'NGNBHN_479402','2020-11-10','19:15:01 Hrs'),
+ (6,'NGNBHN_479402','2020-11-10','19:06:12 Hrs'),
+ (1,'NGNBHN_391909','2020-11-10','19:38:44 Hrs'),
+ (2,'NGNBHN_391909','2020-11-10','19:29:00 Hrs'),
+ (3,'NGNBHN_391909','2020-11-10','19:23:05 Hrs'),
+ (4,'NGNBHN_391909','2020-11-10','19:15:03 Hrs'),
+ (5,'NGNBHN_391909','2020-11-10','19:07:34 Hrs'),
+ (6,'NGNBHN_391909','2020-11-10','19:00:28 Hrs'),
+ (1,'DCHOJAI510814','2020-11-10','19:40:09 Hrs'),
+ (2,'DCHOJAI510814','2020-11-10','19:30:30 Hrs'),
+ (3,'DCHOJAI510814','2020-11-10','19:20:13 Hrs'),
+ (4,'DCHOJAI510814','2020-11-10','19:10:29 Hrs'),
+ (5,'DCHOJAI510814','2020-11-10','19:01:11 Hrs'),
+ (1,'MOR_BHN326072','2020-11-10','19:48:57 Hrs'),
+ (2,'MOR_BHN326072','2020-11-10','19:39:35 Hrs'),
+ (3,'MOR_BHN326072','2020-11-10','19:32:00 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (4,'MOR_BHN326072','2020-11-10','19:26:04 Hrs'),
+ (5,'MOR_BHN326072','2020-11-10','19:20:16 Hrs'),
+ (6,'MOR_BHN326072','2020-11-10','19:13:08 Hrs'),
+ (7,'MOR_BHN326072','2020-11-10','19:07:02 Hrs'),
+ (8,'MOR_BHN326072','2020-11-10','19:00:45 Hrs'),
+ (1,'DCHOJAI525285','2020-11-10','19:54:31 Hrs'),
+ (2,'DCHOJAI525285','2020-11-10','19:38:00 Hrs'),
+ (3,'DCHOJAI525285','2020-11-10','19:25:20 Hrs'),
+ (4,'DCHOJAI525285','2020-11-10','19:09:10 Hrs'),
+ (1,'NGNBHN_153773','2020-11-10','19:19:54 Hrs'),
+ (2,'NGNBHN_153773','2020-11-10','19:08:58 Hrs'),
+ (3,'NGNBHN_153773','2020-11-10','19:00:23 Hrs'),
+ (1,'DCHOJAI462048','2020-11-10','19:08:34 Hrs'),
+ (1,'NGNBHN_153773','2020-11-10','19:19:54 Hrs'),
+ (2,'NGNBHN_153773','2020-11-10','19:08:58 Hrs'),
+ (3,'NGNBHN_153773','2020-11-10','19:00:23 Hrs'),
+ (1,'DCHOJAI11500','2020-11-10','19:31:02 Hrs'),
+ (2,'DCHOJAI11500','2020-11-10','19:17:56 Hrs'),
+ (1,'DCHOJAI365375','2020-11-10','19:52:59 Hrs'),
+ (2,'DCHOJAI365375','2020-11-10','19:20:38 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (3,'DCHOJAI365375','2020-11-10','19:13:28 Hrs'),
+ (4,'DCHOJAI365375','2020-11-10','19:06:34 Hrs'),
+ (1,'NGNBHN_413672','2020-11-10','19:29:56 Hrs'),
+ (2,'NGNBHN_413672','2020-11-10','19:23:19 Hrs'),
+ (3,'NGNBHN_413672','2020-11-10','19:16:05 Hrs'),
+ (4,'NGNBHN_413672','2020-11-10','19:10:05 Hrs'),
+ (5,'NGNBHN_413672','2020-11-10','19:02:26 Hrs'),
+ (6,'NGNBHN_413672','2020-11-10','08:55:19 Hrs'),
+ (1,'DCHOJAI469979','2020-11-10','20:08:43 Hrs'),
+ (2,'DCHOJAI469979','2020-11-10','19:59:40 Hrs'),
+ (3,'DCHOJAI469979','2020-11-10','19:46:25 Hrs'),
+ (4,'DCHOJAI469979','2020-11-10','19:29:28 Hrs'),
+ (5,'DCHOJAI469979','2020-11-10','19:21:19 Hrs'),
+ (6,'DCHOJAI469979','2020-11-10','19:11:27 Hrs'),
+ (1,'HOJBHN_452498','2020-11-10','20:11:23 Hrs'),
+ (2,'HOJBHN_452498','2020-11-10','19:54:49 Hrs'),
+ (3,'HOJBHN_452498','2020-11-10','19:44:10 Hrs'),
+ (4,'HOJBHN_452498','2020-11-10','19:30:32 Hrs'),
+ (5,'HOJBHN_452498','2020-11-10','19:21:53 Hrs'),
+ (6,'HOJBHN_452498','2020-11-10','19:12:03 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (1,'DCHOJ_216025','2020-11-10','20:12:01 Hrs'),
+ (2,'DCHOJ_216025','2020-11-10','20:06:33 Hrs'),
+ (3,'DCHOJ_216025','2020-11-10','20:00:27 Hrs'),
+ (4,'DCHOJ_216025','2020-11-10','19:53:35 Hrs'),
+ (5,'DCHOJ_216025','2020-11-10','19:47:15 Hrs'),
+ (6,'DCHOJ_216025','2020-11-10','19:39:37 Hrs'),
+ (7,'DCHOJ_216025','2020-11-10','19:31:46 Hrs'),
+ (8,'DCHOJ_216025','2020-11-10','19:26:26 Hrs'),
+ (9,'DCHOJ_216025','2020-11-10','19:21:23 Hrs'),
+ (10,'DCHOJ_216025','2020-11-10','19:14:25 Hrs'),
+ (11,'DCHOJ_216025','2020-11-10','19:08:57 Hrs'),
+ (12,'DCHOJ_216025','2020-11-10','19:04:24 Hrs'),
+ (13,'DCHOJ_216025','2020-11-10','19:00:23 Hrs'),
+ (1,'HOJBHN_448024','2020-11-10','20:20:03 Hrs'),
+ (2,'HOJBHN_448024','2020-11-10','20:09:35 Hrs'),
+ (3,'HOJBHN_448024','2020-11-10','19:57:20 Hrs'),
+ (4,'HOJBHN_448024','2020-11-10','19:45:37 Hrs'),
+ (5,'HOJBHN_448024','2020-11-10','19:35:59 Hrs'),
+ (6,'HOJBHN_448024','2020-11-10','19:26:24 Hrs'),
+ (7,'HOJBHN_448024','2020-11-10','19:16:09 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (8,'HOJBHN_448024','2020-11-10','19:05:35 Hrs'),
+ (1,'DCHOJAI479734','2020-11-10','19:28:35 Hrs'),
+ (2,'DCHOJAI479734','2020-11-10','19:13:17 Hrs'),
+ (3,'DCHOJAI479734','2020-11-10','19:05:26 Hrs'),
+ (1,'DCHOJAI505300','2020-11-10','20:19:37 Hrs'),
+ (2,'DCHOJAI505300','2020-11-10','20:05:16 Hrs'),
+ (3,'DCHOJAI505300','2020-11-10','19:56:37 Hrs'),
+ (4,'DCHOJAI505300','2020-11-10','19:49:50 Hrs'),
+ (5,'DCHOJAI505300','2020-11-10','19:41:38 Hrs'),
+ (6,'DCHOJAI505300','2020-11-10','19:34:20 Hrs'),
+ (7,'DCHOJAI505300','2020-11-10','19:24:00 Hrs'),
+ (8,'DCHOJAI505300','2020-11-10','19:13:20 Hrs'),
+ (9,'DCHOJAI505300','2020-11-10','19:06:29 Hrs'),
+ (1,'NGNBHN_449185','2020-11-10','20:26:04 Hrs'),
+ (2,'NGNBHN_449185','2020-11-10','20:20:22 Hrs'),
+ (3,'NGNBHN_449185','2020-11-10','20:15:18 Hrs'),
+ (4,'NGNBHN_449185','2020-11-10','20:10:34 Hrs'),
+ (5,'NGNBHN_449185','2020-11-10','20:02:35 Hrs'),
+ (6,'NGNBHN_449185','2020-11-10','19:57:23 Hrs'),
+ (7,'NGNBHN_449185','2020-11-10','19:48:31 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (8,'NGNBHN_449185','2020-11-10','19:43:30 Hrs'),
+ (9,'NGNBHN_449185','2020-11-10','19:38:19 Hrs'),
+ (10,'NGNBHN_449185','2020-11-10','19:31:47 Hrs'),
+ (11,'NGNBHN_449185','2020-11-10','19:26:37 Hrs'),
+ (12,'NGNBHN_449185','2020-11-10','19:19:01 Hrs'),
+ (13,'NGNBHN_449185','2020-11-10','19:11:30 Hrs'),
+ (14,'NGNBHN_449185','2020-11-10','19:04:28 Hrs'),
+ (1,'DCHOJAI510852','2020-11-10','20:31:54 Hrs'),
+ (2,'DCHOJAI510852','2020-11-10','20:26:55 Hrs'),
+ (3,'DCHOJAI510852','2020-11-10','20:17:51 Hrs'),
+ (4,'DCHOJAI510852','2020-11-10','19:47:03 Hrs'),
+ (5,'DCHOJAI510852','2020-11-10','19:41:29 Hrs'),
+ (6,'DCHOJAI510852','2020-11-10','19:36:28 Hrs'),
+ (7,'DCHOJAI510852','2020-11-10','19:26:18 Hrs'),
+ (8,'DCHOJAI510852','2020-11-10','19:17:27 Hrs'),
+ (9,'DCHOJAI510852','2020-11-10','19:13:13 Hrs'),
+ (1,'HOJBHN_386189','2020-11-10','20:34:28 Hrs'),
+ (2,'HOJBHN_386189','2020-11-10','20:26:23 Hrs'),
+ (3,'HOJBHN_386189','2020-11-10','20:17:58 Hrs'),
+ (4,'HOJBHN_386189','2020-11-10','19:58:26 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (5,'HOJBHN_386189','2020-11-10','19:47:30 Hrs'),
+ (6,'HOJBHN_386189','2020-11-10','19:37:51 Hrs'),
+ (7,'HOJBHN_386189','2020-11-10','19:31:09 Hrs'),
+ (8,'HOJBHN_386189','2020-11-10','19:20:47 Hrs'),
+ (9,'HOJBHN_386189','2020-11-10','19:12:24 Hrs'),
+ (10,'HOJBHN_386189','2020-11-10','19:05:09 Hrs'),
+ (1,'DCHOJAI338953','2020-11-10','20:39:35 Hrs'),
+ (2,'DCHOJAI338953','2020-11-10','20:08:16 Hrs'),
+ (3,'DCHOJAI338953','2020-11-10','19:51:42 Hrs'),
+ (4,'DCHOJAI338953','2020-11-10','19:33:54 Hrs'),
+ (5,'DCHOJAI338953','2020-11-10','19:22:52 Hrs'),
+ (1,'HOJBHN_449248','2020-11-10','20:40:18 Hrs'),
+ (2,'HOJBHN_449248','2020-11-10','20:30:07 Hrs'),
+ (3,'HOJBHN_449248','2020-11-10','20:21:36 Hrs'),
+ (4,'HOJBHN_449248','2020-11-10','20:12:33 Hrs'),
+ (5,'HOJBHN_449248','2020-11-10','20:03:01 Hrs'),
+ (6,'HOJBHN_449248','2020-11-10','19:52:02 Hrs'),
+ (7,'HOJBHN_449248','2020-11-10','19:43:36 Hrs'),
+ (8,'HOJBHN_449248','2020-11-10','19:33:59 Hrs'),
+ (9,'HOJBHN_449248','2020-11-10','19:20:31 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (10,'HOJBHN_449248','2020-11-10','19:08:54 Hrs'),
+ (1,'DCHOJAI478006','2020-11-10','20:30:08 Hrs'),
+ (2,'DCHOJAI478006','2020-11-10','20:20:06 Hrs'),
+ (3,'DCHOJAI478006','2020-11-10','20:10:09 Hrs'),
+ (4,'DCHOJAI478006','2020-11-10','20:00:20 Hrs'),
+ (5,'DCHOJAI478006','2020-11-10','19:52:11 Hrs'),
+ (6,'DCHOJAI478006','2020-11-10','19:17:51 Hrs'),
+ (1,'DCHOJAI077387','2020-11-10','20:46:00 Hrs'),
+ (2,'DCHOJAI077387','2020-11-10','20:15:50 Hrs'),
+ (3,'DCHOJAI077387','2020-11-10','20:03:30 Hrs'),
+ (4,'DCHOJAI077387','2020-11-10','19:44:26 Hrs'),
+ (5,'DCHOJAI077387','2020-11-10','19:31:14 Hrs'),
+ (6,'DCHOJAI077387','2020-11-10','19:11:49 Hrs'),
+ (1,'DCHOJAI479733','2020-11-11','08:53:22 Hrs'),
+ (2,'DCHOJAI479733','2020-11-11','08:45:42 Hrs'),
+ (1,'NTPL_KTR_NS198961','2020-11-11','08:58:21 Hrs'),
+ (2,'NTPL_KTR_NS198961','2020-11-11','08:50:42 Hrs'),
+ (3,'NTPL_KTR_NS198961','2020-11-11','08:44:06 Hrs'),
+ (4,'NTPL_KTR_NS198961','2020-11-11','08:37:47 Hrs');
+INSERT INTO `tbl_outrangetime` (`item_no`,`operator_id`,`created_date`,`log_DTTM`) VALUES 
+ (5,'NTPL_KTR_NS198961','2020-11-11','08:30:19 Hrs'),
+ (6,'NTPL_KTR_NS198961','2020-11-11','08:23:27 Hrs'),
+ (7,'NTPL_KTR_NS198961','2020-11-11','08:16:09 Hrs'),
+ (8,'NTPL_KTR_NS198961','2020-11-11','08:05:00 Hrs');
+/*!40000 ALTER TABLE `tbl_outrangetime` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
